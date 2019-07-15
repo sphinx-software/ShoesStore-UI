@@ -74,12 +74,11 @@ export default class Header extends Component {
                                 {/* Pages */}
                                 <li className="dropdown">
                                     <a href="javascript:void(0);" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                        Pages
+                                        Product
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><a href="index.html">Shop UI</a></li>
-                                        <li><Link to="shop-ui-inner.html">Product Details</Link></li>
                                         <li><Link to="/products">Product List</Link></li>
+                                        <li><Link to="shop-ui-inner.html">Product Details</Link></li>
                                         <li><Link to="shop-ui-add-to-cart.html">Checkout</Link></li>
                                     </ul>
                                 </li>
