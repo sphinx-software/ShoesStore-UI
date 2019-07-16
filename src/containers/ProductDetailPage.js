@@ -7,7 +7,7 @@ import RelatedItem                      from "../components/GridItem/RelatedItem
 export default class ProductListPage extends Component {
     render() {
         const items = [
-            1, 2, 3, 4, 5, 6
+            1, 2, 3, 4, 5, 6, 7
         ];
 
         return (
