@@ -18,8 +18,8 @@ export default class ProductListPage extends Component {
                         {/* Breadcrumbs v5 */}
                         <div className="container">
                             <ul className="breadcrumb-v5">
-                                <li><a href="index.html"><i className="fa fa-home" /></a></li>
-                                <li><a href="#">Products</a></li>
+                                <li><Link to="/"><i className="fa fa-home" /></Link></li>
+                                <li><Link to="/products">Products</Link></li>
                                 <li className="active">New</li>
                             </ul>
                         </div>

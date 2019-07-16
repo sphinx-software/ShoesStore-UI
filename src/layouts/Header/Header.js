@@ -79,7 +79,7 @@ export default class Header extends Component {
                                     <ul className="dropdown-menu">
                                         <li><Link to="/products">Product List</Link></li>
                                         <li><Link to="/products-detail">Product Details</Link></li>
-                                        <li><Link to="shop-ui-add-to-cart.html">Checkout</Link></li>
+                                        <li><Link to="/checkout">Checkout</Link></li>
                                     </ul>
                                 </li>
                                 {/* End Pages */}
