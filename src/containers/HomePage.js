@@ -7,8 +7,6 @@ import CategoryItem                     from '../components/GridItem/CategoryIte
 import TwitterBlock                     from '../components/TwitterBlock/TwitterBlock';
 import ProductService                   from '../components/ProductService/ProductService';
 import Illustrationv5                   from '../components/Illustrationv5/Illustrationv5';
-import CollectionBanner                 from '../components/Banner/CollectionBanner';
-import Sponsors                         from '../components/Sponsors/Sponsors';
 
 export default class HomePage extends Component {
     render() {
@@ -135,15 +133,12 @@ export default class HomePage extends Component {
                                     }
                                 </ul>
                             </div>
-
                         </div>
                         <TwitterBlock/>
                         <div className="container">
                             <ProductService/>
                             <Illustrationv5/>
                         </div>
-                        <CollectionBanner/>
-                        <Sponsors/>
                         {/* Footer */}
                     </div>
                 </div>
