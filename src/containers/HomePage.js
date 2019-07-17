@@ -65,7 +65,7 @@ export default class HomePage extends Component {
                     <div className="wrapper">
                         <Slider/>
                         <div className="container content-md">
-                            {/* SaleBanner */} <SaleBanner/> {/* End SaleBanner */}
+                            <SaleBanner/>
                             <div className="heading heading-v1 margin-bottom-20">
                                 <h2>Featured products</h2>
                             </div>
