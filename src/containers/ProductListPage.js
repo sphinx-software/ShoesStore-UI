@@ -15,9 +15,7 @@ export default class ProductListPage extends Component {
         return (
             <BrowserRouter>
                 <div className="wrapper">
-                    {/*=== Breadcrumbs v4 ===*/}
                         <BreadCrumbs/>
-                    {/*=== End Breadcrumbs v4 ===*/}
                     {/*=== Content Part ===*/}
                         <div className="content container">
                             <div className="row">
@@ -80,12 +78,11 @@ export default class ProductListPage extends Component {
                                             <li><a href="#">3</a></li>
                                             <li><a href="#"><i className="fa fa-angle-right" /></a></li>
                                         </ul>
-                                    </div>{/*/end pagination*/}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     {/*=== End Content Part ===*/}
-                    {/*=== Footer ===*/}
                 </div>
             </BrowserRouter>
         );

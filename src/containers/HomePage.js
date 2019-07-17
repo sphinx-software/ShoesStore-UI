@@ -63,16 +63,12 @@ export default class HomePage extends Component {
             <BrowserRouter>
                 <div>
                     <div className="wrapper">
-                            {/* Topbar */}
-                            {/* Header */}
                         <Slider/>
                         <div className="container content-md">
                             {/* SaleBanner */} <SaleBanner/> {/* End SaleBanner */}
                             <div className="heading heading-v1 margin-bottom-20">
                                 <h2>Featured products</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio elit, ultrices vel cursus sed, placerat ut leo. Phasellus in magna erat. Etiam gravida convallis augue non tincidunt. Nunc lobortis dapibus neque quis lacinia. Nam dapibus tellus sit amet odio venenatis</p>
                             </div>
-
 
                             <div className="illustration-v2 margin-bottom-60">
                                 <div className="customNavigation margin-bottom-25">
@@ -93,7 +89,6 @@ export default class HomePage extends Component {
                             </div>
 
 
-
                             <div className="row margin-bottom-50">
                                 {
                                     categories.map((category, index) => {
@@ -108,12 +103,9 @@ export default class HomePage extends Component {
                             </div>
 
 
-
                             <div className="heading heading-v1 margin-bottom-40">
                                 <h2>Latest products</h2>
                             </div>
-
-
 
 
                             <div className="illustration-v2 margin-bottom-60">
@@ -139,7 +131,6 @@ export default class HomePage extends Component {
                             <ProductService/>
                             <Illustrationv5/>
                         </div>
-                        {/* Footer */}
                     </div>
                 </div>
             </BrowserRouter>
