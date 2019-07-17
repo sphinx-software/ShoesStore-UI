@@ -4,7 +4,7 @@ export default class InfoBlock extends Component {
         return(
             <div className="col-md-7 md-margin-bottom-50">
                 <h2 className="welcome-title">Welcome to Unify</h2>
-                <p>Suspendisse et tincidunt ipsum, et dignissim urna. Vestibulum nisl tortor, gravida at magna et, suscipit vehicula massa.</p><br />
+                <br />
                 <div className="row margin-bottom-50">
                     <div className="col-sm-4 md-margin-bottom-20">
                         <div className="site-statistics">
