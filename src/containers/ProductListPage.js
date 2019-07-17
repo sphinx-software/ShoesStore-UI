@@ -2,13 +2,13 @@ import React, { Component }             from 'react';
 import { BrowserRouter, Router, Link }  from "react-router-dom";
 import BreadCrumbs                      from '../components/BreadCrumbs/BreadCrumbs';
 import Panel                            from "../components/Panel/Panel";
-import ListItem                         from '../components/ListItem/ListItem';
+import ProductItem                      from "../components/GridItem/ProductItem";
 
 
 export default class ProductListPage extends Component {
     render() {
         const items = [
-            1, 2, 3, 4, 5, 6, 7, 8, 9
+            1, 2, 3, 4
         ];
 
         return (
@@ -58,14 +58,40 @@ export default class ProductListPage extends Component {
                                     </div>
                                 </div>
                                 <div className="filter-results">
-                                    <div className="container">
-                                        <div className="illustration-v2 margin-bottom-30">
+                                    <div className="row illustration-v2 margin-bottom-30">
+                                        <ul className="list-inline owl-slider">
                                             {
                                                 items.map((item, index) => {
-                                                    return(<ListItem/>);
+                                                    return(
+                                                        <div key={index}>
+                                                            <ProductItem/>
+                                                        </div>
+                                                    );
                                                 })
                                             }
-                                        </div>
+                                        </ul>
+                                        <ul className="list-inline owl-slider">
+                                            {
+                                                items.map((item, index) => {
+                                                    return(
+                                                        <div key={index}>
+                                                            <ProductItem/>
+                                                        </div>
+                                                    );
+                                                })
+                                            }
+                                        </ul>
+                                        <ul className="list-inline owl-slider">
+                                            {
+                                                items.map((item, index) => {
+                                                    return(
+                                                        <div key={index}>
+                                                            <ProductItem/>
+                                                        </div>
+                                                    );
+                                                })
+                                            }
+                                        </ul>
                                     </div>
                                 </div>
                                 <div className="text-center">
