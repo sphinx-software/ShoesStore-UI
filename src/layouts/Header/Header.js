@@ -57,10 +57,10 @@ export default class Header extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col-xs-6">
-                                            <a href="shop-ui-inner.html" className="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</a>
+                                            <Link to="/products" className="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</Link>
                                         </div>
                                         <div className="col-xs-6">
-                                            <a href="shop-ui-add-to-cart.html" className="btn-u btn-u-sea-shop btn-block">Checkout</a>
+                                            <Link to="/checkout" className="btn-u btn-u-sea-shop btn-block">Checkout</Link>
                                         </div>
                                     </div>
                                 </div>
