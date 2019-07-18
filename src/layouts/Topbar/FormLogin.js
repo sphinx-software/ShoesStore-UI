@@ -3,6 +3,16 @@ import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
 import InfoBlock from '../../components/InfoBlock/InfoBlock';
 
 export default class FormLogin extends Component {
+    constructor(props) {
+        super(props);
+        this.loginForm = this.loginForm.bind(this);
+    }
+
+    loginForm() {
+        console.log(this.refs.username.value);
+        console.log(this.refs.password.value);
+    }
+
     render() {
         return (
             <div>
@@ -18,8 +28,12 @@ export default class FormLogin extends Component {
                                 <label className="input login-input">
                                     <div className="input-group">
                                         <span className="input-group-addon"><i className="fa fa-user"/></span>
-                                        <input type="email" placeholder="Email Address" name="email"
-                                               className="form-control"/>
+                                        <input type="email"
+                                               placeholder="Email Address"
+                                               name="email"
+                                               className="form-control"
+                                               ref="username"
+                                        />
                                     </div>
                                 </label>
                             </section>
@@ -27,8 +41,12 @@ export default class FormLogin extends Component {
                                 <label className="input login-input no-border-top">
                                     <div className="input-group">
                                         <span className="input-group-addon"><i className="fa fa-lock"/></span>
-                                        <input type="password" placeholder="Password" name="password"
-                                               className="form-control"/>
+                                        <input type="password"
+                                               placeholder="Password"
+                                               name="password"
+                                               className="form-control"
+                                               ref="password"
+                                        />
                                     </div>
                                 </label>
                             </section>
@@ -43,7 +61,11 @@ export default class FormLogin extends Component {
                                     <p>Forget your Password?</p>
                                 </div>
                             </div>
-                            <button className="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Log in
+                            <button
+                                onClick={this.loginForm}
+                                className="btn-u btn-u-sea-shop btn-block margin-bottom-20"
+                                type="submit">
+                                Log in
                             </button>
 
                             <div className="border-wings">

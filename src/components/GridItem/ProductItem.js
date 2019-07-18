@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import propTypes            from 'prop-types';
 
-
 export default class ProductItem extends Component {
     render() {
 
@@ -51,3 +50,5 @@ ProductItem.defaultProps = {
         price: "300$"
     }
 }
+
+
