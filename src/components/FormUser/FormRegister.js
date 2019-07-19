@@ -1,8 +1,42 @@
 import React, {Component} from 'react';
-import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
-import InfoBlock from '../../components/InfoBlock/InfoBlock';
+import BreadCrumbs        from '../BreadCrumbs/BreadCrumbs';
+import InfoBlock          from '../InfoBlock/InfoBlock';
+import axios              from 'axios';
 
 export default class FormRegister extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            userName        : '',
+            email           : '',
+            password        : '',
+            confirmPassword : '',
+            gender          : ''
+        }
+    }
+
+
+    registerUser() {
+        const { userName, password } = this.state;
+        axios.post('/user', {
+            userName,
+            password
+        }).then((res) => {
+            console.log(res);
+        }).catch((e) => {
+            console.log(e);
+        });
+    }
+
+
+    handleChangeInputUser(e) {
+        this.setState({
+            userName: e.target.value
+        });
+    }
+
+
     render () {
         return (
             <div>
@@ -71,7 +105,11 @@ export default class FormRegister extends Component {
                                 </div>
                                 <section>
                                     <label className="input">
-                                        <input type="text" name="username" placeholder="Username" className="form-control"/>
+                                        <input onChange={ () => this.handleChangeInputUser }
+                                               type="text"
+                                               name="username"
+                                               placeholder="Username"
+                                               className="form-control"/>
                                     </label>
                                 </section>
                                 <section>
@@ -101,7 +139,10 @@ export default class FormRegister extends Component {
                                 <input type="checkbox" name="checkbox"/>
                                 I have read agreed with the <p>terms &amp; conditions</p>
                             </label>
-                            <button className="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">Create Account
+                            <button className="btn-u btn-u-sea-shop btn-block margin-bottom-20"
+                                    onclick={ () => this.registerUser() }
+                                    >
+                                    Create Account
                             </button>
                         </form>
                             <div className="margin-bottom-20"/>
@@ -114,3 +155,4 @@ export default class FormRegister extends Component {
         );
     }
 }
+

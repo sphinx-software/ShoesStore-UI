@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs';
-import InfoBlock from '../../components/InfoBlock/InfoBlock';
+import BreadCrumbs        from '../BreadCrumbs/BreadCrumbs';
+import InfoBlock          from '../InfoBlock/InfoBlock';
 
 export default class FormLogin extends Component {
     constructor(props) {
