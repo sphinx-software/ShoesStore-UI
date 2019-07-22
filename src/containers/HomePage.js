@@ -1,5 +1,5 @@
 import React, { Component }             from 'react';
-import { BrowserRouter, Router, Link }  from "react-router-dom";
+import { BrowserRouter }  from "react-router-dom";
 import Slider                           from '../components/Slider/Slider';
 import SaleBanner                       from '../components/Banner/SaleBanner';
 import ProductItem                      from '../components/GridItem/ProductItem';
