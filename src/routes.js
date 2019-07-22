@@ -6,8 +6,6 @@ import {
 import FormLogin          from "./components/Topbar/FormLogin";
 import FormRegister       from "./components/Topbar/FormRegister";
 import Home               from './views/Home';
-import FormLogin          from "./layouts/Topbar/FormLogin";
-import FormRegister       from "./layouts/Topbar/FormRegister";
 
 import HomePage          from './containers/HomePage';
 import ProductListPage   from './containers/ProductListPage';

@@ -8,8 +8,6 @@ import Illustrationv4                  from '../components/Illustrationv4/Illust
 import TwitterBlock                    from '../components/TwitterBlock/TwitterBlock';
 import ProductService                  from '../components/ProductService/ProductService';
 import Illustrationv5                  from '../components/Illustrationv5/Illustrationv5';
-import CollectionBanner                from '../components/CollectionBanner/CollectionBanner';
-import Sponsors                        from '../components/Sponsors/Sponsors';
 
 
 export default class App extends Component {
@@ -39,8 +37,6 @@ export default class App extends Component {
                             <ProductService/>
                             <Illustrationv5/>
                         </div>
-                        <CollectionBanner/>
-                        <Sponsors/>
                         {/* Footer */}
                     </div>
                 </div>
