@@ -4,7 +4,6 @@ import Slider                           from '../components/Slider/Slider';
 import SaleBanner                       from '../components/Banner/SaleBanner';
 import ProductItem                      from '../components/GridItem/ProductItem';
 import CategoryItem                     from '../components/GridItem/CategoryItem';
-import TwitterBlock                     from '../components/TwitterBlock/TwitterBlock';
 import ProductService                   from '../components/ProductService/ProductService';
 import Illustrationv5                   from '../components/Illustrationv5/Illustrationv5';
 
@@ -126,7 +125,6 @@ export default class HomePage extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <TwitterBlock/>
                         <div className="container">
                             <ProductService/>
                             <Illustrationv5/>
