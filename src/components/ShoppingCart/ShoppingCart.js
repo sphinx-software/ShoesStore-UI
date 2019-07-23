@@ -24,7 +24,7 @@ export default class ShoppingCart extends Component {
             if(item.id === id) {
                 return  {
                     ...item,
-                    value: item.value - 1
+                    value: item.value - 1 < 1 ? 1 : item.value - 1
                 }
             }
             return {
@@ -98,7 +98,7 @@ export default class ShoppingCart extends Component {
                                         <td>
                                             <Quantity decrease={() => this.decrease(index, element.id) } increase={() => this.increase(index, element.id)} value={element.value}/>
                                         </td>
-                                        <td className="shop-red">{element.price * this.state.value}</td>
+                                        <td className="shop-red">{element.price * element.value}</td>
                                         <td>
                                             <button type="button" className="close"><span>×</span><span className="sr-only">Close</span></button>
                                         </td>
