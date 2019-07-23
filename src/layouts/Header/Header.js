@@ -90,7 +90,7 @@ export default class Header extends Component {
                                     </a>
                                     <ul className="dropdown-menu">
                                         <li className="dropdown">
-                                            <a href="javascript:void(0);">FreeShipp</a>
+                                            <a href="javascript:void(0);">FreeShip</a>
                                         </li>
                                         <li className="dropdown">
                                             <a href="javascript:void(0);">20%</a>

@@ -1,6 +1,7 @@
 import React, { Component }             from 'react';
 import { BrowserRouter, Router, Link }  from "react-router-dom";
 import BreadCrumbs                      from '../components/BreadCrumbs/BreadCrumbs';
+import Quantity from "../components/Quantity/Quantity";
 
 export default class ProductListPage extends Component {
     render() {
@@ -44,9 +45,7 @@ export default class ProductListPage extends Component {
                                                     </td>
                                                     <td>$ 160.00</td>
                                                     <td>
-                                                        <button type="button" className="quantity-button" name="subtract" onclick="javascript: subtractQty1();" value="-">-</button>
-                                                        <input type="text" className="quantity-field" name="qty1" defaultValue={5} id="qty1" />
-                                                        <button type="button" className="quantity-button" name="add" onclick="javascript: document.getElementById(&quot;qty1&quot;).value++;" value="+">+</button>
+                                                        <Quantity/>
                                                     </td>
                                                     <td className="shop-red">$ 320.00</td>
                                                     <td>
@@ -63,9 +62,7 @@ export default class ProductListPage extends Component {
                                                     </td>
                                                     <td>$ 160.00</td>
                                                     <td>
-                                                        <button type="button" className="quantity-button" name="subtract" onclick="javascript: subtractQty2();" value="-">-</button>
-                                                        <input type="text" className="quantity-field" name="qty2" defaultValue={3} id="qty2" />
-                                                        <button type="button" className="quantity-button" name="add" onclick="javascript: document.getElementById(&quot;qty2&quot;).value++;" value="+">+</button>
+                                                        <Quantity/>
                                                     </td>
                                                     <td className="shop-red">$ 320.00</td>
                                                     <td>
@@ -82,9 +79,7 @@ export default class ProductListPage extends Component {
                                                     </td>
                                                     <td>$ 160.00</td>
                                                     <td>
-                                                        <button type="button" className="quantity-button" name="subtract" onclick="javascript: subtractQty3();" value="-">-</button>
-                                                        <input type="text" className="quantity-field" name="qty3" defaultValue={1} id="qty3" />
-                                                        <button type="button" className="quantity-button" name="add" onclick="javascript: document.getElementById(&quot;qty3&quot;).value++;" value="+">+</button>
+                                                        <Quantity/>
                                                     </td>
                                                     <td className="shop-red">$ 320.00</td>
                                                     <td>
@@ -101,9 +96,7 @@ export default class ProductListPage extends Component {
                                                     </td>
                                                     <td>$ 160.00</td>
                                                     <td>
-                                                        <button type="button" className="quantity-button" name="subtract" onclick="javascript: subtractQty4();" value="-">-</button>
-                                                        <input type="text" className="quantity-field" name="qty4" defaultValue={7} id="qty4" />
-                                                        <button type="button" className="quantity-button" name="add" onclick="javascript: document.getElementById(&quot;qty4&quot;).value++;" value="+">+</button>
+                                                        <Quantity/>
                                                     </td>
                                                     <td className="shop-red">$ 320.00</td>
                                                     <td>

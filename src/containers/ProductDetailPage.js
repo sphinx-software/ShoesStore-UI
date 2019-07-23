@@ -2,6 +2,7 @@ import React, { Component }             from 'react';
 import { BrowserRouter, Router, Link }  from "react-router-dom";
 import ProductService                   from '../components/ProductService/ProductService';
 import RelatedItem                      from "../components/GridItem/RelatedItem";
+import Quantity                         from "../components/Quantity/Quantity";
 
 
 export default class ProductListPage extends Component {
@@ -109,9 +110,7 @@ export default class ProductListPage extends Component {
                                     <h3 className="shop-product-title">Quantity</h3>
                                     <div className="margin-bottom-40">
                                         <form name="f1" className="product-quantity sm-margin-bottom-20">
-                                            <button type="button" className="quantity-button" name="subtract" onclick="javascript: subtractQty();" value="-">-</button>
-                                            <input type="text" className="quantity-field" name="qty" defaultValue={1} id="qty" />
-                                            <button type="button" className="quantity-button" name="add" onclick="javascript: document.getElementById(&quot;qty&quot;).value++;" value="+">+</button>
+                                            <Quantity/>
                                         </form>
                                         <button type="button" className="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
                                     </div>{/*/end product quantity*/}
