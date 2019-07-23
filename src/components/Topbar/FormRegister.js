@@ -45,8 +45,7 @@ class FormRegister extends Component {
                             <InfoBlock/>
                             <div className="col-md-5">
                                 <div id="sky-form4" className="log-reg-block sky-form">
-                                    {/*<h2>Create New Account</h2>*/}
-
+                                    <h2>Create New Account</h2>   
                                     <div className="login-input reg-input">
                                         <div className="row">
                                             <div className="col-sm-6">

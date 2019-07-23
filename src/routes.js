@@ -1,5 +1,5 @@
 import React, {Component}         from 'react';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import FormLogin                  from './components/Topbar/FormLogin';
 import FormRegister               from './components/Topbar/FormRegister';
 
@@ -8,13 +8,7 @@ import ProductListPage            from './containers/ProductListPage';
 import ProductDetailPage          from './containers/ProductDetailPage';
 import CheckoutPage               from './containers/CheckoutPage';
 
-
 export default class RouterProtect extends Component {
-
-    componentDidMount() {
-        document.title = 'ShoesStore';
-    }
-
     render () {
         return (
             <Switch>

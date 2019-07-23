@@ -1,8 +1,8 @@
-import React, { Component }             from 'react';
-import { BrowserRouter }                from "react-router-dom";
-import BreadCrumbs                      from '../components/BreadCrumbs/BreadCrumbs';
-import Panel                            from "../components/Panel/Panel";
-import ListItem                         from '../components/ListItem/ListItem';
+import React, { Component } from 'react';
+import { BrowserRouter }    from "react-router-dom";
+import BreadCrumbs          from '../components/BreadCrumbs/BreadCrumbs';
+import Panel                from "../components/Panel/Panel";
+import ProductItem          from '../components/GridItem/ProductItem';
 
 export default class ProductListPage extends Component {
     render() {
@@ -57,11 +57,11 @@ export default class ProductListPage extends Component {
                                     </div>
                                 </div>
                                 <div className="filter-results">
-                                    <div className="container">
+                                    <div className="container-fluid">
                                         <div className="illustration-v2 margin-bottom-30">
                                             {
                                                 items.map((item, index) => {
-                                                    return(<ListItem/>);
+                                                    return(<ProductItem/>);
                                                 })
                                             }
                                         </div>

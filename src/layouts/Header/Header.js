@@ -32,23 +32,7 @@ export default class Header extends Component {
                                             <span>Black Glasses</span>
                                             <small>1 x $400.00</small>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/thumb/02.jpg" alt />
-                                        <button type="button" className="close">×</button>
-                                        <div className="overflow-h">
-                                            <span>Black Glasses</span>
-                                            <small>1 x $400.00</small>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/thumb/03.jpg" alt />
-                                        <button type="button" className="close">×</button>
-                                        <div className="overflow-h">
-                                            <span>Black Glasses</span>
-                                            <small>1 x $400.00</small>
-                                        </div>
-                                    </li>
+                                    </li>                                    
                                 </ul>
                                 <div className="subtotal">
                                     <div className="overflow-h margin-bottom-10">
@@ -57,10 +41,10 @@ export default class Header extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="col-xs-6">
-                                            <a href="shop-ui-inner.html" className="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</a>
+                                            <a href="/checkout" className="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</a>
                                         </div>
                                         <div className="col-xs-6">
-                                            <a href="shop-ui-add-to-cart.html" className="btn-u btn-u-sea-shop btn-block">Checkout</a>
+                                            <a href="/checkout" className="btn-u btn-u-sea-shop btn-block">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
