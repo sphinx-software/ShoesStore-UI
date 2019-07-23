@@ -1,9 +1,8 @@
 import React, { Component }             from 'react';
-import { BrowserRouter, Router, Link }  from "react-router-dom";
+import { BrowserRouter }                from "react-router-dom";
 import BreadCrumbs                      from '../components/BreadCrumbs/BreadCrumbs';
 import Panel                            from "../components/Panel/Panel";
 import ListItem                         from '../components/ListItem/ListItem';
-
 
 export default class ProductListPage extends Component {
     render() {
