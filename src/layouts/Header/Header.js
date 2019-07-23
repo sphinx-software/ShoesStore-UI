@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
     render() {
@@ -89,55 +89,15 @@ export default class Header extends Component {
                                         Promotion
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li className="dropdown-submenu">
-                                            <a href="javascript:void(0);">Jeans</a>
-                                            <ul className="dropdown-menu">
-                                                <li><a href="#">Skinny Jeans</a></li>
-                                                <li><a href="#">Bootcut Jeans</a></li>
-                                                <li><a href="#">Straight Cut Jeans</a></li>
-                                            </ul>
+                                        <li className="dropdown">
+                                            <a href="javascript:void(0);">FreeShipp</a>
                                         </li>
-                                        <li className="dropdown-submenu">
-                                            <a href="javascript:void(0);">Shoes</a>
-                                            <ul className="dropdown-menu">
-                                                <li><a href="#">Sandals</a></li>
-                                                <li><a href="#">Heels</a></li>
-                                            </ul>
+                                        <li className="dropdown">
+                                            <a href="javascript:void(0);">20%</a>
                                         </li>
                                     </ul>
                                 </li>
                                 {/* End Promotion */}
-                                {/* Gifts */}
-                                <li className="dropdown mega-menu-fullwidth">
-                                    <a href="javascript:void(0);" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                        Gifts
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li>
-                                            <div className="mega-menu-content">
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
-                                                            <h3 className="mega-menu-heading">Pellentes que nec diam lectus</h3>
-                                                            <p>Proin pulvinar libero quis auctor pharet ra. Aenean fermentum met us orci, sedf eugiat augue pulvina r vitae. Nulla dolor nisl, molestie nec aliquam vitae, gravida sodals dolor...</p>
-                                                            <button type="button" className="btn-u btn-u-dark">Read More</button>
-                                                        </div>
-                                                        <div className="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
-                                                            <a href="#"><img className="product-offers img-responsive" src="assets/img/blog/01.jpg" alt /></a>
-                                                        </div>
-                                                        <div className="col-md-3 col-sm-4 col-xs-4 sm-margin-bottom-30">
-                                                            <a href="#"><img className="product-offers img-responsive" src="assets/img/blog/02.jpg" alt /></a>
-                                                        </div>
-                                                        <div className="col-md-3 col-sm-4 col-xs-4">
-                                                            <a href="#"><img className="product-offers img-responsive" src="assets/img/blog/03.jpg" alt /></a>
-                                                        </div>
-                                                    </div>{/*/end row*/}
-                                                </div>{/*/end container*/}
-                                            </div>{/*/end mega menu content*/}
-                                        </li>
-                                    </ul>{/*/end dropdown-menu*/}
-                                </li>
-                                {/* End Gifts */}
                             </ul>
                             {/* End Nav Menu */}
                         </div>
