@@ -5,9 +5,10 @@ import propTypes from 'prop-types';
 export default class ShoppingCart extends Component {
 
     state = {
-        value: 1,
+        quantity: 1,
         totalQuantity: 1
     };
+
     componentWillMount() {
         this.setState({
             shoppingCart: this.props.shoppingCart
@@ -16,15 +17,11 @@ export default class ShoppingCart extends Component {
 
     decrease(index, id) {
         let shoppingCart = [...this.state.shoppingCart];
-        // shoppingCart[index] = {
-        //     ...shoppingCart[index],
-        //     value: shoppingCart[index].value - 1
-        // };
         const shoppingCartNew = shoppingCart.map(item => {
             if(item.id === id) {
                 return  {
                     ...item,
-                    value: item.value - 1 < 1 ? 1 : item.value - 1
+                    quantity: item.quantity - 1 < 1 ? 1 : item.quantity - 1
                 }
             }
             return {
@@ -43,7 +40,7 @@ export default class ShoppingCart extends Component {
             if(item.id === id) {
                 return  {
                     ...item,
-                    value: item.value + 1
+                    quantity: item.quantity + 1
                 }
             }
             return {
@@ -96,17 +93,15 @@ export default class ShoppingCart extends Component {
                                         </td>
                                         <td>{element.price}</td>
                                         <td>
-                                            <Quantity decrease={() => this.decrease(index, element.id) } increase={() => this.increase(index, element.id)} value={element.value}/>
+                                            <Quantity decrease={() => this.decrease(index, element.id) } increase={() => this.increase(index, element.id)} value={element.quantity}/>
                                         </td>
-                                        <td className="shop-red">{element.price * element.value}</td>
+                                        <td className="shop-red">{element.price * element.quantity}</td>
                                         <td>
                                             <button type="button" className="close"><span>×</span><span className="sr-only">Close</span></button>
                                         </td>
                                     </tr>
                                 )
                             }
-
-
                             </tbody>
                         </table>
                     </div>
@@ -128,7 +123,7 @@ ShoppingCart.defaultProps = {
             name: 'balo',
             description: 'ohyeah',
             price: 1000,
-            value: 1
+            quantity: 1
         },
         {
             id: 2,
@@ -136,7 +131,7 @@ ShoppingCart.defaultProps = {
             name: 'ao',
             description: 'ohyeah',
             price: 1000,
-            value: 1
+            quantity: 1
         },
         {
             id: 3,
@@ -144,7 +139,7 @@ ShoppingCart.defaultProps = {
             name: 'quan',
             description: 'ohyeah',
             price: 1000,
-            value: 1
+            quantity: 1
         },
         {
             id: 4,
@@ -152,7 +147,7 @@ ShoppingCart.defaultProps = {
             name: 'asdasd',
             description: 'ohyeah',
             price: 1000,
-            value: 1
+            quantity: 1
         },
     ]
 }
