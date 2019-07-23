@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Quantity from "../Quantity/Quantity";
-import propTypes from 'prop-types';
+import React,       { Component } from 'react';
+import Quantity                   from '../Quantity/Quantity';
+import propTypes                  from 'prop-types';
 
 export default class ShoppingCart extends Component {
 
@@ -21,14 +21,13 @@ export default class ShoppingCart extends Component {
             if(item.id === id) {
                 return  {
                     ...item,
-                    quantity: item.quantity - 1 < 1 ? 1 : item.quantity - 1
+                    quantity: item.quantity > 1 ? --item.quantity : 1
                 }
             }
             return {
                 ...item
             }
         });
-
         this.setState({
             shoppingCart: shoppingCartNew
         })
@@ -38,27 +37,22 @@ export default class ShoppingCart extends Component {
         let shoppingCart = [...this.state.shoppingCart];
         const shoppingCartNew = shoppingCart.map(item => {
             if(item.id === id) {
-                return  {
+                return {
                     ...item,
-                    quantity: item.quantity + 1
+                    quantity: ++item.quantity
                 }
             }
             return {
                 ...item
             }
         });
-
-        // shoppingCart[index] = {
-        //     ...shoppingCart[index],
-        //     value: shoppingCart[index].value + 1
-        // };
         this.setState({
             shoppingCart: shoppingCartNew
         })
     };
 
     render() {
-        const {shoppingCart} = this.state;
+        const { shoppingCart } = this.state;
         return (
             <div>
                 <div className="header-tags">
@@ -93,9 +87,11 @@ export default class ShoppingCart extends Component {
                                         </td>
                                         <td>{element.price}</td>
                                         <td>
-                                            <Quantity decrease={() => this.decrease(index, element.id) } increase={() => this.increase(index, element.id)} value={element.quantity}/>
+                                            <Quantity decrease ={ () => this.decrease(index, element.id) }
+                                                      increase ={ () => this.increase(index, element.id) }
+                                                      value    ={ element.quantity }/>
                                         </td>
-                                        <td className="shop-red">{element.price * element.quantity}</td>
+                                        <td className="shop-red">{ element.price * element.quantity }</td>
                                         <td>
                                             <button type="button" className="close"><span>×</span><span className="sr-only">Close</span></button>
                                         </td>

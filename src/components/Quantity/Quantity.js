@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 
 export default class Quantity extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: 1
-        }
+    state = {
+        value: 1
     };
 
     decrease() {
@@ -16,7 +13,6 @@ export default class Quantity extends Component {
     increase() {
         this.props.increase();
     };
-
 
     render() {
         return(
@@ -32,6 +28,3 @@ export default class Quantity extends Component {
         );
     }
 }
-
-
-

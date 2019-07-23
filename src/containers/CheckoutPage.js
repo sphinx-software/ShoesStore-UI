@@ -1,17 +1,15 @@
-import React, { Component }             from 'react';
-import { BrowserRouter }  from "react-router-dom";
+import React,       { Component }       from 'react';
+import              { BrowserRouter }   from "react-router-dom";
 import BreadCrumbs                      from '../components/BreadCrumbs/BreadCrumbs';
-import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
-import BillingInfo from "../components/BillingInfo/BillingInfo";
-import Payment from "../components/Payment/Payment";
+import ShoppingCart                     from "../components/ShoppingCart/ShoppingCart";
+import BillingInfo                      from "../components/BillingInfo/BillingInfo";
+import Payment                          from "../components/Payment/Payment";
+
 
 export default class CheckoutPage extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            index: 1
-        }
+    state = {
+        index: 1
     };
 
     previous() {
@@ -30,10 +28,7 @@ export default class CheckoutPage extends Component {
         return (
             <BrowserRouter>
                 <div className="wrapper">
-                    {/*=== Breadcrumbs v4 ===*/}
-                        <BreadCrumbs/>
-                    {/*=== End Breadcrumbs v4 ===*/}
-                    {/*=== Content Medium Part ===*/}
+                    <BreadCrumbs/>
                     <div className="content-md margin-bottom-30">
                         <div className="container">
                             <form className="shopping-cart" action="#">
@@ -75,10 +70,8 @@ export default class CheckoutPage extends Component {
                                                         </div>
                                                     </li>
 
-
                                                     <button onClick={ () => this.previous() } type="button" className="btn-u btn-u-sea-shop">Previous</button>
                                                     <button onClick={ () => this.next() } type="button" className="btn-u btn-u-sea-shop">Next</button>
-
 
                                                 </ul>
                                             </div>
@@ -86,10 +79,9 @@ export default class CheckoutPage extends Component {
                                     </div>
                                 </div>
                             </form>
-                        </div>{/*/end container*/}
+                        </div>
                     </div>
-                    {/*=== End Content Medium Part ===*/}
-                </div>{/*/wrapper*/}
+                </div>
             </BrowserRouter>
         );
     }
