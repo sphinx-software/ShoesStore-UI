@@ -87,7 +87,6 @@ export default class HomePage extends Component {
                                 </ul>
                             </div>
 
-
                             <div className="row margin-bottom-50">
                                 {
                                     categories.map((category, index) => {
@@ -101,11 +100,9 @@ export default class HomePage extends Component {
                                 }
                             </div>
 
-
                             <div className="heading heading-v1 margin-bottom-40">
                                 <h2>Latest products</h2>
                             </div>
-
 
                             <div className="illustration-v2 margin-bottom-60">
                                 <div className="customNavigation margin-bottom-25">

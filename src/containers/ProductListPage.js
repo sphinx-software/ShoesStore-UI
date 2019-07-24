@@ -2,14 +2,28 @@ import React, { Component } from 'react';
 import { BrowserRouter }    from "react-router-dom";
 import BreadCrumbs          from '../components/BreadCrumbs/BreadCrumbs';
 import Panel                from "../components/Panel/Panel";
-import ProductItem          from '../components/GridItem/ProductItem';
+import Item                 from '../components/GridItem/Item';
 
 export default class ProductListPage extends Component {
     render() {
         const items = [
-            1, 2, 3, 4, 5, 6, 7, 8, 9
-        ];
-
+            {
+                name: 'quan',
+                gender: 'nam',
+                price: '100$'
+            },
+            {
+                name: 'ao',
+                gender: 'nam',
+                price: '200$'
+            },
+            {
+                name: 'quan',
+                gender: 'nu',
+                price: '300$'
+            }
+        ]
+        
         return (
             <BrowserRouter>
                 <div className="wrapper">
@@ -57,21 +71,46 @@ export default class ProductListPage extends Component {
                                     </div>
                                 </div>
                                 <div className="filter-results">
-                                    <div className="container-fluid">
-                                        <div className="illustration-v2 margin-bottom-30">
-                                            {
-                                                items.map((item, index) => {
-                                                    return(<ProductItem/>);
-                                                })
-                                            }
-                                        </div>
+                                    <div className="row illustration-v2 margin-bottom-30">
+                                        {
+                                            items.map((item, index) => {
+                                                return(
+                                                    <div key={index}>
+                                                        <Item item={item}/>
+                                                    </div>
+                                                )
+                                            })
+                                        }                                        
                                     </div>
-                                </div>
+                                    <div className="row illustration-v2 margin-bottom-30">
+                                        {
+                                            items.map((item, index) => {
+                                                return(
+                                                    <div key={index}>
+                                                        <Item item={item}/>
+                                                    </div>
+                                                )
+                                            })
+                                        }                                        
+                                    </div>
+                                    <div className="row illustration-v2 margin-bottom-30">
+                                        {
+                                            items.map((item, index) => {
+                                                return(
+                                                    <div key={index}>
+                                                        <Item item={item}/>
+                                                    </div>
+                                                )
+                                            })
+                                        }                                        
+                                    </div>
+                                </div>{/*/end filter resilts*/}
+
                                 <div className="text-center">
                                     <ul className="pagination pagination-v2">
                                         <li><a href="#"><i className="fa fa-angle-left" /></a></li>
                                         <li><a href="#">1</a></li>
-                                        <li className="active"><a href="#">2</a></li>
+                                        <li><a href="#">2</a></li>
                                         <li><a href="#">3</a></li>
                                         <li><a href="#"><i className="fa fa-angle-right" /></a></li>
                                     </ul>
