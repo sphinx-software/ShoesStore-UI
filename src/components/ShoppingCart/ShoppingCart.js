@@ -17,17 +17,11 @@ export default class ShoppingCart extends Component {
 
     decrease(index, id) {
         let shoppingCart = [...this.state.shoppingCart];
-        const shoppingCartNew = shoppingCart.map(item => {
-            if(item.id === id) {
-                return  {
-                    ...item,
-                    quantity: item.quantity > 1 ? --item.quantity : 1
-                }
-            }
-            return {
-                ...item
-            }
-        });
+        const shoppingCartNew = shoppingCart.map(item =>
+            (item.id === id)
+                ? {...item, quantity: item.quantity > 1 ? --item.quantity : 1}
+                : {...item}
+        );
         this.setState({
             shoppingCart: shoppingCartNew
         })
@@ -35,17 +29,11 @@ export default class ShoppingCart extends Component {
 
     increase(index, id) {
         let shoppingCart = [...this.state.shoppingCart];
-        const shoppingCartNew = shoppingCart.map(item => {
-            if(item.id === id) {
-                return {
-                    ...item,
-                    quantity: ++item.quantity
-                }
-            }
-            return {
-                ...item
-            }
-        });
+        const shoppingCartNew = shoppingCart.map(item =>
+            (item.id === id)
+                ? {...item, quantity: ++item.quantity}
+                : {...item}
+        );
         this.setState({
             shoppingCart: shoppingCartNew
         })
@@ -74,30 +62,29 @@ export default class ShoppingCart extends Component {
                             </tr>
                             </thead>
                             <tbody>
-
-                            {
-                                shoppingCart.map((element, index) =>
-                                    <tr key={index}>
-                                        <td className="product-in-table">
-                                            <img className="img-responsive" src={element.image} alt />
-                                            <div className="product-it-in">
-                                                <h3><Double-Breaste></Double-Breaste>{element.description}</h3>
-                                                <span>{element.name}</span>
-                                            </div>
-                                        </td>
-                                        <td>{element.price}</td>
-                                        <td>
-                                            <Quantity decrease ={ () => this.decrease(index, element.id) }
-                                                      increase ={ () => this.increase(index, element.id) }
-                                                      value    ={ element.quantity }/>
-                                        </td>
-                                        <td className="shop-red">{ element.price * element.quantity }</td>
-                                        <td>
-                                            <button type="button" className="close"><span>×</span><span className="sr-only">Close</span></button>
-                                        </td>
-                                    </tr>
-                                )
-                            }
+                                {
+                                    shoppingCart.map((element, index) =>
+                                        <tr key={index}>
+                                            <td className="product-in-table">
+                                                <img className="img-responsive" src={element.image} alt />
+                                                <div className="product-it-in">
+                                                    <h3><Double-Breaste></Double-Breaste>{element.name}</h3>
+                                                    <span>{element.description}</span>
+                                                </div>
+                                            </td>
+                                            <td>{element.price}</td>
+                                            <td>
+                                                <Quantity decrease={ () => this.decrease(index, element.id) }
+                                                          increase={ () => this.increase(index, element.id) }
+                                                          value={ element.quantity }/>
+                                            </td>
+                                            <td className="shop-red">{ element.price * element.quantity }</td>
+                                            <td>
+                                                <button type="button" className="close"><span>×</span><span className="sr-only">Close</span></button>
+                                            </td>
+                                        </tr>
+                                    )
+                                }
                             </tbody>
                         </table>
                     </div>

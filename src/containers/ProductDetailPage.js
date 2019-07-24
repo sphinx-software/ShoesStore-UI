@@ -6,6 +6,23 @@ import Quantity                         from "../components/Quantity/Quantity";
 
 
 export default class ProductListPage extends Component {
+
+    state = {
+        quantity: 1
+    };
+
+    decrease() {
+        this.setState({
+            quantity: this.state.quantity > 1 ? --this.state.quantity : 1
+        })
+    };
+
+    increase() {
+        this.setState({
+            quantity: ++this.state.quantity
+        })
+    };
+
     render() {
         const items = [
             1, 2, 3, 4, 5, 6, 7
@@ -110,7 +127,9 @@ export default class ProductListPage extends Component {
                                     <h3 className="shop-product-title">Quantity</h3>
                                     <div className="margin-bottom-40">
                                         <form name="f1" className="product-quantity sm-margin-bottom-20">
-                                            <Quantity/>
+                                            <Quantity decrease={ () => this.decrease() }
+                                                      increase={ () => this.increase() }
+                                                      value={ this.state.quantity }/>
                                         </form>
                                         <button type="button" className="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
                                     </div>{/*/end product quantity*/}
