@@ -6,7 +6,7 @@ export default class ShoppingCart extends Component {
 
     state = {
         quantity: 1,
-        totalQuantity: 1
+        totalQuantity: 1,
     };
 
     componentWillMount() {
@@ -15,7 +15,7 @@ export default class ShoppingCart extends Component {
         })
     }
 
-    decrease(index, id) {
+    decrease(id) {
         let shoppingCarts = [...this.state.shoppingCarts];
         const shoppingCartsNew = shoppingCarts.map(item =>
             (item.id === id)
@@ -27,7 +27,7 @@ export default class ShoppingCart extends Component {
         })
     };
 
-    increase(index, id) {
+    increase(id) {
         let shoppingCarts = [...this.state.shoppingCarts];
         const shoppingCartsNew = shoppingCarts.map(item =>
             (item.id === id)
@@ -45,6 +45,17 @@ export default class ShoppingCart extends Component {
            totalPrice = totalPrice + shoppingCart.price * shoppingCart.quantity
         });
         return totalPrice;
+    };
+
+    remove(shoppingCart) {
+        let shoppingCarts       = [...this.state.shoppingCarts];
+        const newShoppingCarts  = shoppingCarts.filter(item => item.id !== shoppingCart.id)
+        this.setState({
+            shoppingCarts: newShoppingCarts
+        })
+
+        console.log(newShoppingCarts);
+
     };
 
     render() {
@@ -71,8 +82,8 @@ export default class ShoppingCart extends Component {
                             </thead>
                             <tbody>
                                 {
-                                    shoppingCarts.map((shoppingCart, index) =>
-                                        <tr key={index}>
+                                    shoppingCarts.map((shoppingCart) =>
+                                        <tr key={shoppingCart.id}>
                                             <td className="product-in-table">
                                                 <img className="img-responsive" src={shoppingCart.image} alt />
                                                 <div className="product-it-in">
@@ -82,13 +93,13 @@ export default class ShoppingCart extends Component {
                                             </td>
                                             <td>{shoppingCart.price} $</td>
                                             <td>
-                                                <Quantity decrease={ () => this.decrease(index, shoppingCart.id) }
-                                                          increase={ () => this.increase(index, shoppingCart.id) }
+                                                <Quantity decrease={ () => this.decrease(shoppingCart.id) }
+                                                          increase={ () => this.increase(shoppingCart.id) }
                                                           value={ shoppingCart.quantity }/>
                                             </td>
                                             <td className="shop-red">{ shoppingCart.price * shoppingCart.quantity } $</td>
                                             <td>
-                                                <button type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                                <button onClick={ () => this.remove(shoppingCart) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                                             </td>
                                         </tr>
                                     )
@@ -107,10 +118,10 @@ export default class ShoppingCart extends Component {
                         </div>
                         <div className="col-sm-3 col-sm-offset-5">
                             <ul className="list-inline total-result">
-                                <li>
-                                    <h4>Subtotal:</h4>
+                                <li className="total-price">
+                                    <h4>Total:</h4>
                                     <div className="total-result-in">
-                                        <span>$ 10000</span>
+                                        <span>$ {this.getTotalPrince(shoppingCarts)}</span>
                                     </div>
                                 </li>
                                 <li>
@@ -120,10 +131,10 @@ export default class ShoppingCart extends Component {
                                     </div>
                                 </li>
                                 <li className="divider" />
-                                <li className="total-price">
-                                    <h4>Total:</h4>
+                                <li>
+                                    <h4>Subtotal:</h4>
                                     <div className="total-result-in">
-                                        <span>$ {this.getTotalPrince(shoppingCarts)}</span>
+                                        <span>$ 10000</span>
                                     </div>
                                 </li>
                             </ul>
