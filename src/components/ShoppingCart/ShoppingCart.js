@@ -11,55 +11,52 @@ export default class ShoppingCart extends Component {
 
     componentWillMount() {
         this.setState({
-            shoppingCarts: this.props.shoppingCarts
+            products: this.props.products
         })
     }
 
     decrease(id) {
-        let shoppingCarts = [...this.state.shoppingCarts];
-        const shoppingCartsNew = shoppingCarts.map(item =>
-            (item.id === id)
-                ? {...item, quantity: item.quantity > 1 ? --item.quantity : 1}
-                : {...item}
+        let products = [...this.state.products];
+        const newProducts = products.map(product =>
+            (product.id === id)
+                ? {...product, quantity: product.quantity > 1 ? --product.quantity : 1}
+                : {...product}
         );
         this.setState({
-            shoppingCarts: shoppingCartsNew
+            products: newProducts
         })
     };
 
     increase(id) {
-        let shoppingCarts = [...this.state.shoppingCarts];
-        const shoppingCartsNew = shoppingCarts.map(item =>
-            (item.id === id)
-                ? {...item, quantity: ++item.quantity}
-                : {...item}
+        let products = [...this.state.products];
+        const newProducts = products.map(product =>
+            (product.id === id)
+                ? {...product, quantity: ++product.quantity}
+                : {...product}
         );
         this.setState({
-            shoppingCarts: shoppingCartsNew
+            products: newProducts
         })
     };
 
-    getTotalPrince = (shoppingCarts) => {
+    getTotalPrince = (products) => {
         let totalPrice = 0;
-        shoppingCarts.forEach(shoppingCart => {
-           totalPrice = totalPrice + shoppingCart.price * shoppingCart.quantity
+        products.forEach(product => {
+           totalPrice = totalPrice + product.price * product.quantity
         });
         return totalPrice;
     };
 
-    remove(shoppingCart) {
-        let shoppingCarts       = [...this.state.shoppingCarts];
-        const newShoppingCarts  = shoppingCarts.filter(item => item.id !== shoppingCart.id)
+    remove(product) {
+        let products       = [...this.state.products];
+        const newProducts  = products.filter(item => item.id !== product.id)
         this.setState({
-            shoppingCarts: newShoppingCarts
+            products: newProducts
         })
-
-        console.log(newShoppingCarts);
-
     };
 
     render() {
-        const { shoppingCarts } = this.state;
+        const { products } = this.state;
 
         return (
             <div>
@@ -82,24 +79,24 @@ export default class ShoppingCart extends Component {
                             </thead>
                             <tbody>
                                 {
-                                    shoppingCarts.map((shoppingCart) =>
-                                        <tr key={shoppingCart.id}>
+                                    products.map((product) =>
+                                        <tr key={product.id}>
                                             <td className="product-in-table">
-                                                <img className="img-responsive" src={shoppingCart.image} alt />
+                                                <img className="img-responsive" src={product.image} alt />
                                                 <div className="product-it-in">
-                                                    <h3><Double-Breaste></Double-Breaste>{shoppingCart.name}</h3>
-                                                    <span>{shoppingCart.description}</span>
+                                                    <h3><Double-Breaste></Double-Breaste>{product.name}</h3>
+                                                    <span>{product.description}</span>
                                                 </div>
                                             </td>
-                                            <td>{shoppingCart.price} $</td>
+                                            <td>{product.price} $</td>
                                             <td>
-                                                <Quantity decrease={ () => this.decrease(shoppingCart.id) }
-                                                          increase={ () => this.increase(shoppingCart.id) }
-                                                          value={ shoppingCart.quantity }/>
+                                                <Quantity decrease={ () => this.decrease(product.id) }
+                                                          increase={ () => this.increase(product.id) }
+                                                          value={ product.quantity }/>
                                             </td>
-                                            <td className="shop-red">{ shoppingCart.price * shoppingCart.quantity } $</td>
+                                            <td className="shop-red">{ product.price * product.quantity } $</td>
                                             <td>
-                                                <button onClick={ () => this.remove(shoppingCart) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                                <button onClick={ () => this.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                                             </td>
                                         </tr>
                                     )
@@ -121,7 +118,7 @@ export default class ShoppingCart extends Component {
                                 <li className="total-price">
                                     <h4>Total:</h4>
                                     <div className="total-result-in">
-                                        <span>$ {this.getTotalPrince(shoppingCarts)}</span>
+                                        <span>$ {this.getTotalPrince(products)}</span>
                                     </div>
                                 </li>
                                 <li>
@@ -147,11 +144,11 @@ export default class ShoppingCart extends Component {
 }
 
 ShoppingCart.propTypes = {
-    shoppingCart: propTypes.object
+    products: propTypes.object
 };
 
 ShoppingCart.defaultProps = {
-    shoppingCarts: [
+    products: [
         {
             id: 1,
             image: 'assets/img/thumb/08.jpg',
