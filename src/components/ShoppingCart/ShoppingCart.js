@@ -39,11 +39,9 @@ export default class ShoppingCart extends Component {
         })
     };
 
-    getTotalPrince = (products) => {
+    getTotalPrice = (products) => {
         let totalPrice = 0;
-        products.forEach(product => {
-           totalPrice = totalPrice + product.price * product.quantity
-        });
+        products.forEach(product => totalPrice = totalPrice + product.price * product.quantity);
         return totalPrice;
     };
 
@@ -118,7 +116,7 @@ export default class ShoppingCart extends Component {
                                 <li className="total-price">
                                     <h4>Total:</h4>
                                     <div className="total-result-in">
-                                        <span>$ {this.getTotalPrince(products)}</span>
+                                        <span>$ {this.getTotalPrice(products)}</span>
                                     </div>
                                 </li>
                                 <li>
