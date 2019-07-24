@@ -39,6 +39,11 @@ export default class ShoppingCart extends Component {
         })
     };
 
+    getTotalPrince = () => {
+
+        return 11212;
+    };
+
     render() {
         const { shoppingCart } = this.state;
 
@@ -115,7 +120,7 @@ export default class ShoppingCart extends Component {
                                 <li className="total-price">
                                     <h4>Total:</h4>
                                     <div className="total-result-in">
-                                        <span>$ 10000</span>
+                                        <span>$ {this.getTotalPrince()}</span>
                                     </div>
                                 </li>
                             </ul>
