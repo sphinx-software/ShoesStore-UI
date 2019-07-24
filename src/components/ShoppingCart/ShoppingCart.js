@@ -11,41 +11,44 @@ export default class ShoppingCart extends Component {
 
     componentWillMount() {
         this.setState({
-            shoppingCart: this.props.shoppingCart
+            shoppingCarts: this.props.shoppingCarts
         })
     }
 
     decrease(index, id) {
-        let shoppingCart = [...this.state.shoppingCart];
-        const shoppingCartNew = shoppingCart.map(item =>
+        let shoppingCarts = [...this.state.shoppingCarts];
+        const shoppingCartsNew = shoppingCarts.map(item =>
             (item.id === id)
                 ? {...item, quantity: item.quantity > 1 ? --item.quantity : 1}
                 : {...item}
         );
         this.setState({
-            shoppingCart: shoppingCartNew
+            shoppingCarts: shoppingCartsNew
         })
     };
 
     increase(index, id) {
-        let shoppingCart = [...this.state.shoppingCart];
-        const shoppingCartNew = shoppingCart.map(item =>
+        let shoppingCarts = [...this.state.shoppingCarts];
+        const shoppingCartsNew = shoppingCarts.map(item =>
             (item.id === id)
                 ? {...item, quantity: ++item.quantity}
                 : {...item}
         );
         this.setState({
-            shoppingCart: shoppingCartNew
+            shoppingCarts: shoppingCartsNew
         })
     };
 
-    getTotalPrince = () => {
-
-        return 11212;
+    getTotalPrince = (shoppingCarts) => {
+        let totalPrice = 0;
+        shoppingCarts.forEach(shoppingCart => {
+           totalPrice = totalPrice + shoppingCart.price * shoppingCart.quantity
+        });
+        return totalPrice;
     };
 
     render() {
-        const { shoppingCart } = this.state;
+        const { shoppingCarts } = this.state;
 
         return (
             <div>
@@ -68,22 +71,22 @@ export default class ShoppingCart extends Component {
                             </thead>
                             <tbody>
                                 {
-                                    shoppingCart.map((element, index) =>
+                                    shoppingCarts.map((shoppingCart, index) =>
                                         <tr key={index}>
                                             <td className="product-in-table">
-                                                <img className="img-responsive" src={element.image} alt />
+                                                <img className="img-responsive" src={shoppingCart.image} alt />
                                                 <div className="product-it-in">
-                                                    <h3><Double-Breaste></Double-Breaste>{element.name}</h3>
-                                                    <span>{element.description}</span>
+                                                    <h3><Double-Breaste></Double-Breaste>{shoppingCart.name}</h3>
+                                                    <span>{shoppingCart.description}</span>
                                                 </div>
                                             </td>
-                                            <td>{element.price} $</td>
+                                            <td>{shoppingCart.price} $</td>
                                             <td>
-                                                <Quantity decrease={ () => this.decrease(index, element.id) }
-                                                          increase={ () => this.increase(index, element.id) }
-                                                          value={ element.quantity }/>
+                                                <Quantity decrease={ () => this.decrease(index, shoppingCart.id) }
+                                                          increase={ () => this.increase(index, shoppingCart.id) }
+                                                          value={ shoppingCart.quantity }/>
                                             </td>
-                                            <td className="shop-red">{ element.price * element.quantity } $</td>
+                                            <td className="shop-red">{ shoppingCart.price * shoppingCart.quantity } $</td>
                                             <td>
                                                 <button type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                                             </td>
@@ -120,7 +123,7 @@ export default class ShoppingCart extends Component {
                                 <li className="total-price">
                                     <h4>Total:</h4>
                                     <div className="total-result-in">
-                                        <span>$ {this.getTotalPrince()}</span>
+                                        <span>$ {this.getTotalPrince(shoppingCarts)}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -137,7 +140,7 @@ ShoppingCart.propTypes = {
 };
 
 ShoppingCart.defaultProps = {
-    shoppingCart: [
+    shoppingCarts: [
         {
             id: 1,
             image: 'assets/img/thumb/08.jpg',
