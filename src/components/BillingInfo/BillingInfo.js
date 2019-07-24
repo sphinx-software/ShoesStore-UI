@@ -8,7 +8,6 @@ export default class BillingInfo extends Component {
                     <div className="overflow-h">
                         <h2>Billing info</h2>
                         <p>Shipping and address infot</p>
-                        <i className="rounded-x fa fa-home" />
                     </div>
                 </div>
                 <section className="billing-info">

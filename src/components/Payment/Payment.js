@@ -8,7 +8,6 @@ export default class Payment extends Component {
                     <div className="overflow-h">
                         <h2>Payment</h2>
                         <p>Select Payment method</p>
-                        <i className="rounded-x fa fa-credit-card" />
                     </div>
                 </div>
 

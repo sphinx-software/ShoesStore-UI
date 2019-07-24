@@ -40,47 +40,18 @@ export default class CheckoutPage extends Component {
 
                                     { this.state.index === 3 && <Payment/> }
 
-                                    <div className="coupon-code">
-                                        <div className="row">
-                                            <div className="col-sm-4 sm-margin-bottom-30">
-                                                <h3>Discount Code</h3>
-                                                <p>Enter your coupon code</p>
-                                                <input className="form-control margin-bottom-10" name="code" type="text" />
-                                                <button type="button" className="btn-u btn-u-sea-shop">Apply Coupon</button>
-                                            </div>
-                                            <div className="col-sm-3 col-sm-offset-5">
-                                                <ul className="list-inline total-result">
-                                                    <li>
-                                                        <h4>Subtotal:</h4>
-                                                        <div className="total-result-in">
-                                                            <span>$ 1280.00</span>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <h4>Shipping:</h4>
-                                                        <div className="total-result-in">
-                                                            <span className="text-right">- - - -</span>
-                                                        </div>
-                                                    </li>
-                                                    <li className="divider" />
-                                                    <li className="total-price">
-                                                        <h4>Total:</h4>
-                                                        <div className="total-result-in">
-                                                            <span>$ 1280.00</span>
-                                                        </div>
-                                                    </li>
-
-                                                    <button onClick={ () => this.previous() } type="button" className="btn-u btn-u-sea-shop">Previous</button>
-                                                    <button onClick={ () => this.next() } type="button" className="btn-u btn-u-sea-shop">Next</button>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    <hr/>
+                    <center>
+                        <div>
+                            <button onClick={ () => this.previous() } type="button" className="btn-u btn-u-sea-shop">Previous</button>
+                            <button onClick={ () => this.next() } type="button" className="btn-u btn-u-sea-shop">Next</button>
+                        </div>
+                    </center>
+                    <hr/>
                 </div>
             </BrowserRouter>
         );

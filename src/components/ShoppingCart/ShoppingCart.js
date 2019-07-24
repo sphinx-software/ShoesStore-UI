@@ -41,13 +41,13 @@ export default class ShoppingCart extends Component {
 
     render() {
         const { shoppingCart } = this.state;
+
         return (
             <div>
                 <div className="header-tags">
                     <div className="overflow-h">
                         <h2>Shopping Cart</h2>
                         <p>Review &amp; edit your product</p>
-                        <i className="rounded-x fa fa-check" />
                     </div>
                 </div>
                 <section>
@@ -72,15 +72,15 @@ export default class ShoppingCart extends Component {
                                                     <span>{element.description}</span>
                                                 </div>
                                             </td>
-                                            <td>{element.price}</td>
+                                            <td>{element.price} $</td>
                                             <td>
                                                 <Quantity decrease={ () => this.decrease(index, element.id) }
                                                           increase={ () => this.increase(index, element.id) }
                                                           value={ element.quantity }/>
                                             </td>
-                                            <td className="shop-red">{ element.price * element.quantity }</td>
+                                            <td className="shop-red">{ element.price * element.quantity } $</td>
                                             <td>
-                                                <button type="button" className="close"><span>×</span><span className="sr-only">Close</span></button>
+                                                <button type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                                             </td>
                                         </tr>
                                     )
@@ -89,6 +89,39 @@ export default class ShoppingCart extends Component {
                         </table>
                     </div>
                 </section>
+                <div className="coupon-code">
+                    <div className="row">
+                        <div className="col-sm-4 sm-margin-bottom-30">
+                            <h3>Discount Code</h3>
+                            <p>Enter your coupon code</p>
+                            <input className="form-control margin-bottom-10" name="code" type="text" />
+                            <button type="button" className="btn-u btn-u-sea-shop">Apply Coupon</button>
+                        </div>
+                        <div className="col-sm-3 col-sm-offset-5">
+                            <ul className="list-inline total-result">
+                                <li>
+                                    <h4>Subtotal:</h4>
+                                    <div className="total-result-in">
+                                        <span>$ 10000</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4>Shipping:</h4>
+                                    <div className="total-result-in">
+                                        <span className="text-right">- - - -</span>
+                                    </div>
+                                </li>
+                                <li className="divider" />
+                                <li className="total-price">
+                                    <h4>Total:</h4>
+                                    <div className="total-result-in">
+                                        <span>$ 10000</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
