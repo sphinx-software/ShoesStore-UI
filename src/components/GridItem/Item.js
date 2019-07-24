@@ -6,7 +6,7 @@ export default class Item extends Component {
         const { item } = this.props;
 
         return (
-            <div className="col-md-4">
+            <div className="col-md-3">
                 <div className="product-img product-img-brd">
                     <a href="#"><img className="full-width img-responsive" src="assets/img/blog/16.jpg" alt="" /></a>
                     <a className="product-review" href="shop-ui-inner.html">Quick review</a>

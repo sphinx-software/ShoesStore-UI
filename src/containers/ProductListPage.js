@@ -7,21 +7,16 @@ import Item                 from '../components/GridItem/Item';
 export default class ProductListPage extends Component {
     render() {
         const items = [
-            {
-                name: 'quan',
-                gender: 'nam',
-                price: '100$'
-            },
-            {
-                name: 'ao',
-                gender: 'nam',
-                price: '200$'
-            },
-            {
-                name: 'quan',
-                gender: 'nu',
-                price: '300$'
-            }
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
+            {  name: 'quan', gender: 'nam', price: '100$' },
         ]
         
         return (
@@ -71,28 +66,6 @@ export default class ProductListPage extends Component {
                                     </div>
                                 </div>
                                 <div className="filter-results">
-                                    <div className="row illustration-v2 margin-bottom-30">
-                                        {
-                                            items.map((item, index) => {
-                                                return(
-                                                    <div key={index}>
-                                                        <Item item={item}/>
-                                                    </div>
-                                                )
-                                            })
-                                        }                                        
-                                    </div>
-                                    <div className="row illustration-v2 margin-bottom-30">
-                                        {
-                                            items.map((item, index) => {
-                                                return(
-                                                    <div key={index}>
-                                                        <Item item={item}/>
-                                                    </div>
-                                                )
-                                            })
-                                        }                                        
-                                    </div>
                                     <div className="row illustration-v2 margin-bottom-30">
                                         {
                                             items.map((item, index) => {
