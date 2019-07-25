@@ -129,7 +129,7 @@ export default class ShoppingCart extends Component {
                                 <li>
                                     <h4>Total:</h4>
                                     <div className="total-result-in">
-                                        <span>$ 10000</span>
+                                        <span>$ {this.getTotalPrice(products)}</span>
                                     </div>
                                 </li>
                             </ul>
