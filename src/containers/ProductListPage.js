@@ -79,7 +79,7 @@ export default class ProductListPage extends Component {
                                             })
                                         }
                                     </div>
-                                </div>{/*/end filter resilts*/}
+                                </div>
 
                                 <div className="text-center">
                                     <ul className="pagination pagination-v2">

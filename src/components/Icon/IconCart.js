@@ -9,7 +9,6 @@ export default class IconCart extends Component {
     }
 
     componentWillMount() {
-        console.log("abc");
         this.setState({
             products: this.props.products
         })
@@ -27,6 +26,8 @@ export default class IconCart extends Component {
         this.setState({
             products: newProducts
         })
+
+        console.log(newProducts);
     }
 
     render() {
