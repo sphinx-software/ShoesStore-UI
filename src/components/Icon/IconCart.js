@@ -40,9 +40,9 @@ export default class IconCart extends Component {
                 <div className="badge-open">
                     <ul className="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
                         {
-                            products.map((product) =>  
+                            products.map((product) =>
                                 <li key={product.id}>
-                                    <img src="assets/img/thumb/05.jpg" alt />
+                                    <img src={product.image} alt />
                                     <button onClick={ () => this.remove(product) } type="button" className="close">×</button>
                                     <div className="overflow-h">
                                         <span>{product.name}</span>
@@ -82,18 +82,21 @@ IconCart.defaultProps = {
             id: 1,
             name: 'quan',
             price: 100,
+            image: "assets/img/thumb/05.jpg",
             quantity: 1,
         },
         {
             id: 2,
             name: 'ao',
             price: 200,
+            image: "assets/img/thumb/05.jpg",
             quantity: 1,
         },
         {
             id: 3,
             name: 'giay',
             price: 300,
+            image: "assets/img/thumb/05.jpg",
             quantity: 1,
         }
     ]
