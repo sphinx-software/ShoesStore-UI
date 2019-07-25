@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter }    from "react-router-dom";
-import BreadCrumbs          from '../components/BreadCrumbs/BreadCrumbs';
+import HeadBanner           from '../components/Banner/HeadBanner';
 import Panel                from "../components/Panel/Panel";
 import Item                 from '../components/GridItem/Item';
+import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
 
 export default class ProductListPage extends Component {
     render() {
@@ -18,12 +19,13 @@ export default class ProductListPage extends Component {
             {  name: 'quan', gender: 'nam', price: '100$' },
             {  name: 'quan', gender: 'nam', price: '100$' },
         ]
-        
+
         return (
             <BrowserRouter>
                 <div className="wrapper">
-                    <BreadCrumbs/>
+                    <HeadBanner/>
                     <div className="content container">
+                        <BreadCrumbs/>
                         <div className="row">
                             <Panel/>
                             <div className="col-md-9">
@@ -75,7 +77,7 @@ export default class ProductListPage extends Component {
                                                     </div>
                                                 )
                                             })
-                                        }                                        
+                                        }
                                     </div>
                                 </div>{/*/end filter resilts*/}
 

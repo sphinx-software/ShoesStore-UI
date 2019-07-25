@@ -1,6 +1,6 @@
 import React,       { Component }       from 'react';
 import              { BrowserRouter }   from "react-router-dom";
-import BreadCrumbs                      from '../components/BreadCrumbs/BreadCrumbs';
+import HeadBanner                      from '../components/Banner/HeadBanner';
 import ShoppingCart                     from "../components/ShoppingCart/ShoppingCart";
 import BillingInfo                      from "../components/BillingInfo/BillingInfo";
 import Payment                          from "../components/Payment/Payment";
@@ -28,7 +28,7 @@ export default class CheckoutPage extends Component {
         return (
             <BrowserRouter>
                 <div className="wrapper">
-                    <BreadCrumbs/>
+                    <HeadBanner/>
                     <div className="content-md margin-bottom-30">
                         <div className="container">
                             <form className="shopping-cart" action="#">
