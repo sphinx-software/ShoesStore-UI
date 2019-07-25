@@ -114,7 +114,7 @@ export default class ShoppingCart extends Component {
                         <div className="col-sm-3 col-sm-offset-5">
                             <ul className="list-inline total-result">
                                 <li className="total-price">
-                                    <h4>Total:</h4>
+                                    <h4>Subtotal:</h4>
                                     <div className="total-result-in">
                                         <span>$ {this.getTotalPrice(products)}</span>
                                     </div>
@@ -127,7 +127,7 @@ export default class ShoppingCart extends Component {
                                 </li>
                                 <li className="divider" />
                                 <li>
-                                    <h4>Subtotal:</h4>
+                                    <h4>Total:</h4>
                                     <div className="total-result-in">
                                         <span>$ 10000</span>
                                     </div>
