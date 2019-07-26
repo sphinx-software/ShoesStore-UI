@@ -1,15 +1,24 @@
 import React, { Component }             from 'react';
-import { BrowserRouter, Router, Link }  from "react-router-dom";
+import { BrowserRouter, Link }          from "react-router-dom";
 import ProductService                   from '../components/ProductService/ProductService';
 import RelatedItem                      from "../components/GridItem/RelatedItem";
 import Quantity                         from "../components/Quantity/Quantity";
+import propTypes from "prop-types";
+import {ButtonShoeStore, } from '../ui'
+import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 
 
 export default class ProductListPage extends Component {
 
     state = {
-        quantity: 1
+        quantity: 1,
     };
+
+    componentWillMount() {
+        this.setState({
+            totalPrice: this.props.totalPrice
+        });
+    }
 
     decrease() {
         this.setState({
@@ -24,12 +33,13 @@ export default class ProductListPage extends Component {
     };
 
     render() {
-        const items = [
-            1, 2, 3, 4, 5, 6, 7
-        ];
+
+        const {totalPrice} = this.props;
+        const { productPrice, quantity } = this.state;
 
         return (
             <BrowserRouter>
+                <ButtonShoeStore name="title" primary/>
                 <div className="wrapper">
                     {/*=== Shop Product ===*/}
                     <div className="shop-product">
@@ -47,14 +57,12 @@ export default class ProductListPage extends Component {
                                 <div className="col-md-6 md-margin-bottom-50">
                                     <div className="ms-showcase2-template">
                                         {/* Master Slider */}
-                                        <div className="master-slider ms-skin-default" id="masterslider">
+                                        <div className="master-slider ms-skin-default" id="masterslider" >
                                             <div className="ms-slide">
-                                                <img className="ms-brd" src="assets/img/blank.gif" data-src="assets/img/blog/28.jpg" alt="lorem ipsum dolor sit" />
-                                                <img className="ms-thumb" src="assets/img/blog/28-thumb.jpg" alt="thumb" />
+                                                <img className="ms-brd" src="assets/img/giaynam1.jpg" data-src="assets/img/blog/28.jpg" alt="lorem ipsum dolor sit" height={200} />
                                             </div>
                                             <div className="ms-slide">
-                                                <img src="assets/img/blank.gif" data-src="assets/img/blog/29.jpg" alt="lorem ipsum dolor sit" />
-                                                <img className="ms-thumb" src="assets/img/blog/29-thumb.jpg" alt="thumb" />
+                                                <img src="assets/img/thumb/06.jpg" data-src="assets/img/thumb/06.jpg" alt="lorem ipsum dolor sit" />
                                             </div>
                                             <div className="ms-slide">
                                                 <img src="assets/img/blank.gif" data-src="assets/img/blog/30.jpg" alt="lorem ipsum dolor sit" />
@@ -67,12 +75,12 @@ export default class ProductListPage extends Component {
                                 <div className="col-md-6">
                                     <div className="shop-product-heading">
                                         <h2>Corinna Foley</h2>
-                                        <ul className="list-inline shop-product-social">
-                                            <li><a href="#"><i className="fa fa-facebook" /></a></li>
-                                            <li><a href="#"><i className="fa fa-twitter" /></a></li>
-                                            <li><a href="#"><i className="fa fa-google-plus" /></a></li>
-                                            <li><a href="#"><i className="fa fa-pinterest" /></a></li>
-                                        </ul>
+                                        {/*<ul className="list-inline shop-product-social">*/}
+                                        {/*    <li><a href="#"><i className="fa fa-facebook" /></a></li>*/}
+                                        {/*    <li><a href="#"><i className="fa fa-twitter" /></a></li>*/}
+                                        {/*    <li><a href="#"><i className="fa fa-google-plus" /></a></li>*/}
+                                        {/*    <li><a href="#"><i className="fa fa-pinterest" /></a></li>*/}
+                                        {/*</ul>*/}
                                     </div>{/*/end shop product social*/}
                                     <ul className="list-inline product-ratings margin-bottom-30">
                                         <li><i className="rating-selected fa fa-star" /></li>
@@ -86,8 +94,11 @@ export default class ProductListPage extends Component {
                                     </ul>{/*/end shop product ratings*/}
                                     <p>Integer <strong>dapibus ut elit</strong> non volutpat. Integer auctor purus a lectus suscipit fermentum. Vivamus lobortis nec erat consectetur elementum.</p><br />
                                     <ul className="list-inline shop-product-prices margin-bottom-30">
-                                        <li className="shop-red">$57.00</li>
+
+                                        <li className="shop-red">$ {totalPrice.price*quantity}</li>
+
                                         <li className="line-through">$70.00</li>
+
                                         <li><small className="shop-bg-red time-day-left">4 days left</small></li>
                                     </ul>{/*/end shop product prices*/}
                                     <h3 className="shop-product-title">Size</h3>
@@ -104,10 +115,7 @@ export default class ProductListPage extends Component {
                                             <input type="radio" id="size-3" name="size" defaultChecked />
                                             <label htmlFor="size-3">L</label>
                                         </li>
-                                        <li>
-                                            <input type="radio" id="size-4" name="size" />
-                                            <label htmlFor="size-4">XL</label>
-                                        </li>
+
                                     </ul>{/*/end product size*/}
                                     <h3 className="shop-product-title">Color</h3>
                                     <ul className="list-inline product-color margin-bottom-30">
@@ -131,7 +139,12 @@ export default class ProductListPage extends Component {
                                                       increase={ () => this.increase() }
                                                       value={ this.state.quantity }/>
                                         </form>
-                                        <button type="button" className="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
+
+                                        <Link to="/checkout" className="btn-u btn-u-sea-shop btn-u-lg">
+                                                Add to Cart
+                                        </Link>
+
+
                                     </div>{/*/end product quantity*/}
                                     <ul className="list-inline add-to-wishlist add-to-wishlist-brd">
                                         <li className="wishlist-in">
@@ -276,11 +289,11 @@ export default class ProductListPage extends Component {
                                 <a className="owl-btn next rounded-x"><i className="fa fa-angle-right" /></a>
                             </div>
                             <ul className="list-inline owl-slider-v4">
-                                {
-                                    items.map((item, index) => {
-                                        return(<RelatedItem/>)
-                                    })
-                                }
+                                {/*{*/}
+                                {/*    items.map((item, index) => {*/}
+                                {/*        return(<RelatedItem/>)*/}
+                                {/*    })*/}
+                                {/*}*/}
                             </ul>
                         </div>
                     </div>
@@ -288,5 +301,18 @@ export default class ProductListPage extends Component {
                 </div>
             </BrowserRouter>
         );
+    }
+}
+
+
+
+
+ProductListPage.propTypes = {
+    totalPrice: propTypes.object,
+};
+
+ProductListPage.defaultProps = {
+    totalPrice: {
+        price: 1500
     }
 }

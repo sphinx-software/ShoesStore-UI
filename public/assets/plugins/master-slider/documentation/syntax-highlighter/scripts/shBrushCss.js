@@ -17,7 +17,7 @@
 ;(function()
 {
 	// CommonJS
-	typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
+	typeof(require) != 'undefined' ? SyntaxHighlighter = require('public/assets/plugins/master-slider/documentation/syntax-highlighter/scripts/shCore').SyntaxHighlighter : null;
 
 	function Brush()
 	{
