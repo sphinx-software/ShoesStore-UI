@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import BreadCrumbs        from '../../components/BreadCrumbs/BreadCrumbs';
+import HeadBanner        from '../Banner/HeadBanner';
 import InfoBlock          from '../../components/InfoBlock/InfoBlock';
 import {register} from "../../serviceAPI";
 
@@ -38,14 +38,14 @@ class FormRegister extends Component {
     render () {
         return (
             <div>
-                <BreadCrumbs/>
+                <HeadBanner/>
                 <div className="log-reg-v3 content-md margin-bottom-30">
                     <div className="container">
                         <div className="row">
                             <InfoBlock/>
                             <div className="col-md-5">
                                 <div id="sky-form4" className="log-reg-block sky-form">
-                                    <h2>Create New Account</h2>   
+                                    <h2>Create New Account</h2>
                                     <div className="login-input reg-input">
                                         <div className="row">
                                             <div className="col-sm-6">

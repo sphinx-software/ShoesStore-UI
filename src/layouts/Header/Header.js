@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import IconCart from '../../components/Icon/IconCart';
 
 export default class Header extends Component {
     render() {
@@ -20,36 +21,7 @@ export default class Header extends Component {
                             </a>
                         </div>
                         {/* Shopping Cart */}
-                        <div className="shop-badge badge-icons pull-right">
-                            <a href="#"><i className="fa fa-shopping-cart" /></a>
-                            <span className="badge badge-sea rounded-x">3</span>
-                            <div className="badge-open">
-                                <ul className="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
-                                    <li>
-                                        <img src="assets/img/thumb/05.jpg" alt />
-                                        <button type="button" className="close">×</button>
-                                        <div className="overflow-h">
-                                            <span>Black Glasses</span>
-                                            <small>1 x $400.00</small>
-                                        </div>
-                                    </li>                                    
-                                </ul>
-                                <div className="subtotal">
-                                    <div className="overflow-h margin-bottom-10">
-                                        <span>Subtotal</span>
-                                        <span className="pull-right subtotal-cost">$1200.00</span>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-xs-6">
-                                            <a href="/checkout" className="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</a>
-                                        </div>
-                                        <div className="col-xs-6">
-                                            <a href="/checkout" className="btn-u btn-u-sea-shop btn-block">Checkout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <IconCart/>
                         {/* End Shopping Cart */}
                         {/* Collect the nav links, forms, and other content for toggling */}
                         <div className="collapse navbar-collapse navbar-responsive-collapse">

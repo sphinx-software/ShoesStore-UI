@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
+import HeadBanner from '../Banner/HeadBanner';
 import InfoBlock from '../InfoBlock/InfoBlock';
 
     export default class FormLogin extends Component {
         render() {
             return (
             <div>
-                <BreadCrumbs/>
+                <HeadBanner/>
                 <div className="log-reg-v3 content-md margin-bottom-30">
                     <div className="container">
                     <InfoBlock/>
@@ -63,14 +63,14 @@ import InfoBlock from '../InfoBlock/InfoBlock';
                                 </div>
                             </div>
                         </form>
-                        
+
                         <div className="margin-bottom-20"/>
                         <p className="text-center">Don't have account yet? Learn more and
                             <p>Sign Up</p></p>
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         );
     }
 }
