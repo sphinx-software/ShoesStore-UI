@@ -1,0 +1,39 @@
+.card {
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 35px;
+    border: solid #b0b0b0;
+    border-width: thin;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.quick-review {
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.add-cart {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.add-cart a {
+    margin-right: -1px;
+    margin-left: -5px;
+    padding-left: 27px;
+    padding-right: 10px;
+}
+
+.name {
+    padding-left: 90px;
+}
+
+.gender {
+    padding-left: 100px;
+}
+
+.price {
+    padding-left: 95px;
+}
+
