@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import IconCart from '../../components/Icon/IconCart';
+import IconCart from '../components/Icon/IconCart';
 
 export default class Header extends Component {
     render() {

@@ -1,7 +1,7 @@
 import React, {Component}         from 'react';
 import { Route, Switch }          from 'react-router-dom';
-import FormLogin                  from './components/Topbar/FormLogin';
-import FormRegister               from './components/Topbar/FormRegister';
+import FormLogin                  from './components/Form/FormLogin';
+import FormRegister               from './components/Form/FormRegister';
 
 import HomePage                   from './containers/HomePage';
 import ProductListPage            from './containers/ProductListPage';

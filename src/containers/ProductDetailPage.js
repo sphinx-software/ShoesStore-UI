@@ -1,11 +1,8 @@
 import React, { Component }             from 'react';
 import { BrowserRouter, Link }          from "react-router-dom";
 import ProductService                   from '../components/ProductService/ProductService';
-import RelatedItem                      from "../components/GridItem/RelatedItem";
 import Quantity                         from "../components/Quantity/Quantity";
 import propTypes from "prop-types";
-import {ButtonShoeStore, } from '../ui'
-import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 
 
 export default class ProductListPage extends Component {
@@ -39,7 +36,6 @@ export default class ProductListPage extends Component {
 
         return (
             <BrowserRouter>
-                <ButtonShoeStore name="title" primary/>
                 <div className="wrapper">
                     {/*=== Shop Product ===*/}
                     <div className="shop-product">

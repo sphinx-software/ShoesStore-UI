@@ -1,0 +1,12 @@
+.form {
+    padding: 100px 160px 100px 200px;
+    margin: 0px 400px 0px 400px;
+}
+
+.form-child {
+    padding: 100px;
+    border-width: 2px;
+    border: solid grey;
+    border-radius: 10px;
+}
+
