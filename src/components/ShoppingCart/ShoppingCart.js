@@ -39,11 +39,10 @@ export default class ShoppingCart extends Component {
         })
     };
 
-    getTotalPrice = (products) => {
-        let totalPrice = 0;
-        products.forEach(product => totalPrice = totalPrice + product.price * product.quantity);
+    getTotalPrice(products) {
+        const totalPrice = products.reduce((total, product) => total + (product.price * product.quantity), 0);
         return totalPrice;
-    };
+    }
 
     remove(product) {
         let products       = [...this.state.products];

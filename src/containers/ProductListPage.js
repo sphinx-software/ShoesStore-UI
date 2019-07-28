@@ -4,21 +4,12 @@ import HeadBanner           from '../components/Banner/HeadBanner';
 import Panel                from "../components/Panel/Panel";
 import Item                 from '../components/GridItem/Item';
 import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
+import propTypes            from "prop-types";
 
 export default class ProductListPage extends Component {
     render() {
-        const items = [
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-            {  name: 'quan', gender: 'nam', price: '100$' },
-        ]
+
+        const { products } = this.props;
 
         return (
             <BrowserRouter>
@@ -70,10 +61,16 @@ export default class ProductListPage extends Component {
                                 <div className="filter-results">
                                     <div className="row illustration-v2 margin-bottom-30">
                                         {
-                                            items.map((item, index) => {
+                                            products.map((product) => {
                                                 return(
-                                                    <div key={index}>
-                                                        <Item item={item}/>
+                                                    <div>
+                                                        <Item
+                                                            key={product.id}
+                                                            image={product.image}
+                                                            name={product.name}
+                                                            gender={product.gender}
+                                                            price={product.price}
+                                                        />
                                                     </div>
                                                 )
                                             })
@@ -98,3 +95,25 @@ export default class ProductListPage extends Component {
         );
     }
 }
+
+ProductListPage.propTypes = {
+    products: propTypes.object
+}
+
+ProductListPage.defaultProps = {
+    products: [
+        { id: 1,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 2,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 3,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 4,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 5,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 6,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 7,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 8,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 9,  image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 10, image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 11, image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+        { id: 12, image: 'assets/img/blog/16.jpg', name: 'quan', gender: 'nam', price: '100$' },
+    ]
+}
+

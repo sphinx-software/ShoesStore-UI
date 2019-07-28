@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 export default class SaleBanner extends Component {
     render() {
 
-        const saleBanner = [
+        const saleBanners = [
             1, 2
         ];
 
         return (
             <div className="row margin-bottom-60">
                 {
-                    saleBanner.map((saleBanner, index) =>
+                    saleBanners.map((saleBanner, index) =>
                         <div className="col-md-6 md-margin-bottom-30">
                             <div className="overflow-h">
                                 <div className="illustration-v1 illustration-img1">

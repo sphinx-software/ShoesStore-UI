@@ -7,8 +7,7 @@ export default class BreadCrumbs extends Component {
             <div>
                 <Breadcrumb>
                     <BreadcrumbItem><a href="/">Home</a></BreadcrumbItem>
-                    <BreadcrumbItem><a href="/">Product</a></BreadcrumbItem>
-                    <BreadcrumbItem active>Product Filter Page</BreadcrumbItem>
+                    <BreadcrumbItem active>Products</BreadcrumbItem>
                 </Breadcrumb>
             </div>
         );
