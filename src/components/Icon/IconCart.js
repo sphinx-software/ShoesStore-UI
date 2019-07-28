@@ -10,7 +10,7 @@ export default class IconCart extends Component {
         const { image, name, price, quantity } = this.props;
         return(
             <li>
-                <img src={image} alt />
+                <img src={image}/>
                 <button onClick={ () => this.remove() } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                 <div className="overflow-h">
                     <span>{name}</span>

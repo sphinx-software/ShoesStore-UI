@@ -7,6 +7,19 @@ import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
 import propTypes            from "prop-types";
 
 export default class ProductListPage extends Component {
+
+    state = {
+        cartItems: []
+    };
+
+    addToCart(product) {
+        console.log('Adding to cart', product);
+        this.setState({
+            cartItems: this.state.cartItems.concat(product)
+        })
+        console.log(this.state.cartItems);
+    }
+
     render() {
 
         const { products } = this.props;
@@ -16,7 +29,7 @@ export default class ProductListPage extends Component {
                 <div className="wrapper">
                     <HeadBanner/>
                     <div className="content container">
-                        <BreadCrumbs/>
+                        <BreadCrumbs page="Products"/>
                         <div className="row">
                             <Panel/>
                             <div className="col-md-9">
@@ -70,6 +83,7 @@ export default class ProductListPage extends Component {
                                                             name={product.name}
                                                             gender={product.gender}
                                                             price={product.price}
+                                                            addToCart={ () => this.addToCart(product) }
                                                         />
                                                     </div>
                                                 )

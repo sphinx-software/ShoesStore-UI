@@ -1,6 +1,7 @@
 import React,       { Component } from 'react';
 import Quantity                   from '../Quantity/Quantity';
 import propTypes                  from 'prop-types';
+import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
 
 export default class ShoppingCart extends Component {
 
@@ -57,6 +58,7 @@ export default class ShoppingCart extends Component {
 
         return (
             <div>
+                <BreadCrumbs page="Checkout"/>
                 <div className="header-tags">
                     <div className="overflow-h">
                         <h2>Shopping Cart</h2>

@@ -2,7 +2,8 @@ import React, { Component }             from 'react';
 import { BrowserRouter, Link }          from "react-router-dom";
 import ProductService                   from '../components/ProductService/ProductService';
 import Quantity                         from "../components/Quantity/Quantity";
-import propTypes from "prop-types";
+import propTypes                        from "prop-types";
+import BreadCrumbs                      from "../components/BreadCrumbs/BreadCrumbs";
 
 
 export default class ProductListPage extends Component {
@@ -31,7 +32,7 @@ export default class ProductListPage extends Component {
 
     render() {
 
-        const {totalPrice} = this.props;
+        const { totalPrice } = this.props;
         const { productPrice, quantity } = this.state;
 
         return (
@@ -41,11 +42,7 @@ export default class ProductListPage extends Component {
                     <div className="shop-product">
                         {/* Breadcrumbs v5 */}
                         <div className="container">
-                            <ul className="breadcrumb-v5">
-                                <li><Link to="/"><i className="fa fa-home" /></Link></li>
-                                <li><Link to="/products">Products</Link></li>
-                                <li className="active">New</li>
-                            </ul>
+                            <BreadCrumbs page="Products-Detail"/>
                         </div>
                         {/* End Breadcrumbs v5 */}
                         <div className="container">

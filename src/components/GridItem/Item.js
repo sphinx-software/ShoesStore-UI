@@ -3,6 +3,11 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } fr
 import '../../ui/item/item.css';
 
 export default class Item extends Component {
+
+    addToCart() {
+        this.props.addToCart();
+    }
+
     render() {
 
         const { image, name, gender, price } = this.props;
@@ -23,7 +28,7 @@ export default class Item extends Component {
                         </div>
                         <div>
                             <Button className="quick-review"><a href="/products-detail">Quick review</a></Button>{' '}
-                            <Button className="add-cart"><a href="/checkout">Add to cart</a></Button>{' '}
+                            <Button onClick={ () => this.addToCart() } className="add-cart"><a>Add to cart</a></Button>{' '}
                         </div>
                     </CardBody>
                 </Card>
