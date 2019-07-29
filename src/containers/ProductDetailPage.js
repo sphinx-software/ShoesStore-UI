@@ -33,7 +33,8 @@ export default class ProductListPage extends Component {
     render() {
 
         const { totalPrice } = this.props;
-        const { productPrice, quantity } = this.state;
+        const { quantity } = this.state;
+
 
         return (
             <BrowserRouter>

@@ -12,12 +12,25 @@ export default class ProductListPage extends Component {
         cartItems: []
     };
 
+    componentWillMount() {
+        this.setState({
+            products: this.props.products
+        })
+    }
+
     addToCart(product) {
-        console.log('Adding to cart', product);
         this.setState({
             cartItems: this.state.cartItems.concat(product)
         })
-        console.log(this.state.cartItems);
+    }
+
+    viewDetail(product) {
+        let products      = [...this.state.products];
+        const id          = this.props.match.id;
+        const viewCarts   = products.find(product => product.id === id)
+        this.setState({
+            products: viewCarts
+        })
     }
 
     render() {
@@ -78,12 +91,9 @@ export default class ProductListPage extends Component {
                                                 return(
                                                     <div>
                                                         <Item
-                                                            key={product.id}
-                                                            image={product.image}
-                                                            name={product.name}
-                                                            gender={product.gender}
-                                                            price={product.price}
+                                                            product={product}
                                                             addToCart={ () => this.addToCart(product) }
+                                                            viewDetail={ () => this.viewDetail(product) }
                                                         />
                                                     </div>
                                                 )
@@ -91,7 +101,6 @@ export default class ProductListPage extends Component {
                                         }
                                     </div>
                                 </div>
-
                                 <div className="text-center">
                                     <ul className="pagination pagination-v2">
                                         <li><a href="#"><i className="fa fa-angle-left" /></a></li>
@@ -127,7 +136,7 @@ ProductListPage.defaultProps = {
         { id: 9,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
         { id: 10, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
         { id: 11, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 12, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM   ', price: '100$' },
+        { id: 12, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
     ]
 }
 
