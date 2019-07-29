@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import '../../ui/item/item.css';
-import {Link} from "react-router-dom";
 
 export default class Item extends Component {
 
@@ -32,7 +31,7 @@ export default class Item extends Component {
                             <CardText><h3>{product.price}</h3></CardText>
                         </div>
                         <div>
-                            <Button onClick={ () => this.viewDetail() } className="quick-review"><Link to={`/products/${product.id}`}>Quick review</Link></Button>{' '}
+                            <Button onClick={ () => this.viewDetail() } className="quick-review"><a href={`/products/${product.id}`}>Quick review</a></Button>{' '}
                             <Button onClick={ () => this.addToCart() } className="add-cart"><a>Add to cart</a></Button>{' '}
                         </div>
                     </CardBody>

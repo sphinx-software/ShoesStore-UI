@@ -24,7 +24,7 @@ export default class ProductListPage extends Component {
         })
     }
 
-    viewDetail(product) {
+    viewDetail() {
         let products      = [...this.state.products];
         const id          = this.props.match.id;
         const viewCarts   = products.find(product => product.id === id)

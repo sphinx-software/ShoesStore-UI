@@ -1,5 +1,5 @@
 import React, { Component }             from 'react';
-import { BrowserRouter }  from "react-router-dom";
+import { BrowserRouter }                from "react-router-dom";
 import Slider                           from '../components/Slider/Slider';
 import SaleBanner                       from '../components/Banner/SaleBanner';
 import ProductItem                      from '../components/GridItem/ProductItem';
@@ -11,52 +11,18 @@ export default class HomePage extends Component {
     render() {
 
         const categories = [
-            {
-                name: 'Men1',
-                amount: '200'
-            },
-            {
-                name: 'Men2',
-                amount: '200'
-            },
-            {
-                name: 'Men3',
-                amount: '200'
-            }
-        ]
+            { name: 'Men1', amount: '200' },
+            { name: 'Men2', amount: '200' },
+            { name: 'Men3', amount: '200' }
+        ];
 
         const products = [
-            {
-                name: "name4",
-                gender: "man",
-                category: "cate4",
-                price: "300$"
-            },
-            {
-                name: "name4",
-                gender: "man",
-                category: "cate4",
-                price: "300$"
-            },
-            {
-                name: "name4",
-                gender: "man",
-                category: "cate4",
-                price: "300$"
-            },
-            {
-                name: "name4",
-                gender: "man",
-                category: "cate4",
-                price: "300$"
-            },
-            {
-                name: "name4",
-                gender: "man",
-                category: "cate4",
-                price: "300$"
-            },
-        ]
+            { name: "name4", gender: "man", category: "cate4", price: "300$" },
+            { name: "name4", gender: "man", category: "cate4", price: "300$" },
+            { name: "name4", gender: "man", category: "cate4", price: "300$" },
+            { name: "name4", gender: "man", category: "cate4", price: "300$" },
+            { name: "name4", gender: "man", category: "cate4", price: "300$" },
+        ];
 
         return (
             <BrowserRouter>

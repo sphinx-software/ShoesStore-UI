@@ -12,12 +12,12 @@ export default class RouterProtect extends Component {
     render () {
         return (
             <Switch>
-                <Route exact path="/"              component={HomePage}/>
-                <Route exact path="/login"         component={LoginPage}/>
-                <Route exact path="/register"      component={RegisterPage}/>
-                <Route exact path="/products"      component={ProductListPage}/>
+                <Route exact path="/"               component={HomePage}/>
+                <Route exact path="/login"          component={LoginPage}/>
+                <Route exact path="/register"       component={RegisterPage}/>
+                <Route exact path="/products"       component={ProductListPage}/>
                 <Route exact path="/products/:id"   component={ProductDetailPage}/>
-                <Route exact path="/checkout"      component={CheckoutPage}/>
+                <Route exact path="/checkout"       component={CheckoutPage}/>
             </Switch>
         )
     }

@@ -9,7 +9,7 @@ export default class FormLogin extends Component {
     render() {
         return (
             <div>
-                <Form className="form">
+                <Form>
                     <div className="form-child">
                         <div className="col-md-pull-6">
                             <h2>Login </h2>

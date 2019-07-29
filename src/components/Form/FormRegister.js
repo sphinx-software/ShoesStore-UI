@@ -8,7 +8,7 @@ class FormRegister extends Component {
     render () {
         return (
             <div>
-                <Form className="form">
+                <Form>
                     <Form className="form-child">
                         <h2>Register</h2>
                         <FormGroup>

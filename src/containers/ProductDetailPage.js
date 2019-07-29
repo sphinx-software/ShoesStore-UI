@@ -33,7 +33,7 @@ export default class ProductListPage extends Component {
     render() {
 
         const { totalPrice } = this.props;
-        const { quantity } = this.state;
+        const { quantity }   = this.state;
 
 
         return (
@@ -297,9 +297,6 @@ export default class ProductListPage extends Component {
         );
     }
 }
-
-
-
 
 ProductListPage.propTypes = {
     totalPrice: propTypes.object,
