@@ -2,6 +2,7 @@ import React,       { Component } from 'react';
 import Quantity                   from '../Quantity/Quantity';
 import propTypes                  from 'prop-types';
 import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
+import {Table}                    from "reactstrap";
 
 export default class ShoppingCart extends Component {
 
@@ -65,45 +66,43 @@ export default class ShoppingCart extends Component {
                         <p>Review &amp; edit your product</p>
                     </div>
                 </div>
-                <section>
-                    <div className="table-responsive">
-                        <table className="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Qty</th>
-                                <th>Total</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    products.map((product) =>
-                                        <tr key={product.id}>
-                                            <td className="product-in-table">
-                                                <img className="img-responsive" src={product.image} alt />
-                                                <div className="product-it-in">
-                                                    <h3><Double-Breaste></Double-Breaste>{product.name}</h3>
-                                                    <span>{product.description}</span>
-                                                </div>
-                                            </td>
-                                            <td>{product.price} $</td>
-                                            <td>
-                                                <Quantity decrease={ () => this.decrease(product.id) }
-                                                          increase={ () => this.increase(product.id) }
-                                                          value={ product.quantity }/>
-                                            </td>
-                                            <td className="shop-red">{ product.price * product.quantity } $</td>
-                                            <td>
-                                                <button onClick={ () => this.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
-                                            </td>
-                                        </tr>
-                                    )
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+                <Table>
+                    <thead>
+                    <tr>
+                        <th>...</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            products.map((product) =>
+                                <tr key={product.id}>
+                                    <td style={{ width: 100 }}>
+                                        <img src={product.image}/>
+                                    </td>
+                                    <td>
+                                        <h3>{product.name}</h3>
+                                        <p>{product.description}</p>
+                                    </td>
+                                    <td>{product.price}</td>
+                                    <td>
+                                        <Quantity decrease={ () => this.decrease(product.id) }
+                                                  increase={ () => this.increase(product.id) }
+                                                  value={ product.quantity }/>
+                                    </td>
+                                    <td>{ product.price * product.quantity } $</td>
+                                    <td>
+                                        <button onClick={ () => this.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                    </td>
+                                </tr>
+                            )
+                        }
+                    </tbody>
+                </Table>
                 <div className="coupon-code">
                     <div className="row">
                         <div className="col-sm-4 sm-margin-bottom-30">
