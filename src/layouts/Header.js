@@ -60,12 +60,9 @@ export default class Header extends Component {
                                         {
                                             products.map((product) => {
                                                 return(
-                                                    <div key={product.id}>
+                                                    <div>
                                                         <IconCart
-                                                            image={product.image}
-                                                            name={product.name}
-                                                            price={product.price}
-                                                            quantity={product.quantity}
+                                                            product={product}
                                                             remove={ () => this.remove(product) }
                                                         />
                                                     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Accordion, Card} from "react-bootstrap";
 import {FormGroup, Input, Label} from "reactstrap";
-import '../../ui/accordion/categories.css';
+import '../../ui/accordion/accordion.css';
 
 export default class CategoriesAccordion extends Component {
     render() {
