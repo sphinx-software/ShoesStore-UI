@@ -62,7 +62,7 @@ export default class ProductListPage extends Component {
                                             </div>
                                             <div className="ms-slide">
                                                 <img src="/assets/img/blank.gif"
-                                                     alt="lorem ipsum dolor sit" />
+                                                     data-src="assets/img/blog/30.jpg" alt="lorem ipsum dolor sit" />
                                                 <img className="ms-thumb" src="/assets/img/blog/30-thumb.jpg" alt="thumb" />
                                             </div>
                                         </div>
@@ -140,9 +140,8 @@ export default class ProductListPage extends Component {
                                         <Link to="/checkout" className="btn-u btn-u-sea-shop btn-u-lg">
                                                 Add to Cart
                                         </Link>
-
-
                                     </div>{/*/end product quantity*/}
+
                                     <ul className="list-inline add-to-wishlist add-to-wishlist-brd">
                                         <li className="wishlist-in">
                                             <i className="fa fa-heart" />
