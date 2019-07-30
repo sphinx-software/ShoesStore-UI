@@ -5,8 +5,8 @@ export default class HeadBanner extends Component {
         return(
             <div className="breadcrumbs-v4">
                 <div className="container">
-                    <span className="page-name">Product Filter Page</span>
-                    <h1>Maecenas <span className="shop-green">enim</span> sapien</h1>
+                    <span className="page-name">ShoesStore</span>
+                    <h1>Choice <span className="shop-green">for</span> everyone</h1>
                 </div>
             </div>
         );

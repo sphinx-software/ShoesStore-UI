@@ -5,6 +5,8 @@ import Panel                from "../components/Panel/Panel";
 import Item                 from '../components/GridItem/Item';
 import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
 import propTypes            from "prop-types";
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import '../ui/pagination/pagination.css';
 
 export default class ProductListPage extends Component {
 
@@ -101,14 +103,36 @@ export default class ProductListPage extends Component {
                                         }
                                     </div>
                                 </div>
-                                <div className="text-center">
-                                    <ul className="pagination pagination-v2">
-                                        <li><a href="#"><i className="fa fa-angle-left" /></a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#"><i className="fa fa-angle-right" /></a></li>
-                                    </ul>
+                                <div className="pagination-pagin">
+                                    <Pagination size="lg" aria-label="Page navigation example">
+                                        <PaginationItem>
+                                            <PaginationLink first href="#" />
+                                        </PaginationItem>
+                                        <PaginationItem>
+                                            <PaginationLink previous href="#" />
+                                        </PaginationItem>
+                                        <PaginationItem>
+                                            <PaginationLink href="#">
+                                                1
+                                            </PaginationLink>
+                                        </PaginationItem>
+                                        <PaginationItem>
+                                            <PaginationLink href="#">
+                                                2
+                                            </PaginationLink>
+                                        </PaginationItem>
+                                        <PaginationItem>
+                                            <PaginationLink href="#">
+                                                3
+                                            </PaginationLink>
+                                        </PaginationItem>
+                                        <PaginationItem>
+                                            <PaginationLink next href="#" />
+                                        </PaginationItem>
+                                        <PaginationItem>
+                                            <PaginationLink last href="#" />
+                                        </PaginationItem>
+                                    </Pagination>
                                 </div>
                             </div>
                         </div>

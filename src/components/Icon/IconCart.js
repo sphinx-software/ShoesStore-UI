@@ -7,14 +7,14 @@ export default class IconCart extends Component {
     }
 
     render() {
-        const { image, name, price, quantity } = this.props;
+        const { product } = this.props;
         return(
             <li>
-                <img src={image}/>
+                <img src={product.image}/>
                 <button onClick={ () => this.remove() } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                 <div className="overflow-h">
-                    <span>{name}</span>
-                    <small>{price}$ x {quantity}</small>
+                    <span>{product.name}</span>
+                    <small>{product.price}$ x {product.quantity}</small>
                 </div>
             </li>
         )
