@@ -1,6 +1,6 @@
 import React,       { Component }       from 'react';
 import              { BrowserRouter }   from "react-router-dom";
-import HeadBanner                      from '../components/Banner/HeadBanner';
+import HeadBanner                       from '../components/Banner/HeadBanner';
 import ShoppingCart                     from "../components/ShoppingCart/ShoppingCart";
 import BillingInfo                      from "../components/BillingInfo/BillingInfo";
 import Payment                          from "../components/Payment/Payment";
