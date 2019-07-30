@@ -1,5 +1,4 @@
 import React, {Component}   from 'react';
-import HeadBanner           from '../Banner/HeadBanner';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import '../../ui/form/formregister.css';
 
