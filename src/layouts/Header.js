@@ -46,7 +46,7 @@ export default class Header extends Component {
                                 <span className="icon-bar" />
                             </button>
                             <a href="/" className="navbar-brand">
-                                <img id="logo-header" src="assets/img/logo.png" alt="Logo" />
+                                <img id="logo-header" src="/assets/img/logo.png" alt="Logo" />
                             </a>
                         </div>
 

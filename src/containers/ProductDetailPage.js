@@ -53,14 +53,17 @@ export default class ProductListPage extends Component {
                                         {/* Master Slider */}
                                         <div className="master-slider ms-skin-default" id="masterslider" >
                                             <div className="ms-slide">
-                                                <img className="ms-brd" src="acc" data-src="assets/img/blog/28.jpg" alt="lorem ipsum dolor sit" height={200} />
+                                                <img className="ms-brd" src="/assets/img/blog/28.jpg"
+                                                     alt="lorem ipsum dolor sit" height={200} />
                                             </div>
                                             <div className="ms-slide">
-                                                <img src="assets/img/thumb/06.jpg" data-src="assets/img/thumb/06.jpg" alt="lorem ipsum dolor sit" />
+                                                <img src="/assets/img/thumb/06.jpg"
+                                                     alt="lorem ipsum dolor sit" />
                                             </div>
                                             <div className="ms-slide">
-                                                <img src="assets/img/blank.gif" data-src="assets/img/blog/30.jpg" alt="lorem ipsum dolor sit" />
-                                                <img className="ms-thumb" src="assets/img/blog/30-thumb.jpg" alt="thumb" />
+                                                <img src="/assets/img/blank.gif"
+                                                     alt="lorem ipsum dolor sit" />
+                                                <img className="ms-thumb" src="/assets/img/blog/30-thumb.jpg" alt="thumb" />
                                             </div>
                                         </div>
                                         {/* End Master Slider */}
@@ -208,7 +211,7 @@ export default class ProductListPage extends Component {
                                 <div className="tab-pane fade" id="reviews">
                                     <div className="product-comment margin-bottom-40">
                                         <div className="product-comment-in">
-                                            <img className="product-comment-img rounded-x" src="assets/img/team/01.jpg" alt />
+                                            <img className="product-comment-img rounded-x" src="/assets/img/team/01.jpg" alt />
                                             <div className="product-comment-dtl">
                                                 <h4>Mickel <small>22 days ago</small></h4>
                                                 <p>I like the green colour, it's very likeable and reminds me of Hollister. A little loose though but I am very skinny</p>
