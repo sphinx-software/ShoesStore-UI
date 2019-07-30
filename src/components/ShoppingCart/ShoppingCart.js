@@ -3,6 +3,8 @@ import Quantity                   from '../Quantity/Quantity';
 import propTypes                  from 'prop-types';
 import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
 import {Table}                    from "reactstrap";
+import ShoppingCartTable from "./ShoppingCartTable";
+import ShoppingCartTotalPrice from "./ShoppingCartTotalPrice";
 
 export default class ShoppingCart extends Component {
 
@@ -80,62 +82,19 @@ export default class ShoppingCart extends Component {
                     <tbody>
                         {
                             products.map((product) =>
-                                <tr key={product.id}>
-                                    <td style={{ width: 100 }}>
-                                        <img src={product.image}/>
-                                    </td>
-                                    <td>
-                                        <h3>{product.name}</h3>
-                                        <p>{product.description}</p>
-                                    </td>
-                                    <td>{product.price}</td>
-                                    <td>
-                                        <Quantity decrease={ () => this.decrease(product.id) }
-                                                  increase={ () => this.increase(product.id) }
-                                                  value={ product.quantity }/>
-                                    </td>
-                                    <td>{ product.price * product.quantity } $</td>
-                                    <td>
-                                        <button onClick={ () => this.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
-                                    </td>
-                                </tr>
+                                <ShoppingCartTable
+                                    product={product}
+                                    decrease={ () => this.decrease(product.id) }
+                                    increase={ () => this.increase(product.id) }
+                                    remove={ () => this.remove(product)  }
+                                />
                             )
                         }
                     </tbody>
                 </Table>
-                <div className="coupon-code">
-                    <div className="row">
-                        <div className="col-sm-4 sm-margin-bottom-30">
-                            <h3>Discount Code</h3>
-                            <p>Enter your coupon code</p>
-                            <input className="form-control margin-bottom-10" name="code" type="text" />
-                            <button type="button" className="btn-u btn-u-sea-shop">Apply Coupon</button>
-                        </div>
-                        <div className="col-sm-3 col-sm-offset-5">
-                            <ul className="list-inline total-result">
-                                <li className="total-price">
-                                    <h4>Subtotal:</h4>
-                                    <div className="total-result-in">
-                                        <span>$ {this.getTotalPrice(products)}</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h4>Shipping:</h4>
-                                    <div className="total-result-in">
-                                        <span className="text-right">- - - -</span>
-                                    </div>
-                                </li>
-                                <li className="divider" />
-                                <li>
-                                    <h4>Total:</h4>
-                                    <div className="total-result-in">
-                                        <span>$ {this.getTotalPrice(products)}</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <ShoppingCartTotalPrice
+                    getTotalPrice={ () => this.getTotalPrice(products) }
+                />
             </div>
         );
     }
