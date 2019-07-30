@@ -13,15 +13,15 @@ export default class HomePage extends Component {
         const categories = [
             { name: 'Men1', amount: '200' },
             { name: 'Men2', amount: '200' },
-            { name: 'Men3', amount: '200' }
+            { name: 'Men3', amount: '200' },
         ];
 
         const products = [
+            { name: "name1", gender: "man", category: "cate1", price: "300$" },
+            { name: "name2", gender: "man", category: "cate2", price: "300$" },
+            { name: "name3", gender: "man", category: "cate3", price: "300$" },
             { name: "name4", gender: "man", category: "cate4", price: "300$" },
-            { name: "name4", gender: "man", category: "cate4", price: "300$" },
-            { name: "name4", gender: "man", category: "cate4", price: "300$" },
-            { name: "name4", gender: "man", category: "cate4", price: "300$" },
-            { name: "name4", gender: "man", category: "cate4", price: "300$" },
+            { name: "name5", gender: "man", category: "cate5", price: "300$" },
         ];
 
         return (
