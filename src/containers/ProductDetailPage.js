@@ -53,7 +53,7 @@ export default class ProductListPage extends Component {
                                         {/* Master Slider */}
                                         <div className="master-slider ms-skin-default" id="masterslider" >
                                             <div className="ms-slide">
-                                                <img className="ms-brd" src="assets/img/giaynam1.jpg" data-src="assets/img/blog/28.jpg" alt="lorem ipsum dolor sit" height={200} />
+                                                <img className="ms-brd" src="acc" data-src="assets/img/blog/28.jpg" alt="lorem ipsum dolor sit" height={200} />
                                             </div>
                                             <div className="ms-slide">
                                                 <img src="assets/img/thumb/06.jpg" data-src="assets/img/thumb/06.jpg" alt="lorem ipsum dolor sit" />
