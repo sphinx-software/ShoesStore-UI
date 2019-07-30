@@ -4,6 +4,7 @@ import HeadBanner                       from '../components/Banner/HeadBanner';
 import ShoppingCart                     from "../components/ShoppingCart/ShoppingCart";
 import BillingInfo                      from "../components/BillingInfo/BillingInfo";
 import Payment                          from "../components/Payment/Payment";
+import {Button}                         from "reactstrap";
 
 
 export default class CheckoutPage extends Component {
@@ -44,15 +45,15 @@ export default class CheckoutPage extends Component {
                             </form>
                         </div>
                     </div>
-                    <hr/>
+                    <hr className="container"/>
                     <center>
                         <div>
-                            <button onClick={ () => this.previous() } type="button" className="btn-u btn-u-sea-shop">Previous</button>
-                            <button onClick={ () => this.next() } type="button" className="btn-u btn-u-sea-shop">Next</button>
+                            <Button onClick={ () => this.previous() } color="info">Previous</Button>{' '}
+                            <Button onClick={ () => this.next() } color="info">Next</Button>{' '}
                         </div>
                     </center>
-                    <hr/>
                 </div>
+                <hr className="container"/>
             </BrowserRouter>
         );
     }

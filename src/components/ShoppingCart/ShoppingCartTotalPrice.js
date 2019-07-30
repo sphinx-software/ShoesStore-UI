@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
-import {Button, FormGroup, Input, Label} from "reactstrap";
+import {Button, FormGroup, Input, Label, Table} from "reactstrap";
+import '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
 export default class ShoppingCartTotalPrice extends Component {
 
     getTotalPrice() {
-        this.props.getTotalPrice()
+        this.props.getTotalPrice();
     };
 
 
     render() {
         return(
-            <div>
-                <hr/>
-                <div>
+            <div className="content-father">
+                <div className="form-fa">
                     <FormGroup>
-                        <Label for="exampleEmail"><h3>Discount Code</h3></Label>
-                        <Input type="email" name="email" id="exampleEmail" placeholder="Enter your coupon code" />
+                        <Label><h3>Discount Code</h3></Label>
                     </FormGroup>
-                    <Button color="success">Apply Coupon</Button>{' '}
+                    <FormGroup className="content-child">
+                        <Input style={{ height: 40, width: 200}} placeholder="Enter your coupon code" />
+                        <Button color="success">Apply Coupon</Button>{' '}
+                    </FormGroup>
                 </div>
-
-                <hr/>
-
-                <div>
-                    <h4><strong>Subtotal:</strong></h4>
-                    <p>$ { this.props.getTotalPrice() }</p>
-                    <h4><strong>Shipping:</strong></h4>
-                    <p>----</p>
-                    <h4><strong>Total:</strong></h4>
-                    <p>$ { this.props.getTotalPrice() }</p>
-                </div>
+                <Table className="table" style={{ width: 200}}>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><h3>Subtotal:</h3></th>
+                            <td><h3>$ { this.props.getTotalPrice() }</h3></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><h3>Shipping:</h3></th>
+                            <td><h3>----</h3></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><h3>Total:</h3></th>
+                            <td><h3>$ { this.props.getTotalPrice() }</h3></td>
+                        </tr>
+                    </tbody>
+                </Table>
             </div>
         );
     }

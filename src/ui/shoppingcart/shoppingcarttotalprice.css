@@ -1,0 +1,12 @@
+.content-father {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-child {
+    display: flex;
+}
+
+.form-fa {
+    padding-top: 15px;
+}

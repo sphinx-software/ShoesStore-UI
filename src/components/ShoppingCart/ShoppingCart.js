@@ -92,6 +92,7 @@ export default class ShoppingCart extends Component {
                         }
                     </tbody>
                 </Table>
+                <hr/>
                 <ShoppingCartTotalPrice
                     getTotalPrice={ () => this.getTotalPrice(products) }
                 />
