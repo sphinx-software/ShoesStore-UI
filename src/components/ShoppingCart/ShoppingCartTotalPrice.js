@@ -24,16 +24,16 @@ export default class ShoppingCartTotalPrice extends Component {
                 <Table className="table" style={{ width: 200}}>
                     <tbody>
                         <tr>
-                            <th scope="row"><h3>Subtotal:</h3></th>
-                            <td><h3>$ { this.props.getTotalPrice() }</h3></td>
+                            <th><h3>Subtotal:</h3></th>
+                            <td><h3>{ this.props.getTotalPrice() }$</h3></td>
                         </tr>
                         <tr>
-                            <th scope="row"><h3>Shipping:</h3></th>
+                            <th><h3>Shipping:</h3></th>
                             <td><h3>----</h3></td>
                         </tr>
                         <tr>
-                            <th scope="row"><h3>Total:</h3></th>
-                            <td><h3>$ { this.props.getTotalPrice() }</h3></td>
+                            <th><h3>Total:</h3></th>
+                            <td><h3>{ this.props.getTotalPrice() }$</h3></td>
                         </tr>
                     </tbody>
                 </Table>
