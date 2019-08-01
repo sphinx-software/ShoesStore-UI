@@ -48,8 +48,8 @@ export default class CheckoutPage extends Component {
                     <hr className="container"/>
                     <center>
                         <div>
-                            <Button onClick={ () => this.previous() } color="info">Previous</Button>{' '}
-                            <Button onClick={ () => this.next() } color="info">Next</Button>{' '}
+                            <Button onClick={ () => this.previous() } color="success">Previous</Button>{' '}
+                            <Button onClick={ () => this.next() } color="success">Next</Button>{' '}
                         </div>
                     </center>
                 </div>

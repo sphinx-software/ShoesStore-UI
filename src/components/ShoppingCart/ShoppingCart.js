@@ -107,37 +107,9 @@ ShoppingCart.propTypes = {
 
 ShoppingCart.defaultProps = {
     products: [
-        {
-            id: 1,
-            image: 'assets/img/thumb/08.jpg',
-            name: 'balo',
-            description: 'ohyeah',
-            price: 1000,
-            quantity: 1
-        },
-        {
-            id: 2,
-            image: 'assets/img/thumb/08.jpg',
-            name: 'ao',
-            description: 'ohyeah',
-            price: 1000,
-            quantity: 1
-        },
-        {
-            id: 3,
-            image: 'assets/img/thumb/08.jpg',
-            name: 'quan',
-            description: 'ohyeah',
-            price: 1000,
-            quantity: 1
-        },
-        {
-            id: 4,
-            image: 'assets/img/thumb/08.jpg',
-            name: 'asdasd',
-            description: 'ohyeah',
-            price: 1000,
-            quantity: 1
-        },
+        { id: 1, image: 'assets/img/thumb/08.jpg', name: 'balo',   description: 'ohyeah', price: 1000, quantity: 1 },
+        { id: 2, image: 'assets/img/thumb/08.jpg', name: 'ao',     description: 'ohyeah', price: 1000, quantity: 1 },
+        { id: 3, image: 'assets/img/thumb/08.jpg', name: 'quan',   description: 'ohyeah', price: 1000, quantity: 1 },
+        { id: 4, image: 'assets/img/thumb/08.jpg', name: 'asdasd', description: 'ohyeah', price: 1000, quantity: 1 },
     ]
 }
