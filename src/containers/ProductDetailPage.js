@@ -94,7 +94,7 @@ export default class ProductListPage extends Component {
 
                                         <li className="shop-red">$ {totalPrice.price*quantity}</li>
 
-                                        <li className="line-through">$70.00</li>
+                                        <li className="line-through">${totalPrice.price*quantity /2}</li>
 
                                         <li><small className="shop-bg-red time-day-left">4 days left</small></li>
                                     </ul>{/*/end shop product prices*/}
