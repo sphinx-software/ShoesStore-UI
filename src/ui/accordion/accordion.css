@@ -1,8 +1,35 @@
 .card-header {
     margin-left: 5px;
     margin-top: 1px;
+    user-select: none;
 }
 
 .accordion {
     padding-top: 25px;
+    user-select: none;
+}
+
+.brands-accordion {
+    padding-bottom: 0px;
+    padding-top: 40px;
+}
+
+.categories-accordion{
+    padding-top: 0px;
+}
+
+.size-accordion {
+    padding-top: 0px;
+}
+
+.price-accordion {
+    padding-top: 0px;
+}
+
+.color-accordion {
+    padding-top: 0px;
+}
+
+.rating-accordion {
+    padding-top: 0px;
 }

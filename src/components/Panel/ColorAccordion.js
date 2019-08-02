@@ -9,7 +9,7 @@ export default class ColorAccordion extends Component {
         const { title } = this.props;
 
         return (
-            <Accordion defaultActiveKey="0">
+            <Accordion className="color-accordion" defaultActiveKey="0">
                 <Card>
                     <div className="card-header">
                         <Accordion.Toggle as={Card.Header} eventKey="0">

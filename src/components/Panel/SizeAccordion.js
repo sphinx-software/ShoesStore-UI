@@ -9,7 +9,7 @@ export default class SizeAccordion extends Component {
         const { title } = this.props;
 
         return(
-            <Accordion defaultActiveKey="0">
+            <Accordion className="size-accordion" defaultActiveKey="0">
                 <Card>
                     <div className="card-header">
                         <Accordion.Toggle as={Card.Header} eventKey="0">
