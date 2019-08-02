@@ -33,8 +33,8 @@ export default class PaymentMethod extends Component {
                             <div className="credit-4">
                                 <Label for="exampleEmail"><h4>Expiration Date</h4></Label>
                                 <div className="credit-4-1">
-                                    <Input type="email" name="email" id="exampleEmail" placeholder="MM" />
-                                    <Input type="email" name="email" id="exampleEmail" placeholder="YY" />
+                                    <Input type="email" placeholder="MM" />
+                                    <Input type="email" placeholder="YY" />
                                 </div>
                             </div>
                             <div className="credit-5">
@@ -48,7 +48,7 @@ export default class PaymentMethod extends Component {
                 </Card>
                 <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="1">
-                        <h4>  Pay with Paypal</h4>
+                        <h4><Icon icon="credit-card"/>  Pay with Paypal</h4>
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="1">
                         <FormGroup>

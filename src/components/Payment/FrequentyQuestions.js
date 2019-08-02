@@ -2,6 +2,7 @@ import React, { Component }         from 'react';
 import { Accordion, Card }          from "react-bootstrap";
 import {FormGroup, Label}           from "reactstrap";
 import { Icon }                     from '@blueprintjs/core';
+import '../../ui/payment/paymentmethod.css';
 
 export default class FrequentyQuestions extends Component {
 
@@ -20,7 +21,7 @@ export default class FrequentyQuestions extends Component {
         const { title, content } = this.props;
 
         return(
-            <div>
+            <div className="frequenty-questions">
                 <Accordion defaultActiveKey="0">
                     <Card>
                         <div className="card-header">

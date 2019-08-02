@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PaymentMethod        from "./PaymentMethod";
 import FrequentyQuestions   from "./FrequentyQuestions";
+import '../../ui/payment/paymentmethod.css';
 
 export default class Payment extends Component {
     render() {
@@ -12,7 +13,7 @@ export default class Payment extends Component {
                         <p>Select Payment method</p>
                     </div>
                 </div>
-                <div>
+                <div className="payment-method">
                     <div className="row">
                         <div className="col-md-6 md-margin-bottom-50">
                             <h2 className="title-type">Choose a payment method</h2>
@@ -40,8 +41,6 @@ export default class Payment extends Component {
                     </div>
                 </div>
             </div>
-
-
         )
     }
 }

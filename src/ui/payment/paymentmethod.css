@@ -25,3 +25,12 @@
 .credit-4-1 {
     display: flex
 }
+
+.payment-method {
+    padding-top: 10px
+}
+
+.frequenty-questions {
+    margin-top: 0px;
+    margin-bottom: -25px;
+}
