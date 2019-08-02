@@ -1,36 +1,46 @@
 .credit-1 {
     padding-top: 10px;
+    user-select: none;
 }
 
 .credit-2 {
     padding-top: 10px;
+    user-select: none;
 }
 
 .credit-3 {
     padding-top: 15px;
+    user-select: none;
 }
 
 .credit-4 {
     padding-top: 20px;
+    user-select: none;
 }
 
 .credit-5 {
     padding-top: 10px;
+    user-select: none;
 }
 
 .credit-3-1 {
-    padding-left: 10px ;
+    padding-left: 10px;
+    user-select: none;
 }
 
 .credit-4-1 {
-    display: flex
+    display: flex;
+    user-select: none;
 }
 
 .payment-method {
-    padding-top: 10px
+    padding-top: 10px;
+    user-select: none;
 }
 
 .frequenty-questions {
     margin-top: 0px;
     margin-bottom: -25px;
+    user-select: none;
 }
+
