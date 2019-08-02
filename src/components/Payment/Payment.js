@@ -40,6 +40,8 @@ export default class Payment extends Component {
                     </div>
                 </div>
             </div>
+
+
         )
     }
 }

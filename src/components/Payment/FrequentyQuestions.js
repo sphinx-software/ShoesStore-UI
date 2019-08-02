@@ -26,7 +26,7 @@ export default class FrequentyQuestions extends Component {
                         <div className="card-header">
                             <Accordion.Toggle onClick={ () => this.toggle() } as={Card.Header} eventKey="0">
                                 {
-                                    this.state.dropdown ? <h4><Icon icon="plus"/> {title}</h4> : <h4><Icon icon="minus"/> {title}</h4>
+                                    this.state.dropdown ? <h4><Icon icon="minus"/> {title}</h4> : <h4><Icon icon="plus"/> {title}</h4>
                                 }
                             </Accordion.Toggle>
                         </div>

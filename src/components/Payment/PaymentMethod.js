@@ -1,79 +1,62 @@
-import React, { Component } from 'react';
+import React, { Component }      from 'react';
+import {Accordion, Card}         from "react-bootstrap";
+import {FormGroup, Input, Label} from "reactstrap";
+import {Icon}                    from "@blueprintjs/core";
+import '../../ui/payment/paymentmethod.css';
 
 export default class PaymentMethod extends Component {
     render() {
         return(
-            <div>
-                <div className="panel-group" id="accordion">
-                    <div className="panel panel-default">
-                        <div className="panel-heading">
-                            <h4 className="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    <i className="fa fa-credit-card" />
-                                    Credit or Debit Card
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" className="panel-collapse collapse in">
-                            <div className="panel-body cus-form-horizontal">
-                                <div className="form-group">
-                                    <label className="col-sm-4 no-col-space control-label">Cardholder Name</label>
-                                    <div className="col-sm-8">
-                                        <input type="text" className="form-control required" name="cardholder" placeholder />
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <label className="col-sm-4 no-col-space control-label">Card Number</label>
-                                    <div className="col-sm-8">
-                                        <input type="text" className="form-control required" name="cardnumber" placeholder />
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <label className="col-sm-4 no-col-space control-label">Payment Types</label>
-                                    <div className="col-sm-8">
-                                        <ul className="list-inline payment-type">
-                                            <li><i className="fa fa-cc-paypal" /></li>
-                                            <li><i className="fa fa-cc-visa" /></li>
-                                            <li><i className="fa fa-cc-mastercard" /></li>
-                                            <li><i className="fa fa-cc-discover" /></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <label className="col-sm-4">Expiration Date</label>
-                                    <div className="col-sm-8 input-small-field">
-                                        <input type="text" name="mm" placeholder="MM" className="form-control required sm-margin-bottom-20" />
-                                        <span className="slash">/</span>
-                                        <input type="text" name="yy" placeholder="YY" className="form-control required" />
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <label className="col-sm-4 no-col-space control-label">CSC</label>
-                                    <div className="col-sm-8 input-small-field">
-                                        <input type="text" name="number" placeholder className="form-control required" />
-                                        <a href="#">What's this?</a>
-                                    </div>
+            <Accordion defaultActiveKey="0">
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="0">
+                        <h4><Icon icon="credit-card"/>  Credit or Debit Card</h4>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                        <FormGroup>
+                            <div className="credit-1">
+                                <Label for="exampleEmail"><h4>Cardholder Name</h4></Label>
+                                <Input type="email" />
+                            </div>
+                            <div className="credit-2">
+                                <Label for="exampleEmail"><h4>Card Number</h4></Label>
+                                <Input type="email" />
+                            </div>
+                            <div className="credit-3">
+                                <Label for="exampleEmail"><h4>Payment Types</h4></Label>
+                                <div className="credit-3-1">
+                                    <img src={require('../../img/card/paypal.gif')}/>
+                                    <img src={require('../../img/card/mastercard.gif')}/>
+                                    <img src={require('../../img/card/visa.gif')}/>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="panel panel-default">
-                        <div className="panel-heading">
-                            <h4 className="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                    <i className="fa fa-paypal" />
-                                    Pay with PayPal
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" className="panel-collapse collapse">
-                            <div className="content margin-left-10">
-                                <a href="#"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_150x38.png" alt="PayPal" /></a>
+                            <div className="credit-4">
+                                <Label for="exampleEmail"><h4>Expiration Date</h4></Label>
+                                <div className="credit-4-1">
+                                    <Input type="email" name="email" id="exampleEmail" placeholder="MM" />
+                                    <Input type="email" name="email" id="exampleEmail" placeholder="YY" />
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <div className="credit-5">
+                                <Label for="exampleEmail"><h4>CSCs</h4></Label>
+                                <Input type="email" />
+                                <br/>
+                                <a>What's this?</a>
+                            </div>
+                        </FormGroup>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="1">
+                        <h4>  Pay with Paypal</h4>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
+                        <FormGroup>
+                            <img src={require('../../img/card/PayPal.png')} style={{ height: 200, width: 300 }}/>
+                        </FormGroup>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
         );
     }
 }
