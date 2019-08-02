@@ -10,7 +10,7 @@ export default class ProductItem extends Component {
         return (
             <li className="item">
                 <div className="product-img">
-                    <a href="/products-detail"><img className="full-width img-responsive" src="assets/img/blog/09.jpg" alt /></a>
+                    <a href="/products-detail"><img className="full-width img-responsive" src={product.img}/></a>
                     <a className="product-review" href="/products-detail">Quick review</a>
                     <a className="add-to-cart" href="/checkout"><i className="fa fa-shopping-cart" />Add to cart</a>
                 </div>
@@ -48,6 +48,7 @@ ProductItem.defaultProps = {
         name: "name4",
         gender: "man",
         category: "cate4",
-        price: "300$"
+        price: "300$",
+        img: "assets/img/blog/41.jpg"
     }
 }

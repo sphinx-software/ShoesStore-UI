@@ -11,17 +11,21 @@ export default class HomePage extends Component {
     render() {
 
         const categories = [
-            { name: 'Men1', amount: '200' },
+            { name: 'Men1', amount: '200', img: "assets/img/blog/40.jpg" },
             { name: 'Men2', amount: '200' },
             { name: 'Men3', amount: '200' },
         ];
 
         const products = [
-            { name: "name1", gender: "man", category: "cate1", price: "300$" },
-            { name: "name2", gender: "man", category: "cate2", price: "300$" },
-            { name: "name3", gender: "man", category: "cate3", price: "300$" },
-            { name: "name4", gender: "man", category: "cate4", price: "300$" },
-            { name: "name5", gender: "man", category: "cate5", price: "300$" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/40.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/41.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/42.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/43.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/44.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/45.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/46.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/47.jpg" },
+            { name: "name1", gender: "man", category: "cate1", price: "300$", img: "assets/img/blog/48.jpg" },
         ];
 
         return (
