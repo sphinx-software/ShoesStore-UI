@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import CardDeck from "react-bootstrap/CardDeck";
 import Card from "react-bootstrap/Card";
 
 export default class ProductService extends Component {

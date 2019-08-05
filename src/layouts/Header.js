@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import IconCart from '../components/Icon/IconCart';
 import propTypes from "prop-types";
+import '../ui/header/header.css';
 
 export default class Header extends Component {
 
@@ -45,8 +46,8 @@ export default class Header extends Component {
                                 <span className="icon-bar" />
                                 <span className="icon-bar" />
                             </button>
-                            <a href="/" className="navbar-brand">
-                                <img id="logo-header" src="assets/img/logo.png" alt="Logo" />
+                            <a href="/" className="timkeo">
+                                <img id="logo-header" src="assets/img/timkeologo.png" style={{ height: 80}} alt="Logo" />
                             </a>
                         </div>
 
