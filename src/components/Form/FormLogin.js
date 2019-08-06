@@ -1,6 +1,6 @@
-import React, {Component}                                from 'react';
-import {FacebookLoginButton, TwitterLoginButton}         from "react-social-login-buttons";
-import {Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
+import React, {Component}                               from 'react';
+import { FacebookLoginButton, TwitterLoginButton }      from "react-social-login-buttons";
+import { Button, Form, FormGroup, Label, Input }        from 'reactstrap';
 import '../../ui/form/formlogin.css';
 
 export default class FormLogin extends Component {

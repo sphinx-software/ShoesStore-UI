@@ -25,7 +25,7 @@ export default class ShoppingCartTable extends Component {
         return(
             <tr key={ product.id }>
                 <td style={{ width: 100 }}>
-                    <img src={ product.image }/>
+                    <img src={ product.image } alt={'text'}/>
                 </td>
                 <td>
                     <h3>{ product.name }</h3>

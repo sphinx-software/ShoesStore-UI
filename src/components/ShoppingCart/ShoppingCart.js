@@ -1,5 +1,4 @@
 import React,       { Component } from 'react';
-import Quantity                   from '../Quantity/Quantity';
 import propTypes                  from 'prop-types';
 import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
 import {Table}                    from "reactstrap";
@@ -58,7 +57,6 @@ class ShoppingCart extends Component {
     };
 
     render() {
-        const { products } = this.state;
         const {production} = this.props;
         console.log(production);
         return (
@@ -83,7 +81,7 @@ class ShoppingCart extends Component {
                     </thead>
                     <tbody>
                         {
-                            production  .map((product) =>
+                            production.map((product) =>
                                 <ShoppingCartTable
                                     product={product}
                                     decrease={ () => this.decrease(product.id) }

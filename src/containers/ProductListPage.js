@@ -7,6 +7,7 @@ import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
 import propTypes            from "prop-types";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import '../ui/pagination/pagination.css';
+import Nav from "reactstrap/es/Nav";
 
 
 export default class ProductListPage extends Component {
@@ -38,10 +39,10 @@ export default class ProductListPage extends Component {
                                                         Popularity <span className="caret" />
                                                     </button>
                                                     <ul className="dropdown-menu" role="menu">
-                                                        <li><a href="#">All</a></li>
-                                                        <li><a href="#">Best Sales</a></li>
-                                                        <li><a href="#">Top Last Week Sales</a></li>
-                                                        <li><a href="#">New Arrived</a></li>
+                                                        <li><Nav href="#">All</Nav></li>
+                                                        <li><Nav href="#">Best Sales</Nav></li>
+                                                        <li><Nav href="#">Top Last Week Sales</Nav></li>
+                                                        <li><Nav href="#">New Arrived</Nav></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -52,10 +53,10 @@ export default class ProductListPage extends Component {
                                                         20 <span className="caret" />
                                                     </button>
                                                     <ul className="dropdown-menu" role="menu">
-                                                        <li><a href="#">All</a></li>
-                                                        <li><a href="#">10</a></li>
-                                                        <li><a href="#">5</a></li>
-                                                        <li><a href="#">3</a></li>
+                                                        <li><Nav href="#">All</Nav></li>
+                                                        <li><Nav href="#">10</Nav></li>
+                                                        <li><Nav href="#">5</Nav></li>
+                                                        <li><Nav href="#">3</Nav></li>
                                                     </ul>
                                                 </div>
                                             </li>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import IconCart from '../components/Icon/IconCart';
 import propTypes from "prop-types";
 import '../ui/header/header.css';
+import Nav from "reactstrap/es/Nav";
+import NavLink from "reactstrap/es/NavLink";
 
 export default class Header extends Component {
 
@@ -35,26 +37,27 @@ export default class Header extends Component {
         const { products } = this.props;
 
         return(
-            <div className="header-v5 header-static">
-                <div className="navbar navbar-default mega-menu" role="navigation">
-                    <div className="container">
-                        {/* Brand and toggle get grouped for better mobile display */}
-                        <div className="navbar-header">
-                            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                                <span className="sr-only">Toggle navigation</span>
-                                <span className="icon-bar" />
-                                <span className="icon-bar" />
-                                <span className="icon-bar" />
-                            </button>
-                            <a href="/" className="timkeo">
-                                <img id="logo-header" src="assets/img/timkeologo.png" style={{ height: 80}} alt="Logo" />
-                            </a>
-                        </div>
+            <Nav>
+                <div className="header-v5 header-static">
+                    <div className="navbar navbar-default mega-menu" role="navigation">
+                        <div className="container">
+                            {/* Brand and toggle get grouped for better mobile display */}
+                            <div className="navbar-header">
+                                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                    <span className="sr-only">Toggle navigation</span>
+                                    <span className="icon-bar" />
+                                    <span className="icon-bar" />
+                                    <span className="icon-bar" />
+                                </button>
+                                <NavLink href="/" className="timkeo">
+                                    <img id="logo-header" src="assets/img/timkeologo.png" style={{ height: 80}} alt="Logo" />
+                                </NavLink>
+                            </div>
 
 
-                        {/* Icon Cart */}
+                            {/* Icon Cart */}
                             <div className="shop-badge badge-icons pull-right">
-                                <a href="#"><i className="fa fa-shopping-cart" /></a>
+                                <NavLink href="#"><i className="fa fa-shopping-cart" /></NavLink>
                                 <span className="badge badge-sea rounded-x">3</span>
                                 <div className="badge-open">
                                     <ul className="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
@@ -87,45 +90,46 @@ export default class Header extends Component {
                                     </div>
                                 </div>
                             </div>
-                        {/* End Icon Cart */}
+                            {/* End Icon Cart */}
 
 
-                        {/* Collect the nav links, forms, and other content for toggling */}
-                        <div className="collapse navbar-collapse navbar-responsive-collapse">
-                            {/* Nav Menu */}
-                            <ul className="nav navbar-nav">
-                                {/* Pages */}
-                                <li className="dropdown">
-                                    <a href="javascript:void(0);" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                        Product
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li><Link to="/products">Product List</Link></li>
-                                        <li><Link to="/checkout">Checkout</Link></li>
-                                    </ul>
-                                </li>
-                                {/* End Pages */}
-                                {/* Promotion */}
-                                <li className="dropdown">
-                                    <a href="javascript:void(0);" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                        Promotion
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li className="dropdown">
-                                            <a href="javascript:void(0);">FreeShip</a>
-                                        </li>
-                                        <li className="dropdown">
-                                            <a href="javascript:void(0);">20%</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                {/* End Promotion */}
-                            </ul>
-                            {/* End Nav Menu */}
+                            {/* Collect the nav links, forms, and other content for toggling */}
+                            <div className="collapse navbar-collapse navbar-responsive-collapse">
+                                {/* Nav Menu */}
+                                <ul className="nav navbar-nav">
+                                    {/* Pages */}
+                                    <li className="dropdown">
+                                        <NavLink href="javascript:void(0);" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                            Product
+                                        </NavLink>
+                                        <ul className="dropdown-menu">
+                                            <li><Link to="/products">Product List</Link></li>
+                                            <li><Link to="/checkout">Checkout</Link></li>
+                                        </ul>
+                                    </li>
+                                    {/* End Pages */}
+                                    {/* Promotion */}
+                                    <li className="dropdown">
+                                        <NavLink href="javascript:void(0);" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                            Promotion
+                                        </NavLink>
+                                        <ul className="dropdown-menu">
+                                            <li className="dropdown">
+                                                <NavLink href="javascript:void(0);">FreeShip</NavLink>
+                                            </li>
+                                            <li className="dropdown">
+                                                <NavLink href="javascript:void(0);">20%</NavLink>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    {/* End Promotion */}
+                                </ul>
+                                {/* End Nav Menu */}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Nav>
         );
     }
 }

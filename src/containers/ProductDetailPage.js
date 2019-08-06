@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import ProductService from '../components/ProductService/ProductService';
 import Quantity from "../components/Quantity/Quantity";
 import propTypes from "prop-types";
 import BreadCrumbs from "../components/BreadCrumbs/BreadCrumbs";
 
 import Product from "../components/Product";
+import Nav from "reactstrap/es/Nav";
+import NavLink from "reactstrap/es/NavLink";
 
 const products = [
     {
@@ -93,7 +95,7 @@ export default class ProductListPage extends Component {
         const {quantity} = this.state;
 
         return (
-
+            <Nav>
                 <div className="wrapper">
                     {/*=== Shop Product ===*/}
                     <div className="shop-product">
@@ -124,7 +126,7 @@ export default class ProductListPage extends Component {
                                         <li><i className="rating fa fa-star"/></li>
                                         <li><i className="rating fa fa-star"/></li>
                                         <li className="product-review-list">
-                                            <span>(1) <a href="#">Review</a> | <a href="#"> Add Review</a></span>
+                                            <span>(1) <NavLink href="#">Review</NavLink> | <NavLink href="#"> Add Review</NavLink></span>
                                         </li>
                                     </ul>
                                     {/*/end shop product ratings*/}
@@ -190,15 +192,16 @@ export default class ProductListPage extends Component {
                                     <ul className="list-inline add-to-wishlist add-to-wishlist-brd">
                                         <li className="wishlist-in">
                                             <i className="fa fa-heart"/>
-                                            <a href="#">Add to Wishlist</a>
+                                            <NavLink href="#">Add to Wishlist</NavLink>
                                         </li>
                                         <li className="compare-in">
                                             <i className="fa fa-exchange"/>
-                                            <a href="#">Add to Compare</a>
+                                            <NavLink href="#">Add to Compare</NavLink>
                                         </li>
                                     </ul>
-                                    <p className="wishlist-category"><strong>Categories:</strong> <a
-                                        href="#">Clothing,</a> <a href="#">Shoes</a></p>
+                                    <p className="wishlist-category"><strong>Categories:</strong>
+                                        <NavLink href="#">Clothing,</NavLink>
+                                        <NavLink href="#">Shoes</NavLink></p>
                                 </div>
                             </div>
                             {/*/end row*/}
@@ -212,9 +215,12 @@ export default class ProductListPage extends Component {
                         {/*=== End Product Service ===*/}
                         <div className="tab-v6">
                             <ul className="nav nav-tabs" role="tablist">
-                                <li className="active"><a href="#description" role="tab"
-                                                          data-toggle="tab">Description</a></li>
-                                <li><a href="#reviews" role="tab" data-toggle="tab">Reviews (1)</a></li>
+                                <li className="active">
+                                    <NavLink href="#description" role="tab" data-toggle="tab">Description</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink href="#reviews" role="tab" data-toggle="tab">Reviews (1)</NavLink>
+                                </li>
                             </ul>
                             <div className="tab-content">
                                 {/* Description */}
@@ -279,13 +285,15 @@ export default class ProductListPage extends Component {
                                     <div className="product-comment margin-bottom-40">
                                         <div className="product-comment-in">
                                             <img className="product-comment-img rounded-x" src="/assets/img/team/01.jpg"
-                                                 alt/>
+                                                 alt={'product-comment-img'}/>
                                             <div className="product-comment-dtl">
                                                 <h4>Mickel <small>22 days ago</small></h4>
                                                 <p>I like the green colour, it's very likeable and reminds me of
                                                     Hollister. A little loose though but I am very skinny</p>
                                                 <ul className="list-inline product-ratings">
-                                                    <li className="reply"><a href="#">Reply</a></li>
+                                                    <li className="reply">
+                                                        <NavLink href="#">Reply</NavLink>
+                                                    </li>
                                                     <li className="pull-right">
                                                         <ul className="list-inline">
                                                             <li><i className="rating-selected fa fa-star"/></li>
@@ -355,8 +363,8 @@ export default class ProductListPage extends Component {
                         </div>
                         <div className="illustration-v2 margin-bottom-60">
                             <div className="customNavigation margin-bottom-25">
-                                <a className="owl-btn prev rounded-x"><i className="fa fa-angle-left"/></a>
-                                <a className="owl-btn next rounded-x"><i className="fa fa-angle-right"/></a>
+                                <NavLink className="owl-btn prev rounded-x"><i className="fa fa-angle-left"/></NavLink>
+                                <NavLink className="owl-btn next rounded-x"><i className="fa fa-angle-right"/></NavLink>
                             </div>
                             <ul className="list-inline owl-slider-v4">
                                 {/*{*/}
@@ -369,6 +377,7 @@ export default class ProductListPage extends Component {
                     </div>
                     {/*=== End Illustration v2 ===*/}
                 </div>
+            </Nav>
         );
     }
 }

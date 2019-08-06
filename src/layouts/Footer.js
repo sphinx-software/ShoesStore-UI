@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Nav from "reactstrap/es/Nav";
+import NavLink from "reactstrap/es/NavLink";
 
 export default class Footer extends Component {
     render() {
         return (
-            <div className="footer-v4">
+            <Nav>
+                <div className="footer-v4">
                 <div className="shop-subscribe">
                     <div className="container">
                         <div className="row">
@@ -26,7 +29,7 @@ export default class Footer extends Component {
                         <div className="row">
                             {/* About */}
                             <div className="col-md-4 md-margin-bottom-40">
-                                <a href="index.html"><img className="footer-logo" src="assets/img/logo-2.png" alt /></a>
+                                <Nav href="index.html"><img className="footer-logo" src="assets/img/logo-2.png" alt={'footer-logo'} /></Nav>
                                 <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
                                 <br />
                                 <ul className="list-unstyled address-list margin-bottom-20">
@@ -36,10 +39,10 @@ export default class Footer extends Component {
                                     <li><i className="fa fa-angle-right" />Email: info@anybiz.co</li>
                                 </ul>
                                 <ul className="list-inline shop-social">
-                                    <li><a href="#"><i className="fb rounded-md fa fa-facebook" /></a></li>
-                                    <li><a href="#"><i className="tw rounded-md fa fa-twitter" /></a></li>
-                                    <li><a href="#"><i className="gp rounded-md fa fa-google-plus" /></a></li>
-                                    <li><a href="#"><i className="yt rounded-md fa fa-youtube" /></a></li>
+                                    <li><NavLink href="#"><i className="fb rounded-md fa fa-facebook" /></NavLink></li>
+                                    <li><NavLink href="#"><i className="tw rounded-md fa fa-twitter" /></NavLink></li>
+                                    <li><NavLink href="#"><i className="gp rounded-md fa fa-google-plus" /></NavLink></li>
+                                    <li><NavLink href="#"><i className="yt rounded-md fa fa-youtube" /></NavLink></li>
                                 </ul>
                             </div>
                             {/* End About */}
@@ -49,20 +52,16 @@ export default class Footer extends Component {
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Secciones</h2>
                                         <ul className="list-unstyled simple-list margin-bottom-20">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
-                                            <li><a href="#">Documentos </a></li>
-                                            <li><a href="#">Francisco papa</a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Temas</h2>
                                         <ul className="list-unstyled simple-list">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
-                                            <li><a href="#">Documentos </a></li>
-                                            <li><a href="#">Francisco papa</a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
@@ -73,19 +72,16 @@ export default class Footer extends Component {
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Utilidades</h2>
                                         <ul className="list-unstyled simple-list margin-bottom-20">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
-                                            <li><a href="#">Documentos </a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Documentos</h2>
                                         <ul className="list-unstyled simple-list">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
-                                            <li><a href="#">Documentos </a></li>
-                                            <li><a href="#">Francisco papa</a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
@@ -96,20 +92,16 @@ export default class Footer extends Component {
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Publicidad</h2>
                                         <ul className="list-unstyled simple-list margin-bottom-20">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
-                                            <li><a href="#">Documentos </a></li>
-                                            <li><a href="#">Francisco papa</a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Contacto</h2>
                                         <ul className="list-unstyled simple-list">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
-                                            <li><a href="#">Documentos </a></li>
-                                            <li><a href="#">Francisco papa</a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
@@ -120,16 +112,16 @@ export default class Footer extends Component {
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Utilidades</h2>
                                         <ul className="list-unstyled simple-list margin-bottom-20">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
                                     <div className="col-sm-12 col-xs-6">
                                         <h2 className="thumb-headline">Documentos</h2>
                                         <ul className="list-unstyled simple-list">
-                                            <li><a href="#">Ultima Hora</a></li>
-                                            <li><a href="#">Exclusiva</a></li>
+                                            <li><NavLink href="#">Ultima Hora</NavLink></li>
+                                            <li><NavLink href="#">Exclusiva</NavLink></li>
                                             <li>...</li>
                                         </ul>
                                     </div>
@@ -142,24 +134,22 @@ export default class Footer extends Component {
                 <div className="copyright">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-6">
-                                <p>
-                                    2014 © Unify. ALL Rights Reserved.
-                                    <a target="_blank" href="https://twitter.com/htmlstream">Htmlstream</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-                                </p>
-                            </div>
-                            <div className="col-md-6">
-                                <ul className="list-inline sponsors-icons pull-right">
-                                    <li><i className="fa fa-cc-paypal" /></li>
-                                    <li><i className="fa fa-cc-visa" /></li>
-                                    <li><i className="fa fa-cc-mastercard" /></li>
-                                    <li><i className="fa fa-cc-discover" /></li>
-                                </ul>
+                            <div className="col-md-12">
+                                <center>
+                                    <h4>
+                                        2019 © TimKeoVN. ALL Rights Reserved.
+                                        <br/>
+                                        <NavLink target="_blank" href="https://timkeo.vn">TimKeoVN</NavLink> |
+                                        <NavLink href="https://bitly.vn/8da0">Our Page</NavLink> |
+                                        <NavLink href="https://bitly.vn/8da5">Nhà Đầu Tư Kim Cương</NavLink>
+                                    </h4>
+                                </center>
                             </div>
                         </div>
                     </div>
                 </div>{/*/copyright*/}
             </div>
+            </Nav>
         );
     }
 }

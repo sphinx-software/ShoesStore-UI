@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import propTypes            from 'prop-types';
+import Nav from "reactstrap/es/Nav";
 
 export default class CategoryItem extends Component {
     render() {
@@ -7,7 +8,7 @@ export default class CategoryItem extends Component {
         return (
             <div className="col-md-4 md-margin-bottom-30">
                 <div className="overflow-h">
-                    <a className="illustration-v3 illustration-img1" href="#">
+                    <Nav className="illustration-v3 illustration-img1" href="#">
                       <span className="illustration-bg">
                         <span className="illustration-ads">
                           <span className="illustration-v3-category">
@@ -16,7 +17,7 @@ export default class CategoryItem extends Component {
                           </span>
                         </span>
                       </span>
-                    </a>
+                    </Nav>
                 </div>
             </div>
         );

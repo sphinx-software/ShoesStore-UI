@@ -3,5 +3,5 @@ import Cart                 from "./Cart";
 
 export default combineReducers({
     Cart,
-})
+});
 
