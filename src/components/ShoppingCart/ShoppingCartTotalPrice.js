@@ -8,7 +8,6 @@ export default class ShoppingCartTotalPrice extends Component {
         this.props.getTotalPrice();
     };
 
-
     render() {
         return(
             <div className="content-father">

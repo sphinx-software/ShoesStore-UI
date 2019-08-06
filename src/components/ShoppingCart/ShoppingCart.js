@@ -5,8 +5,9 @@ import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
 import {Table}                    from "reactstrap";
 import ShoppingCartTable from "./ShoppingCartTable";
 import ShoppingCartTotalPrice from "./ShoppingCartTotalPrice";
+import {connect} from "react-redux";
 
-export default class ShoppingCart extends Component {
+class ShoppingCart extends Component {
 
     state = {
         quantity: 1,
@@ -58,7 +59,8 @@ export default class ShoppingCart extends Component {
 
     render() {
         const { products } = this.state;
-
+        const {production} = this.props;
+        console.log(production);
         return (
             <div>
                 <BreadCrumbs page="Checkout"/>
@@ -81,7 +83,7 @@ export default class ShoppingCart extends Component {
                     </thead>
                     <tbody>
                         {
-                            products.map((product) =>
+                            production  .map((product) =>
                                 <ShoppingCartTable
                                     product={product}
                                     decrease={ () => this.decrease(product.id) }
@@ -94,7 +96,7 @@ export default class ShoppingCart extends Component {
                 </Table>
                 <hr/>
                 <ShoppingCartTotalPrice
-                    getTotalPrice={ () => this.getTotalPrice(products) }
+                    getTotalPrice={ () => this.getTotalPrice(production) }
                 />
             </div>
         );
@@ -113,3 +115,21 @@ ShoppingCart.defaultProps = {
         { id: 4, image: 'assets/img/thumb/08.jpg', name: 'asdasd', description: 'ohyeah', price: 1000, quantity: 1 },
     ]
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        production: state.Cart
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ShoppingCart);

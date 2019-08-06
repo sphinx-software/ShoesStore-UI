@@ -8,32 +8,8 @@ import propTypes            from "prop-types";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import '../ui/pagination/pagination.css';
 
+
 export default class ProductListPage extends Component {
-
-    state = {
-        cartItems: []
-    };
-
-    componentWillMount() {
-        this.setState({
-            products: this.props.products
-        })
-    }
-
-    addToCart(product) {
-        this.setState({
-            cartItems: this.state.cartItems.concat(product)
-        })
-    }
-
-    viewDetail() {
-        let products      = [...this.state.products];
-        const id          = this.props.match.id;
-        const viewCarts   = products.find(product => product.id === id)
-        this.setState({
-            products: viewCarts
-        })
-    }
 
     render() {
 
@@ -92,11 +68,7 @@ export default class ProductListPage extends Component {
                                             products.map((product) => {
                                                 return(
                                                     <div>
-                                                        <Item
-                                                            product={product}
-                                                            addToCart={ () => this.addToCart(product) }
-                                                            viewDetail={ () => this.viewDetail(product) }
-                                                        />
+                                                        <Item product={product}/>
                                                     </div>
                                                 )
                                             })

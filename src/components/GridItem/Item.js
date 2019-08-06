@@ -2,14 +2,20 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import '../../ui/item/item.css';
 
-export default class Item extends Component {
 
-    addToCart() {
-        this.props.addToCart();
-    }
+import { addToCart }    from  '../../actions/actions';
+import { connect }      from  'react-redux';
+
+
+class Item extends Component {
 
     viewDetail() {
-        this.props.viewDetail();
+        let products      = [...this.state.products];
+        const id          = this.props.match.id;
+        const viewCarts   = products.find(product => product.id === id)
+        this.setState({
+            products: viewCarts
+        })
     }
 
     render() {
@@ -32,7 +38,7 @@ export default class Item extends Component {
                         </div>
                         <div>
                             <Button onClick={ () => this.viewDetail() } className="quick-review"><a href={`/products/${product.id}`}>Quick review</a></Button>{' '}
-                            <Button onClick={ () => this.addToCart() } className="add-cart"><a>Add to cart</a></Button>{' '}
+                            <Button onClick={ () => this.props.addToCart(product) } className="add-cart"><a>Add to cart</a></Button>{' '}
                         </div>
                     </CardBody>
                 </Card>
@@ -41,3 +47,18 @@ export default class Item extends Component {
     }
 }
 
+
+const mapStateToProps = (state) => {
+    return {}
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (product) => dispatch(addToCart(product))
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Item);
