@@ -122,18 +122,18 @@ ProductListPage.propTypes = {
 
 ProductListPage.defaultProps = {
     products: [
-        { id: 1,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 2,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 3,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 4,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 5,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 6,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 7,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 8,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 9,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 10, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 11, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
-        { id: 12, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$' },
+        { id: 1,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 2,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 3,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 4,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 5,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 6,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 7,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 8,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 9,  image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 10, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 11, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 12, image: 'assets/img/blog/31.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
     ]
 }
 

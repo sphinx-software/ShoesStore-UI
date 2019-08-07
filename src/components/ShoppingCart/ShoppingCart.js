@@ -1,10 +1,11 @@
-import React,       { Component } from 'react';
-import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
-import Quantity from "../Quantity/Quantity";
-
+import React,       { Component }                 from 'react';
+import BreadCrumbs                                from "../BreadCrumbs/BreadCrumbs";
+import Quantity                                   from "../Quantity/Quantity";
 import { Button, FormGroup, Input, Label, Table } from "reactstrap";
-import { connect }                                from "react-redux";
 import '../../ui/shoppingcart/shoppingcarttotalprice.css';
+
+import { connect }                                from "react-redux";
+import { remove }                                 from "../../actions/actions";
 
 
 class ShoppingCart extends Component {
@@ -49,15 +50,6 @@ class ShoppingCart extends Component {
         return totalPrice;
     }
 
-    remove(product) {
-        let products       = [...this.state.products];
-        const newProducts  = products.filter(item => item.id !== product.id);
-        this.setState({
-            products: newProducts
-        })
-        console.log(newProducts);
-    };
-
     render() {
 
         const { products } = this.props;
@@ -94,7 +86,7 @@ class ShoppingCart extends Component {
                                         <h3>{ product.name }</h3>
                                         <p>{ product.description }</p>
                                     </td>
-                                    <td>{ product.price } $</td>
+                                    <td>{ product.price } </td>
                                     <td>
                                         <Quantity decrease={ () => this.decrease(product.id) }
                                                   increase={ () => this.increase(product.id) }
@@ -102,7 +94,7 @@ class ShoppingCart extends Component {
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
                                     <td>
-                                        <button onClick={ () => this.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                        <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                                     </td>
                                 </tr>
                             )
@@ -154,7 +146,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        remove: (product) => dispatch(remove(product))
     }
 };
 

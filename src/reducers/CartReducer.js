@@ -1,4 +1,4 @@
-const Cart = (state = [], action) => {
+const CartReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
             return [
@@ -7,9 +7,14 @@ const Cart = (state = [], action) => {
                     ...action.product
                 }
             ]
+        case 'REMOVE_ITEM':
+            return [
+                ...state,
+                state.filter((e, i) => i != action.product)
+            ]
         default:
             return state
     }
 }
 
-export default Cart;
+export default CartReducer;
