@@ -1,10 +1,11 @@
 import React,       { Component } from 'react';
 import propTypes                  from 'prop-types';
 import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
-import {Table}                    from "reactstrap";
-import ShoppingCartTable from "./ShoppingCartTable";
-import ShoppingCartTotalPrice from "./ShoppingCartTotalPrice";
+import Quantity from "../Quantity/Quantity";
+
+import {Button, FormGroup, Input, Label, Table} from "reactstrap";
 import {connect} from "react-redux";
+import '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
 class ShoppingCart extends Component {
 
@@ -20,7 +21,7 @@ class ShoppingCart extends Component {
     }
 
     decrease(id) {
-        let products = [...this.state.products];
+        let products = [...this.props.products];
         const newProducts = products.map(product =>
             (product.id === id)
                 ? {...product, quantity: product.quantity > 1 ? --product.quantity : 1}
@@ -32,7 +33,7 @@ class ShoppingCart extends Component {
     };
 
     increase(id) {
-        let products = [...this.state.products];
+        let products = [...this.props.products];
         const newProducts = products.map(product =>
             (product.id === id)
                 ? {...product, quantity: ++product.quantity}
@@ -50,15 +51,18 @@ class ShoppingCart extends Component {
 
     remove(product) {
         let products       = [...this.state.products];
-        const newProducts  = products.filter(item => item.id !== product.id)
+        const newProducts  = products.filter(item => item.id !== product.id);
         this.setState({
             products: newProducts
         })
+        console.log(newProducts);
     };
 
     render() {
-        const {production} = this.props;
-        console.log(production);
+        const { products } = this.props;
+
+        // const { production } = this.props;
+        // console.log(production);
         return (
             <div>
                 <BreadCrumbs page="Checkout"/>
@@ -80,22 +84,63 @@ class ShoppingCart extends Component {
                     </tr>
                     </thead>
                     <tbody>
+                    {/* ShoppingCartTable */}
                         {
-                            production.map((product) =>
-                                <ShoppingCartTable
-                                    product={product}
-                                    decrease={ () => this.decrease(product.id) }
-                                    increase={ () => this.increase(product.id) }
-                                    remove={ () => this.remove(product)  }
-                                />
+                            products.map((product) =>
+                                <tr key={ product.id }>
+                                    <td style={{ width: 100 }}>
+                                        <img src={ product.image } alt={'text'}/>
+                                    </td>
+                                    <td>
+                                        <h3>{ product.name }</h3>
+                                        <p>{ product.description }</p>
+                                    </td>
+                                    <td>{ product.price } $</td>
+                                    <td>
+                                        <Quantity decrease={ () => this.decrease(product.id) }
+                                                  increase={ () => this.increase(product.id) }
+                                                  value={ product.quantity }/>
+                                    </td>
+                                    <td>{ product.price * product.quantity } $</td>
+                                    <td>
+                                        <button onClick={ () => this.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                    </td>
+                                </tr>
                             )
                         }
+                    {/* End ShoppingCartTable */}
                     </tbody>
                 </Table>
                 <hr/>
-                <ShoppingCartTotalPrice
-                    getTotalPrice={ () => this.getTotalPrice(production) }
-                />
+                {/* ShoppingCartTotalPrice */}
+                    <div className="content-father">
+                    <div className="form-fa">
+                        <FormGroup>
+                            <Label><h3>Discount Code</h3></Label>
+                        </FormGroup>
+                        <FormGroup className="content-child">
+                            <Input style={{ height: 40, width: 200 }} placeholder="Enter your coupon code" />
+                            <Button color="success">Apply Coupon</Button>{' '}
+                        </FormGroup>
+                    </div>
+                    <Table className="table" style={{ width: 200 }}>
+                        <tbody>
+                        <tr>
+                            <th><h3>Subtotal:</h3></th>
+                            <td><h3>{ (products) => this.getTotalPrice(products) }$</h3></td>
+                        </tr>
+                        <tr>
+                            <th><h3>Shipping:</h3></th>
+                            <td><h3>----</h3></td>
+                        </tr>
+                        <tr>
+                            <th><h3>Total:</h3></th>
+                            <td><h3>{ (products) => this.getTotalPrice(products) }$</h3></td>
+                        </tr>
+                        </tbody>
+                    </Table>
+                </div>
+                {/* End ShoppingCartTotalPrice */}
             </div>
         );
     }
