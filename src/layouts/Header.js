@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import IconCart from '../components/Icon/IconCart';
-import propTypes from "prop-types";
-import '../ui/header/header.css';
-import Nav from "reactstrap/es/Nav";
-import NavLink from "reactstrap/es/NavLink";
+import React, { Component }     from 'react';
+import        { Link }          from "react-router-dom";
+import IconCart                 from '../components/Icon/IconCart';
+import Nav                      from "reactstrap/es/Nav";
+import NavLink                  from "reactstrap/es/NavLink";
 
-export default class Header extends Component {
+import { connect }              from "react-redux";
+import '../ui/header/header.css';
+
+
+class Header extends Component {
 
     state = {
         quantity: 1
@@ -135,32 +137,19 @@ export default class Header extends Component {
 }
 
 
-Header.propTypes = {
-    products: propTypes.object
+const mapStateToProps = (state) => {
+    return {
+        products: state.Cart
+    }
 };
 
-Header.defaultProps = {
-    products: [
-        {
-            id: 1,
-            name: 'quan',
-            price: 100,
-            image: "assets/img/thumb/05.jpg",
-            quantity: 1,
-        },
-        {
-            id: 2,
-            name: 'ao',
-            price: 200,
-            image: "assets/img/thumb/05.jpg",
-            quantity: 1,
-        },
-        {
-            id: 3,
-            name: 'giay',
-            price: 300,
-            image: "assets/img/thumb/05.jpg",
-            quantity: 1,
-        }
-    ]
-}
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Header);

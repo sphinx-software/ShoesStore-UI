@@ -1,11 +1,11 @@
 import React,       { Component } from 'react';
-import propTypes                  from 'prop-types';
 import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
 import Quantity from "../Quantity/Quantity";
 
-import {Button, FormGroup, Input, Label, Table} from "reactstrap";
-import {connect} from "react-redux";
+import { Button, FormGroup, Input, Label, Table } from "reactstrap";
+import { connect }                                from "react-redux";
 import '../../ui/shoppingcart/shoppingcarttotalprice.css';
+
 
 class ShoppingCart extends Component {
 
@@ -59,10 +59,9 @@ class ShoppingCart extends Component {
     };
 
     render() {
+
         const { products } = this.props;
 
-        // const { production } = this.props;
-        // console.log(production);
         return (
             <div>
                 <BreadCrumbs page="Checkout"/>
@@ -89,7 +88,7 @@ class ShoppingCart extends Component {
                             products.map((product) =>
                                 <tr key={ product.id }>
                                     <td style={{ width: 100 }}>
-                                        <img src={ product.image } alt={'text'}/>
+                                        <img src={ product.image } style={{ width: 300 }} alt={'text'}/>
                                     </td>
                                     <td>
                                         <h3>{ product.name }</h3>
@@ -146,23 +145,10 @@ class ShoppingCart extends Component {
     }
 }
 
-ShoppingCart.propTypes = {
-    products: propTypes.object
-};
-
-ShoppingCart.defaultProps = {
-    products: [
-        { id: 1, image: 'assets/img/thumb/08.jpg', name: 'balo',   description: 'ohyeah', price: 1000, quantity: 1 },
-        { id: 2, image: 'assets/img/thumb/08.jpg', name: 'ao',     description: 'ohyeah', price: 1000, quantity: 1 },
-        { id: 3, image: 'assets/img/thumb/08.jpg', name: 'quan',   description: 'ohyeah', price: 1000, quantity: 1 },
-        { id: 4, image: 'assets/img/thumb/08.jpg', name: 'asdasd', description: 'ohyeah', price: 1000, quantity: 1 },
-    ]
-}
-
 
 const mapStateToProps = (state) => {
     return {
-        production: state.Cart
+        products: state.Cart
     }
 };
 
