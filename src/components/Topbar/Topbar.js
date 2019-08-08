@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
-import { Link } from "react-router-dom";
+import { Link }             from "react-router-dom";
+
 
 export default class Topbar extends Component {
+
     render() {
-        return(
+
+        return (
             <div className="topbar-v3">
                 <div className="search-open">
                     <div className="container">
