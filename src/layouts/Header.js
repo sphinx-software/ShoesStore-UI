@@ -64,9 +64,6 @@ class Header extends Component {
                                         </div>
                                         <div className="row">
                                             <div className="col-xs-6">
-                                                <Link to="/checkout" className="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</Link>
-                                            </div>
-                                            <div className="col-xs-6">
                                                 <Link to="/checkout" className="btn-u btn-u-sea-shop btn-block">Checkout</Link>
                                             </div>
                                         </div>
