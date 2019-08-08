@@ -2,24 +2,17 @@ import React,       { Component }                 from 'react';
 import BreadCrumbs                                from "../BreadCrumbs/BreadCrumbs";
 import Quantity                                   from "../Quantity/Quantity";
 import { Button, FormGroup, Input, Label, Table } from "reactstrap";
-import '../../ui/shoppingcart/shoppingcarttotalprice.css';
+
 
 import { connect }                                from "react-redux";
 import { remove }                                 from "../../actions/actions";
+import { getTotalPrice }                          from "../../actions/actions";
+
+
+import '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
 
 class ShoppingCart extends Component {
-
-    state = {
-        quantity: 1,
-        totalQuantity: 1,
-    };
-
-    componentWillMount() {
-        this.setState({
-            products: this.props.products
-        })
-    }
 
     decrease(id) {
         let products = [...this.props.products];
@@ -45,10 +38,6 @@ class ShoppingCart extends Component {
         })
     };
 
-    getTotalPrice(products) {
-        const totalPrice = products.reduce((total, product) => total + (product.price * product.quantity), 0);
-        return totalPrice;
-    }
 
     render() {
 
@@ -118,7 +107,7 @@ class ShoppingCart extends Component {
                         <tbody>
                         <tr>
                             <th><h3>Subtotal:</h3></th>
-                            <td><h3>{ (products) => this.getTotalPrice(products) }$</h3></td>
+                            <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
                         </tr>
                         <tr>
                             <th><h3>Shipping:</h3></th>
@@ -126,7 +115,7 @@ class ShoppingCart extends Component {
                         </tr>
                         <tr>
                             <th><h3>Total:</h3></th>
-                            <td><h3>{ (products) => this.getTotalPrice(products) }$</h3></td>
+                            <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
                         </tr>
                         </tbody>
                     </Table>
@@ -140,7 +129,8 @@ class ShoppingCart extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.Cart
+        products        : state.Cart,
+        getTotalPrice   : getTotalPrice(state.Cart)
     }
 };
 

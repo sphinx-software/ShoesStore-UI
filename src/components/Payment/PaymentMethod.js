@@ -2,9 +2,12 @@ import React, { Component }      from 'react';
 import {Accordion, Card}         from "react-bootstrap";
 import {FormGroup, Input, Label} from "reactstrap";
 import {Icon}                    from "@blueprintjs/core";
+
+import Nav                       from "reactstrap/es/Nav";
+import NavLink                   from "reactstrap/es/NavLink";
+
 import '../../ui/payment/paymentmethod.css';
-import Nav from "reactstrap/es/Nav";
-import NavLink from "reactstrap/es/NavLink";
+
 
 export default class PaymentMethod extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import propTypes            from 'prop-types';
-import Nav from "reactstrap/es/Nav";
+import Nav                  from "reactstrap/es/Nav";
 
 export default class CategoryItem extends Component {
     render() {

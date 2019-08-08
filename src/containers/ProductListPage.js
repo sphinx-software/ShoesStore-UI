@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter }    from "react-router-dom";
-import HeadBanner           from '../components/Banner/HeadBanner';
-import Panel                from "../components/Panel/Panel";
-import Item                 from '../components/GridItem/Item';
-import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
-import propTypes            from "prop-types";
+import React, { Component }                           from 'react';
+import { BrowserRouter }                              from "react-router-dom";
+import HeadBanner                                     from '../components/Banner/HeadBanner';
+import Panel                                          from "../components/Panel/Panel";
+import Item                                           from '../components/GridItem/Item';
+import BreadCrumbs                                    from "../components/BreadCrumbs/BreadCrumbs";
+import propTypes                                      from "prop-types";
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import Nav                                            from "reactstrap/es/Nav";
 import '../ui/pagination/pagination.css';
-import Nav from "reactstrap/es/Nav";
 
 
 export default class ProductListPage extends Component {

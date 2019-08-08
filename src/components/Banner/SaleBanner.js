@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Nav from "reactstrap/es/Nav";
-import NavLink from "reactstrap/es/NavLink";
+import Nav                  from "reactstrap/es/Nav";
+import NavLink              from "reactstrap/es/NavLink";
 
 export default class SaleBanner extends Component {
     render() {

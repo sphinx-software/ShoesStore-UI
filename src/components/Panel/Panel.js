@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AccordionList             from "./AccordionList";
+import AccordionList        from "./AccordionList";
 
 export default class Panel extends Component {
     render() {

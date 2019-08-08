@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
-import NavLink from "reactstrap/es/NavLink";
+import propTypes            from 'prop-types';
+import NavLink              from "reactstrap/es/NavLink";
 
 export default class ThumbProduct extends Component {
     render() {

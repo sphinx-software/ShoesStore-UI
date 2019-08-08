@@ -10,7 +10,7 @@ const CartReducer = (state = [], action) => {
         case 'REMOVE_ITEM':
             return [
                 ...state,
-                state.filter((e, i) => i != action.product)
+                state.filter((e, i) => i !== action.product)
             ]
         case 'GET_TOTAL_PRICE':
             return [

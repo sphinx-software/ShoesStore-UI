@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {Accordion, Card} from "react-bootstrap";
-import {FormGroup, Input, Label} from "reactstrap";
+import React, { Component }         from 'react';
+import {Accordion, Card}            from "react-bootstrap";
+import {FormGroup, Input, Label}    from "reactstrap";
 import '../../ui/accordion/accordion.css';
 
 export default class SizeAccordion extends Component {
