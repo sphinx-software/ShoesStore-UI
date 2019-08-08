@@ -14,5 +14,17 @@ export const getTotalPrice = products => ({
     products
 });
 
+export const increaseQuantity = quantity => ({
+    type: 'INCREASE_QUANTITY',
+    quantity
+});
+
+export const decreaseQuantity = quantity => ({
+    type: 'DECREASE_QUANTITY',
+    quantity
+});
+
+
+
 
 

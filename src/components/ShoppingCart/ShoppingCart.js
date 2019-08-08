@@ -5,6 +5,8 @@ import { Button, FormGroup, Input, Label, Table } from "reactstrap";
 
 
 import { connect }                                from "react-redux";
+import { decreaseQuantity }                       from "../../actions/actions";
+import { increaseQuantity }                       from "../../actions/actions";
 import { remove }                                 from "../../actions/actions";
 import { getTotalPrice }                          from "../../actions/actions";
 
@@ -13,31 +15,6 @@ import '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
 
 class ShoppingCart extends Component {
-
-    decrease(id) {
-        let products = [...this.props.products];
-        const newProducts = products.map(product =>
-            (product.id === id)
-                ? {...product, quantity: product.quantity > 1 ? --product.quantity : 1}
-                : {...product}
-        );
-        this.setState({
-            products: newProducts
-        })
-    };
-
-    increase(id) {
-        let products = [...this.props.products];
-        const newProducts = products.map(product =>
-            (product.id === id)
-                ? {...product, quantity: ++product.quantity}
-                : {...product}
-        );
-        this.setState({
-            products: newProducts
-        })
-    };
-
 
     render() {
 
@@ -77,8 +54,8 @@ class ShoppingCart extends Component {
                                     </td>
                                     <td>{ product.price } </td>
                                     <td>
-                                        <Quantity decrease={ () => this.decrease(product.id) }
-                                                  increase={ () => this.increase(product.id) }
+                                        <Quantity decrease={ () => this.props.decrease(product.id) }
+                                                  increase={ () => this.props.increase(product.id) }
                                                   value={ product.quantity }/>
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
@@ -134,11 +111,15 @@ const mapStateToProps = (state) => {
     }
 };
 
+
 const mapDispatchToProps = (dispatch) => {
     return {
-        remove: (product) => dispatch(remove(product))
+        remove      : (product) => dispatch(remove(product)),
+        decrease    : (quantity) => dispatch(decreaseQuantity(quantity)),
+        increase    : (quantity) => dispatch(increaseQuantity(quantity))
     }
 };
+
 
 export default connect(
     mapStateToProps,
