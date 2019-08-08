@@ -1,21 +1,39 @@
 version: 2
 jobs:
-  deploy:
+  build:
     docker:
-      - image: python:2.7
-      - image: circleci/node:12
+      - image: node:12.7.0-buster
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: Update npm
+          command: 'npm install -g npm@latest'
       - run:
           name: Install npm package
           command: npm install
       - run:
           name: Make build directory
-          command: npm run build
+          command: CI=false npm run build
+  deploy:
+    docker:
+      - image: python:3.7-buster
+    working_directory: ~/repo
+    steps:
+      - checkout
       - run:
           name: Install awscli
-          command: pip install awscli
+          command: |
+            pip install awscli
+      - run:
+          name: Create AWS credentials manually
+          command: |
+            mkdir ~/.aws
+            touch ~/.aws/credentials
+            chmod 600 ~/.aws/credentials
+            echo "[eb-cli]" > ~/.aws/credentials
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
       - run:
           name: Deploy to S3
           command: aws s3 sync ./build s3://shoes-store-ui --delete
@@ -23,6 +41,10 @@ workflows:
   version: 2
   build-deploy:
     jobs:
+      - build:
+          filters:
+            branches:
+              only: master
       - deploy:
           filters:
             branches:
