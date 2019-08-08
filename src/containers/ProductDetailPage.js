@@ -1,25 +1,21 @@
-import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import ProductService from '../components/ProductService/ProductService';
-import Quantity from "../components/Quantity/Quantity";
-import propTypes from "prop-types";
-import BreadCrumbs from "../components/BreadCrumbs/BreadCrumbs";
+import React, {Component}           from 'react';
+import {Link}                       from "react-router-dom";
+import ProductService               from '../components/ProductService/ProductService';
+import Quantity                     from "../components/Quantity/Quantity";
+import propTypes                    from "prop-types";
+import BreadCrumbs                  from "../components/BreadCrumbs/BreadCrumbs";
 
-import Nav from "reactstrap/es/Nav";
-import NavLink from "reactstrap/es/NavLink";
+import Nav                          from "reactstrap/es/Nav";
+import NavLink                      from "reactstrap/es/NavLink";
 
 
 export default class ProductDetailPage extends Component {
     constructor() {
         super();
         this.state = {
-            quantity:1 ,
-            name: 'React',
-            cart: [
-                {
-
-                }
-            ]
+            quantity: 1,
+            name: 'Shoes',
+            cart: []
         };
     }
 
@@ -44,8 +40,8 @@ export default class ProductDetailPage extends Component {
 
     render() {
 
-        const {totalPrice} = this.props;
-        const {quantity} = this.state;
+        const { totalPrice } = this.props;
+        const { quantity }   = this.state;
 
         return (
             <Nav>
@@ -60,9 +56,9 @@ export default class ProductDetailPage extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6 md-margin-bottom-50">
-
                                 </div>
                                 <div className="col-md-6">
+                                    <h2>{this.state.name}</h2>
                                     <ul className="list-inline product-ratings margin-bottom-30">
                                         <li><i className="rating-selected fa fa-star"/></li>
                                         <li><i className="rating-selected fa fa-star"/></li>
@@ -74,14 +70,13 @@ export default class ProductDetailPage extends Component {
                                         </li>
                                     </ul>
                                     {/*/end shop product ratings*/}
-                                    <p>Integer <strong>dapibus ut elit</strong> non volutpat. Integer auctor purus a
-                                        lectus suscipit fermentum. Vivamus lobortis nec erat consectetur elementum.</p>
+                                    <p>This is <strong>new product</strong> !!</p>
                                     <br/>
                                     <ul className="list-inline shop-product-prices margin-bottom-30">
 
-                                        <li className="shop-red">$ {totalPrice.price * quantity}</li>
+                                        <li className="shop-red">$ { totalPrice.price * quantity } </li>
 
-                                        <li className="line-through">${totalPrice.price * quantity / 2}</li>
+                                        <li className="line-through">$ { totalPrice.price * quantity / 2 } </li>
 
                                         <li><small className="shop-bg-red time-day-left">4 days left</small></li>
                                     </ul>
@@ -171,10 +166,7 @@ export default class ProductDetailPage extends Component {
                                 <div className="tab-pane fade in active" id="description">
                                     <div className="row">
                                         <div className="col-md-7">
-                                            <p>Morbi non semper est, eget tincidunt turpis. Vivamus sollicitudin sodales
-                                                nisi, et venenatis turpis Vivamus sollicitudin ultricies eget. Fusce
-                                                vitae neque blandit lectus faucibus aliquet nec vel ipsum. Integer
-                                                mattis lacinia felis vel sollicitudin molestie.</p><br/>
+                                            <p>This is new product !!</p><br/>
                                             <h3 className="heading-md margin-bottom-20">Specifies</h3>
                                             <div className="row">
                                                 <div className="col-sm-6">
