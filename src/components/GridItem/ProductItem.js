@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import propTypes            from 'prop-types';
-import Nav from "reactstrap/es/Nav";
-import {NavLink} from "react-router-dom";
-import Button from "reactstrap/es/Button";
+import Nav                  from "reactstrap/es/Nav";
+import {NavLink}            from "react-router-dom";
+import Button               from "reactstrap/es/Button";
 
 
 export default class ProductItem extends Component {

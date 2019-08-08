@@ -1,38 +1,19 @@
 import React, { Component }     from 'react';
 import        { Link }          from "react-router-dom";
-import IconCart                 from '../components/Icon/IconCart';
 import Nav                      from "reactstrap/es/Nav";
 import NavLink                  from "reactstrap/es/NavLink";
 
+
 import { connect }              from "react-redux";
+import { remove }               from "../actions/actions";
+import { getTotalPrice }        from "../actions/actions";
+
+
 import '../ui/header/header.css';
+import '../ui/header/iconcart.css';
 
 
 class Header extends Component {
-
-    state = {
-        quantity: 1
-    }
-
-    componentWillMount() {
-        this.setState({
-            products: this.props.products
-        })
-    }
-
-    getTotalPrice(products) {
-        const totalPrice = products.reduce((total, product) => total + (product.price * product.quantity), 0);
-        return totalPrice;
-    }
-
-    remove(product) {
-        let products        = [...this.state.products];
-        const newProducts   = products.filter(item => item.id !== product.id)
-        this.setState({
-            products: newProducts
-        })
-        console.log(newProducts);
-    }
 
     render() {
 
@@ -52,7 +33,7 @@ class Header extends Component {
                                     <span className="icon-bar" />
                                 </button>
                                 <NavLink href="/" className="timkeo">
-                                    <img id="logo-header" src="assets/img/timkeologo.png" style={{ height: 80}} alt="Logo" />
+                                    <img id="logo-header" src="/assets/img/timkeologo.png" style={{ height: 80 }} alt="Logo" />
                                 </NavLink>
                             </div>
 
@@ -64,27 +45,24 @@ class Header extends Component {
                                 <div className="badge-open">
                                     <ul className="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
                                         {
-                                            products.map((product) => {
-                                                return(
-                                                    <div>
-                                                        <IconCart
-                                                            product={product}
-                                                            remove={ () => this.remove(product) }
-                                                        />
+                                            products.map((product) =>
+                                                <li className="icon-cart">
+                                                    <img src={product.image} style={{ width: 70 }} alt={"text"}/>
+                                                    <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span></button>
+                                                    <div className="overflow-h">
+                                                        <span>{product.name}</span>
+                                                        <small>{product.price} * {product.quantity} </small>
                                                     </div>
-                                                )
-                                            })
+                                                </li>
+                                            )
                                         }
                                     </ul>
                                     <div className="subtotal">
                                         <div className="overflow-h margin-bottom-10">
                                             <span>Subtotal</span>
-                                            <span className="pull-right subtotal-cost">{this.getTotalPrice(products)}$</span>
+                                            <span className="pull-right subtotal-cost">{ () => this.props.getTotalPrice(products)}$</span>
                                         </div>
                                         <div className="row">
-                                            <div className="col-xs-6">
-                                                <Link to="/checkout" className="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</Link>
-                                            </div>
                                             <div className="col-xs-6">
                                                 <Link to="/checkout" className="btn-u btn-u-sea-shop btn-block">Checkout</Link>
                                             </div>
@@ -126,7 +104,6 @@ class Header extends Component {
                                     </li>
                                     {/* End Promotion */}
                                 </ul>
-                                {/* End Nav Menu */}
                             </div>
                         </div>
                     </div>
@@ -139,13 +116,14 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.Cart
+        products: state.Cart,
+        getTotalPrice: getTotalPrice(state.Cart)
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        remove: (product) => dispatch(remove(product)),
     }
 };
 

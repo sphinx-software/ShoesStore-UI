@@ -6,8 +6,8 @@ import ProductItem                      from '../components/GridItem/ProductItem
 import CategoryItem                     from '../components/GridItem/CategoryItem';
 import ProductService                   from '../components/ProductService/ProductService';
 import Illustrationv5                   from '../components/Illustrationv5/Illustrationv5';
-import Nav from "reactstrap/es/Nav";
-import NavLink from "reactstrap/es/NavLink";
+import Nav                              from "reactstrap/es/Nav";
+import NavLink                          from "reactstrap/es/NavLink";
 
 export default class HomePage extends Component {
     render() {

@@ -1,62 +1,20 @@
-import React,       { Component } from 'react';
-import BreadCrumbs                from "../BreadCrumbs/BreadCrumbs";
-import Quantity from "../Quantity/Quantity";
-
+import React,       { Component }                 from 'react';
+import BreadCrumbs                                from "../BreadCrumbs/BreadCrumbs";
+import Quantity                                   from "../Quantity/Quantity";
 import { Button, FormGroup, Input, Label, Table } from "reactstrap";
+
+
 import { connect }                                from "react-redux";
+import { decreaseQuantity }                       from "../../actions/actions";
+import { increaseQuantity }                       from "../../actions/actions";
+import { remove }                                 from "../../actions/actions";
+import { getTotalPrice }                          from "../../actions/actions";
+
+
 import '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
 
 class ShoppingCart extends Component {
-
-    state = {
-        quantity: 1,
-        totalQuantity: 1,
-    };
-
-    componentWillMount() {
-        this.setState({
-            products: this.props.products
-        })
-    }
-
-    decrease(id) {
-        let products = [...this.props.products];
-        const newProducts = products.map(product =>
-            (product.id === id)
-                ? {...product, quantity: product.quantity > 1 ? --product.quantity : 1}
-                : {...product}
-        );
-        this.setState({
-            products: newProducts
-        })
-    };
-
-    increase(id) {
-        let products = [...this.props.products];
-        const newProducts = products.map(product =>
-            (product.id === id)
-                ? {...product, quantity: ++product.quantity}
-                : {...product}
-        );
-        this.setState({
-            products: newProducts
-        })
-    };
-
-    getTotalPrice(products) {
-        const totalPrice = products.reduce((total, product) => total + (product.price * product.quantity), 0);
-        return totalPrice;
-    }
-
-    remove(product) {
-        let products       = [...this.state.products];
-        const newProducts  = products.filter(item => item.id !== product.id);
-        this.setState({
-            products: newProducts
-        })
-        console.log(newProducts);
-    };
 
     render() {
 
@@ -88,21 +46,21 @@ class ShoppingCart extends Component {
                             products.map((product) =>
                                 <tr key={ product.id }>
                                     <td style={{ width: 100 }}>
-                                        <img src={ product.image } style={{ width: 300 }} alt={'text'}/>
+                                        <img src={ product.image } style={{ width: 250 }} alt={'text'}/>
                                     </td>
                                     <td>
                                         <h3>{ product.name }</h3>
                                         <p>{ product.description }</p>
                                     </td>
-                                    <td>{ product.price } $</td>
+                                    <td>{ product.price } </td>
                                     <td>
-                                        <Quantity decrease={ () => this.decrease(product.id) }
-                                                  increase={ () => this.increase(product.id) }
+                                        <Quantity decrease={ () => this.props.decrease(product.id) }
+                                                  increase={ () => this.props.increase(product.id) }
                                                   value={ product.quantity }/>
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
                                     <td>
-                                        <button onClick={ () => this.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                        <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
                                     </td>
                                 </tr>
                             )
@@ -126,7 +84,7 @@ class ShoppingCart extends Component {
                         <tbody>
                         <tr>
                             <th><h3>Subtotal:</h3></th>
-                            <td><h3>{ (products) => this.getTotalPrice(products) }$</h3></td>
+                            <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
                         </tr>
                         <tr>
                             <th><h3>Shipping:</h3></th>
@@ -134,7 +92,7 @@ class ShoppingCart extends Component {
                         </tr>
                         <tr>
                             <th><h3>Total:</h3></th>
-                            <td><h3>{ (products) => this.getTotalPrice(products) }$</h3></td>
+                            <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
                         </tr>
                         </tbody>
                     </Table>
@@ -148,15 +106,20 @@ class ShoppingCart extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.Cart
+        products        : state.Cart,
+        getTotalPrice   : getTotalPrice(state.Cart)
     }
 };
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        remove      : (product) => dispatch(remove(product)),
+        decrease    : (quantity) => dispatch(decreaseQuantity(quantity)),
+        increase    : (quantity) => dispatch(increaseQuantity(quantity))
     }
 };
+
 
 export default connect(
     mapStateToProps,
