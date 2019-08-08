@@ -69,7 +69,7 @@ class ShoppingCart extends Component {
                             products.map((product) =>
                                 <tr key={ product.id }>
                                     <td style={{ width: 100 }}>
-                                        <img src={ product.image } style={{ width: 300 }} alt={'text'}/>
+                                        <img src={ product.image } style={{ width: 250 }} alt={'text'}/>
                                     </td>
                                     <td>
                                         <h3>{ product.name }</h3>

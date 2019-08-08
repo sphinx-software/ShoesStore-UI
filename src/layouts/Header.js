@@ -119,8 +119,8 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.Cart,
-        getTotalPrice: getTotalPrice(state.Cart)
+        products        : state.Cart,
+        getTotalPrice   : getTotalPrice(state.Cart)
     }
 };
 
