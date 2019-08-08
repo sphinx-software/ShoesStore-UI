@@ -21,7 +21,6 @@ const CartReducer = (state = [], action) => {
                 ...state,
                 quantity: action.quantity + 1
             };
-            console.log(state.quantity);
         case 'DECREASE_QUANTITY':
             if (state.quantity > 0) {
                 return {
@@ -29,7 +28,7 @@ const CartReducer = (state = [], action) => {
                     quantity: action.quantity - 1
                 };
             }
-            console.log(state.quantity);
+            break;
         default:
             return state
     }
