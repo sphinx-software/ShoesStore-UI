@@ -12,6 +12,10 @@ const CartReducer = (state = [], action) => {
                 ...state,
                 state.filter((e, i) => i != action.product)
             ]
+        case 'GET_TOTAL_PRICE':
+            return [
+                state.reduce((total, action) => total + (action.price * action.quantity), 0)
+            ]
         default:
             return state
     }

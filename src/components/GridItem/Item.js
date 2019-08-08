@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component }                                                   from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import Nav                                                                    from "reactstrap/es/Nav";
+import NavLink                                                                from "reactstrap/es/NavLink";
+
+import { addToCart }                                                          from  '../../actions/actions';
+import { connect }                                                            from  'react-redux';
+
 import '../../ui/item/item.css';
-import Nav from "reactstrap/es/Nav";
-import NavLink from "reactstrap/es/NavLink";
-
-import { addToCart }    from  '../../actions/actions';
-import { connect }      from  'react-redux';
-
 
 
 class Item extends Component {

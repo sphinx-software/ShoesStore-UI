@@ -6,27 +6,14 @@ import NavLink                  from "reactstrap/es/NavLink";
 
 import { connect }              from "react-redux";
 import { remove }               from "../actions/actions";
+import { getTotalPrice }        from "../actions/actions";
+
 
 import '../ui/header/header.css';
 import '../ui/header/iconcart.css';
 
 
 class Header extends Component {
-
-    state = {
-        quantity: 1
-    }
-
-    componentWillMount() {
-        this.setState({
-            products: this.props.products
-        })
-    }
-
-    getTotalPrice(products) {
-        const totalPrice = products.reduce((total, product) => total + (product.price * product.quantity), 0);
-        return totalPrice;
-    }
 
     render() {
 
@@ -58,24 +45,22 @@ class Header extends Component {
                                 <div className="badge-open">
                                     <ul className="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
                                         {
-                                            products.map((product) => {
-                                                return(
-                                                    <li className="icon-cart">
-                                                        <img src={product.image} style={{ width: 70 }} alt={"text"}/>
-                                                        <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span></button>
-                                                        <div className="overflow-h">
-                                                            <span>{product.name}</span>
-                                                            <small>{product.price} x {product.quantity} </small>
-                                                        </div>
-                                                    </li>
-                                                )
-                                            })
+                                            products.map((product) =>
+                                                <li className="icon-cart">
+                                                    <img src={product.image} style={{ width: 70 }} alt={"text"}/>
+                                                    <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span></button>
+                                                    <div className="overflow-h">
+                                                        <span>{product.name}</span>
+                                                        <small>{product.price} * {product.quantity} </small>
+                                                    </div>
+                                                </li>
+                                            )
                                         }
                                     </ul>
                                     <div className="subtotal">
                                         <div className="overflow-h margin-bottom-10">
                                             <span>Subtotal</span>
-                                            <span className="pull-right subtotal-cost">{ () => this.getTotalPrice(products)}$</span>
+                                            <span className="pull-right subtotal-cost">{ () => this.props.getTotalPrice(products)}$</span>
                                         </div>
                                         <div className="row">
                                             <div className="col-xs-6">
@@ -122,7 +107,6 @@ class Header extends Component {
                                     </li>
                                     {/* End Promotion */}
                                 </ul>
-                                {/* End Nav Menu */}
                             </div>
                         </div>
                     </div>
@@ -135,13 +119,14 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.Cart
+        products: state.Cart,
+        getTotalPrice: getTotalPrice(state.Cart)
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        remove: (product) => dispatch(remove(product))
+        remove: (product) => dispatch(remove(product)),
     }
 };
 
