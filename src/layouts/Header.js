@@ -33,7 +33,7 @@ class Header extends Component {
                                     <span className="icon-bar" />
                                 </button>
                                 <NavLink href="/" className="timkeo">
-                                    <img id="logo-header" src="assets/img/timkeologo.png" style={{ height: 80 }} alt="Logo" />
+                                    <img id="logo-header" src="/assets/img/timkeologo.png" style={{ height: 80 }} alt="Logo" />
                                 </NavLink>
                             </div>
 

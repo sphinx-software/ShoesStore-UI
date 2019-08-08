@@ -5,12 +5,11 @@ import Quantity from "../components/Quantity/Quantity";
 import propTypes from "prop-types";
 import BreadCrumbs from "../components/BreadCrumbs/BreadCrumbs";
 
-import Product from "../components/Product";
 import Nav from "reactstrap/es/Nav";
 import NavLink from "reactstrap/es/NavLink";
 
 
-export default class ProductListPage extends Component {
+export default class ProductDetailPage extends Component {
     constructor() {
         super();
         this.state = {
@@ -327,11 +326,11 @@ export default class ProductListPage extends Component {
     }
 }
 
-ProductListPage.propTypes = {
+ProductDetailPage.propTypes = {
     totalPrice: propTypes.object,
 };
 
-ProductListPage.defaultProps = {
+ProductDetailPage.defaultProps = {
     totalPrice: {
         price: 1500
     }
