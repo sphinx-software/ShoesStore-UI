@@ -6,7 +6,7 @@ import NavLink                                                                fr
 import { addToCart }                                                          from  '../../actions/actions';
 import { connect }                                                            from  'react-redux';
 
-import '../../ui/item/item.css';
+import                                                                              '../../ui/item/item.css';
 
 
 class Item extends Component {
@@ -17,7 +17,7 @@ class Item extends Component {
         const viewCarts   = products.find(product => product.id === id)
         this.setState({
             products: viewCarts
-        })
+        });
     }
 
     render() {
