@@ -29,7 +29,7 @@ export default class Footer extends Component {
                         <div className="row">
                             {/* About */}
                             <div className="col-md-4 md-margin-bottom-40">
-                                <Nav href="index.html"><img className="footer-logo" src="assets/img/logo-2.png" alt={'footer-logo'} /></Nav>
+                                <Nav href="index.html"><img className="footer-logo" src="/assets/img/timkeologo.png" style={{ height: 80 }} alt={'footer-logo'} /></Nav>
                                 <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
                                 <br />
                                 <ul className="list-unstyled address-list margin-bottom-20">
