@@ -15,6 +15,9 @@ jobs:
       - run:
           name: Make build directory
           command: CI=false npm run build
+      - run:
+          name: Show directory
+          command: ls
   deploy:
     docker:
       - image: python:3.7-buster
@@ -50,3 +53,5 @@ workflows:
           filters:
             branches:
               only: master
+          requires:
+            - build
