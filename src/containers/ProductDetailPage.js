@@ -9,29 +9,7 @@ import Product from "../components/Product";
 import Nav from "reactstrap/es/Nav";
 import NavLink from "reactstrap/es/NavLink";
 
-const products = [
-    {
-        id: 1,
-        name: "meow",
-        description: "toi la meow",
-        price: 10000,
-        image:"https://tachyons.io/img/avatar_1.jpg"
-    },
-    {
-        id: 2,
-        name: "apple",
-        description: "toi la apple",
-        price: 10000,
-        image: "https://tachyons.io/img/avatar_1.jpg"
-    },
-    {
-        id: 3,
-        name: "dog",
-        description: "toi la dog",
-        price: 10000,
-        image: "https://tachyons.io/img/avatar_1.jpg"
-    },
-];
+
 export default class ProductListPage extends Component {
     constructor() {
         super();
@@ -64,30 +42,6 @@ export default class ProductListPage extends Component {
         })
     };
 
-    handleAddFunc(product) {
-      const existingProductIndex = this.state.cart.findIndex(p => p.id === product.id);
-
-      if (existingProductIndex >= 0) {
-
-          const cartProducts    = this.state.cart.slice();
-
-          const existingProduct = cartProducts[existingProductIndex];
-
-          const updatedUnitsProduct     = {
-              ...existingProduct,
-              units: existingProduct.units + product.units
-          };
-          cartProducts[existingProductIndex] = updatedUnitsProduct;
-
-          this.setState({
-              cart: cartProducts
-          });
-      } else {
-          this.setState({
-              cart: [...this.state.cart, product]
-          });
-      }
-    }
 
     render() {
 
@@ -107,16 +61,7 @@ export default class ProductListPage extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6 md-margin-bottom-50">
-                                    <div className="ms-showcase2-template">
-                                        <ul>
-                                           {
-                                               this.state.cart.map(c => <li>{c.name} | units {c.units}</li>)
-                                           }
-                                        </ul>
-                                        {
-                                            products.map(p => <Product key={p.id} {...p} addFunc={this.handleAddFunc.bind(this)} />)
-                                        }
-                                    </div>
+
                                 </div>
                                 <div className="col-md-6">
                                     <ul className="list-inline product-ratings margin-bottom-30">
