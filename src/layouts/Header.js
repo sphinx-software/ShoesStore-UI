@@ -79,7 +79,7 @@ class Header extends Component {
                                     {
                                         products.map((product) =>
                                             <li className="icon-cart">
-                                                <img src={product.image} style={{ width: 70 }} alt={"text"}/>
+                                                <img src={product.image} style={{ width: 100 }} alt={"text"}/>
                                                 <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span></button>
                                                 <div className="overflow-h">
                                                     <span>{product.name}</span>
