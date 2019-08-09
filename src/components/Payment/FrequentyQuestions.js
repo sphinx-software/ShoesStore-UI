@@ -1,20 +1,17 @@
 import React, { Component }         from 'react';
 import { Accordion, Card }          from "react-bootstrap";
-import {FormGroup, Label}           from "reactstrap";
+import { FormGroup, Label }         from "reactstrap";
 import { Icon }                     from '@blueprintjs/core';
+
+
+import { dropdown }                 from "../../actions/actions";
+import { connect }                  from "react-redux";
+
+
 import '../../ui/payment/paymentmethod.css';
 
-export default class FrequentyQuestions extends Component {
 
-    state = {
-        dropdown: true
-    }
-
-    toggle() {
-        this.setState({
-            dropdown: !this.state.dropdown
-        });
-    }
+class FrequentyQuestions extends Component {
 
     render() {
 
@@ -25,9 +22,9 @@ export default class FrequentyQuestions extends Component {
                 <Accordion defaultActiveKey="0">
                     <Card>
                         <div className="card-header">
-                            <Accordion.Toggle onClick={ () => this.toggle() } as={Card.Header} eventKey="0">
+                            <Accordion.Toggle onClick={ () => this.props.toggle() } as={Card.Header} eventKey="0">
                                 {
-                                    this.state.dropdown ? <h4><Icon icon="minus"/> {title}</h4> : <h4><Icon icon="plus"/> {title}</h4>
+                                    this.props.dropdown ? <h4><Icon icon="minus"/> {title}</h4> : <h4><Icon icon="plus"/> {title}</h4>
                                 }
                             </Accordion.Toggle>
                         </div>
@@ -44,3 +41,22 @@ export default class FrequentyQuestions extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        dropdown: state.DropDown,
+    }
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggle: () => dispatch(dropdown()),
+    }
+};
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(FrequentyQuestions);
