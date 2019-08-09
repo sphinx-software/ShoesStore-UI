@@ -9,13 +9,15 @@ import Illustrationv5                   from '../components/Illustrationv5/Illus
 import Nav                              from "reactstrap/es/Nav";
 import NavLink                          from "reactstrap/es/NavLink";
 
+
+
 export default class HomePage extends Component {
     render() {
 
         const categories = [
             { name: 'Men1', amount: '200', img: "assets/img/blog/40.jpg" },
-            { name: 'Men2', amount: '200' },
-            { name: 'Men3', amount: '200' },
+            { name: 'Men2', amount: '200', img: "assets/img/blog/40.jpg" },
+            { name: 'Men3', amount: '200', img: "assets/img/blog/40.jpg" },
         ];
 
         const products = [
