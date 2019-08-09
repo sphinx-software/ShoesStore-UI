@@ -13,7 +13,7 @@ export default class SaleBanner extends Component {
             <Nav>
                 <div className="row margin-bottom-60">
                     {
-                        saleBanners.map((saleBanner, index) =>
+                        saleBanners.map((saleBanner) =>
                             <div className="col-md-6 md-margin-bottom-30">
                                 <div className="overflow-h">
                                     <div className="illustration-v1 illustration-img1">
