@@ -37,7 +37,7 @@ class Item extends Component {
                             <CardSubtitle>{product.gender}</CardSubtitle>
                         </div>
                         <div className="price">
-                            <CardText><h3>{product.price}</h3></CardText>
+                            <CardText><h3>{product.price}$</h3></CardText>
                         </div>
                         <div>
                             <Button onClick={ () => this.viewDetail() } className="quick-review"><NavLink href={`/products/${product.id}`}>Quick review</NavLink></Button>{' '}

@@ -1,11 +1,20 @@
 import React, { Component }                                                                              from 'react';
 import        { Link }                                                                                   from "react-router-dom";
-
 import        { getTotalPrice, remove }                                                                  from "../actions/actions";
 import        { connect }                                                                                from "react-redux";
+import                                                                                                        '../ui/header/headers.css';
+import {
+    Navbar,
+    NavLink,
+    ButtonGroup,
+    ButtonDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    Nav,
+    Button
+} from 'reactstrap';
 
-import { Navbar, NavLink, ButtonGroup, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Nav } from 'reactstrap';
-import '../ui/header/headers.css';
 
 
 class Header extends Component {
@@ -75,19 +84,33 @@ class Header extends Component {
                                         style={{ width: 100 }}
                                     />
                                 </DropdownToggle>
-                                <DropdownMenu style={{ height: 300, width: 300 }}>
+                                <DropdownMenu style={{ width: 400 }}>
                                     {
                                         products.map((product) =>
-                                            <li className="icon-cart">
-                                                <img src={product.image} style={{ width: 100 }} alt={"text"}/>
-                                                <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span></button>
-                                                <div className="overflow-h">
-                                                    <span>{product.name}</span>
-                                                    <small>{product.price} * {product.quantity} </small>
+                                            <div className="product">
+                                                <img className="image" src={product.image} alt={"text"}/>
+                                                <div className="name-price-quantity">
+                                                    <h2>{product.name}</h2>
+                                                    <h4>{product.price}$ x {product.quantity}</h4>
                                                 </div>
-                                            </li>
+                                                <div className="total-price">
+                                                    <h2>{product.price * product.quantity}$</h2>
+                                                </div>
+                                                <button onClick={ () => this.props.remove(product) } type="button" className="close">x</button>
+                                            </div>
                                         )
                                     }
+                                    <div>
+                                        <center>
+                                            <div className="sub-total">
+                                                <h3>SUBTOTAL</h3>
+                                                <h3>$</h3>
+                                            </div>
+                                            <div>
+                                                <Button className="checkout-button" color="primary" size="lg"><Link to="/checkout">Checkout</Link></Button>{' '}
+                                            </div>
+                                        </center>
+                                    </div>
                                 </DropdownMenu>
                             </ButtonDropdown>
                         </ButtonGroup>
