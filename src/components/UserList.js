@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
-import axios     from          'axios';
+import React, { Component } from 'react';
+import axios                from 'axios';
 
 
 class UserList extends Component {
+
     state = {
-        users:[]
+        users: []
     };
 
     componentWillMount() {
@@ -12,14 +13,14 @@ class UserList extends Component {
             this.setState({
                 users: res.data
             });
-        }).catch(e => {
-            // alert('sdsds');
-        })
+        }).catch(err => console.log(err))
     }
 
     render() {
-        const {users} = this.state;
-        return(
+
+        const { users } = this.state;
+
+        return (
             <div>
                 {
                     users.map(user => {
