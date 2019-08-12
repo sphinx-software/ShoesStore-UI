@@ -4,13 +4,12 @@ const CartReducer = (state = [], action) => {
             return [
                 ...state,
                 {
-                    ...action.product
+                    ...action.product,
                 }
             ]
         case 'REMOVE_ITEM':
             return [
-                ...state,
-                state.filter((e, i) => i !== action.product)
+                state.filter(id => id !== action.id)
             ]
         case 'GET_TOTAL_PRICE':
             return [
@@ -19,13 +18,13 @@ const CartReducer = (state = [], action) => {
         case 'INCREASE_QUANTITY':
             return {
                 ...state,
-                quantity: action.quantity + 1
+                quantity: action.quantity++
             };
         case 'DECREASE_QUANTITY':
             if (state.quantity > 0) {
                 return {
                     ...state,
-                    quantity: action.quantity - 1
+                    quantity: action.quantity--
                 };
             }
             break;

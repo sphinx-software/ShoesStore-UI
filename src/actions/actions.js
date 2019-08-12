@@ -1,5 +1,6 @@
 export const addToCart = product => ({
     type: "ADD_TO_CART",
+    id: product.id,
     product
 });
 
