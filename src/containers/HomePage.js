@@ -15,9 +15,9 @@ export default class HomePage extends Component {
     render() {
 
         const categories = [
-            { name: 'Men1', amount: '200', img: "assets/img/blog/40.jpg" },
-            { name: 'Men2', amount: '200', img: "assets/img/blog/40.jpg" },
-            { name: 'Men3', amount: '200', img: "assets/img/blog/40.jpg" },
+            { name: 'Men1', img: "assets/img/blog/collection2.png" },
+            { name: 'Men2', img: "assets/img/blog/collection3.png" },
+            { name: 'Men3', img: "assets/img/blog/collection1.png" },
         ];
 
         const products = [
