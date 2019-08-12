@@ -106,8 +106,8 @@ class ShoppingCart extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products        : state.Cart.products,
-        getTotalPrice   : getTotalPrice(state.Cart.products)
+        products        : state.Cart.cart,
+        getTotalPrice   : getTotalPrice(state.Cart.cart)
     }
 };
 

@@ -12,18 +12,19 @@ const initialState = {
         { id: 10, image: 'assets/img/blog/49.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
         { id: 11, image: 'assets/img/blog/50.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
         { id: 12, image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-    ]
+    ],
+
+    cart: [
+
+    ],
 }
 
 const CartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
-            return [
-                ...state,
-                {
-                    ...action.product,
-                }
-            ]
+            return {
+                
+            }
         case 'REMOVE_ITEM':
             return [
                 state.filter(id => id !== action.id)

@@ -78,34 +78,36 @@ class ProductListPage extends Component {
                                     </div>
                                 </div>
                                 <div className="filter-results">
-                                    <div className="row illustration-v2 margin-bottom-30">
-                                        {
-                                            products.map((product) => {
-                                                return (
-                                                    <div className="col-md-4">
-                                                        <Card className="card">
-                                                            <CardImg top width="100%" src={product.image} alt="Card image cap" />
-                                                            <CardBody>
-                                                                <div className="name">
-                                                                    <CardTitle><h3><NavLink>{product.name}</NavLink></h3></CardTitle>
-                                                                </div>
-                                                                <div className="gender">
-                                                                    <CardSubtitle>{product.gender}</CardSubtitle>
-                                                                </div>
-                                                                <div className="price">
-                                                                    <CardText><h3>{product.price}$</h3></CardText>
-                                                                </div>
-                                                                <div>
-                                                                    <Button className="quick-review"><NavLink href={`/products/${product.id}`}>Quick review</NavLink></Button>{' '}
-                                                                    <Button onClick={ () => this.props.addToCart(product) } className="add-cart"><NavLink>Add to cart</NavLink></Button>{' '}
-                                                                </div>
-                                                            </CardBody>
-                                                        </Card>
-                                                    </div>
-                                                )}
-                                            )
-                                        }
-                                    </div>
+                                    {/* Item */}
+                                        <div className="row illustration-v2 margin-bottom-30">
+                                            {
+                                                products.map((product) => {
+                                                    return (
+                                                        <div className="col-md-4">
+                                                            <Card className="card">
+                                                                <CardImg top width="100%" src={product.image} alt="Card image cap" />
+                                                                <CardBody>
+                                                                    <div className="name">
+                                                                        <CardTitle><h3><NavLink>{product.name}</NavLink></h3></CardTitle>
+                                                                    </div>
+                                                                    <div className="gender">
+                                                                        <CardSubtitle>{product.gender}</CardSubtitle>
+                                                                    </div>
+                                                                    <div className="price">
+                                                                        <CardText><h3>{product.price}$</h3></CardText>
+                                                                    </div>
+                                                                    <div>
+                                                                        <Button className="quick-review"><NavLink href={`/products/${product.id}`}>Quick review</NavLink></Button>{' '}
+                                                                        <Button onClick={ () => this.props.addToCart(product) } className="add-cart"><NavLink>Add to cart</NavLink></Button>{' '}
+                                                                    </div>
+                                                                </CardBody>
+                                                            </Card>
+                                                        </div>
+                                                    )}
+                                                )
+                                            }
+                                        </div>
+                                    {/* End Item */}
                                 </div>
                                 <div className="pagination-pagin">
                                     <Pagination size="lg" aria-label="Page navigation example">
