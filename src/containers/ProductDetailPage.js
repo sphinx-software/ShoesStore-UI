@@ -7,6 +7,8 @@ import BreadCrumbs                  from "../components/BreadCrumbs/BreadCrumbs"
 
 import Nav                          from "reactstrap/es/Nav";
 import NavLink                      from "reactstrap/es/NavLink";
+import Slideshow                    from "../components/GridItem/ItemDetailSilde";
+import {Button} from "reactstrap";
 
 
 export default class ProductDetailPage extends Component {
@@ -28,20 +30,21 @@ export default class ProductDetailPage extends Component {
     decrease() {
         this.setState({
             quantity: this.state.quantity > 1 ? --this.state.quantity : 1
-        })
-    };
+        });
+    }
 
     increase() {
         this.setState({
             quantity: ++this.state.quantity
-        })
-    };
+        });
+    }
 
 
     render() {
 
         const { totalPrice } = this.props;
         const { quantity }   = this.state;
+        const { product }    = this.props;
 
         return (
             <Nav>
@@ -54,10 +57,13 @@ export default class ProductDetailPage extends Component {
                         </div>
                         {/* End Breadcrumbs v5 */}
                         <div className="container">
-                            <div className="row">
-                                <div className="col-md-6 md-margin-bottom-50">
+                            <div >
+                                {/* Item Detail Slide*/}
+                                <div className="col-md-8 md-margin-bottom-50">
+                                    <Slideshow/>
                                 </div>
-                                <div className="col-md-6">
+
+                                <div className="col-md-4">
                                     <h2>{this.state.name}</h2>
                                     <ul className="list-inline product-ratings margin-bottom-30">
                                         <li><i className="rating-selected fa fa-star"/></li>
@@ -122,9 +128,8 @@ export default class ProductDetailPage extends Component {
                                                       value={this.state.quantity}/>
                                         </form>
 
-                                        <Link to="/checkout" className="btn-u btn-u-sea-shop btn-u-lg">
-                                            Add to Cart
-                                        </Link>
+                                        <Button className="add-cart"><NavLink>Add to cart</NavLink></Button>{' '}
+
                                     </div>
                                     {/*/end product quantity*/}
 
@@ -317,6 +322,9 @@ export default class ProductDetailPage extends Component {
         );
     }
 }
+
+
+
 
 ProductDetailPage.propTypes = {
     totalPrice: propTypes.object,

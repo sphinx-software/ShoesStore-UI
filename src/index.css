@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.back-ground-img-slider {
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  height:300px;
+  width:300px;
+}
