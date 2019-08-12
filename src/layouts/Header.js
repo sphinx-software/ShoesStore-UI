@@ -85,21 +85,21 @@ class Header extends Component {
                                     />
                                 </DropdownToggle>
                                 <DropdownMenu style={{ width: 400 }}>
-                                    {
-                                        products.map((product) =>
-                                            <div className="product">
-                                                <img className="image" src={product.image} alt={"text"}/>
-                                                <div className="name-price-quantity">
-                                                    <h2>{product.name}</h2>
-                                                    <h4>{product.price}$ x {product.quantity}</h4>
-                                                </div>
-                                                <div className="total-price">
-                                                    <h2>{product.price * product.quantity}$</h2>
-                                                </div>
-                                                <button onClick={ () => this.props.remove(product) } type="button" className="close">x</button>
-                                            </div>
-                                        )
-                                    }
+                                    {/*{*/}
+                                    {/*    products.map((product) =>*/}
+                                    {/*        <div className="product">*/}
+                                    {/*            <img className="image" src={product.image} alt={"text"}/>*/}
+                                    {/*            <div className="name-price-quantity">*/}
+                                    {/*                <h2>{product.name}</h2>*/}
+                                    {/*                <h4>{product.price}$ x {product.quantity}</h4>*/}
+                                    {/*            </div>*/}
+                                    {/*            <div className="total-price">*/}
+                                    {/*                <h2>{product.price * product.quantity}$</h2>*/}
+                                    {/*            </div>*/}
+                                    {/*            <button onClick={ () => this.props.remove(product) } type="button" className="close">x</button>*/}
+                                    {/*        </div>*/}
+                                    {/*    )*/}
+                                    {/*}*/}
                                     <div>
                                         <center>
                                             <div className="sub-total">
