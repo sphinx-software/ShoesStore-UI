@@ -20,7 +20,7 @@ const CartReducer = (state = initialState, action) => {
                 addProduct.quantity++
                 return {
                     ...state,
-                    total: state.total + addProduct.price
+                    total: state.cart.reduce((existedProduct, total) => total + ( existedProduct * action.quantity ), 0)
                 }
             } else {
                 addProduct.quantity = 1
@@ -46,14 +46,13 @@ const CartReducer = (state = initialState, action) => {
 export default CartReducer;
 
 
-
-
-
-
 // case 'GET_TOTAL_PRICE':
 //     return [
 //         state.reduce((total, action) => total + (action.price * action.quantity), 0)
 //     ]
+
+
+
 // case 'INCREASE_QUANTITY':
 //     return {
 //         ...state,

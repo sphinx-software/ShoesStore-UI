@@ -20,6 +20,8 @@ import { addToCart }        from "../actions/actions";
 import                           '../ui/item/item.css';
 import                           '../ui/pagination/pagination.css';
 import Pagination           from "react-js-pagination";
+
+
 class ProductListPage extends Component {
 
     constructor(props) {
