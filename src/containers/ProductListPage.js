@@ -1,9 +1,9 @@
-import React, { Component }                           from 'react';
-import { BrowserRouter }                              from "react-router-dom";
-import HeadBanner                                     from '../components/Banner/HeadBanner';
-import Panel                                          from "../components/Panel/Panel";
-import BreadCrumbs                                    from "../components/BreadCrumbs/BreadCrumbs";
-import propTypes                                      from "prop-types";
+import React, { Component } from 'react';
+import { BrowserRouter }    from "react-router-dom";
+import HeadBanner           from '../components/Banner/HeadBanner';
+import Panel                from "../components/Panel/Panel";
+import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
+import propTypes            from "prop-types";
 import {
     Button,
     Card,
@@ -12,18 +12,27 @@ import {
     CardSubtitle,
     CardText,
     CardTitle,
-    Pagination,
-    PaginationItem,
-    PaginationLink
-} from 'reactstrap';
-import Nav                                            from "reactstrap/es/Nav";
-import NavLink                                        from "reactstrap/es/NavLink";
-import { connect }                                    from "react-redux";
-import { addToCart }                                  from "../actions/actions";
-import                                                     '../ui/item/item.css';
-import                                                     '../ui/pagination/pagination.css';
-
+}                           from 'reactstrap';
+import Nav                  from "reactstrap/es/Nav";
+import NavLink              from "reactstrap/es/NavLink";
+import { connect }          from "react-redux";
+import { addToCart }        from "../actions/actions";
+import                           '../ui/item/item.css';
+import                           '../ui/pagination/pagination.css';
+import Pagination           from "react-js-pagination";
 class ProductListPage extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            activePage: 1
+        };
+    }
+
+    handlePageChange(pageNumber) {
+        console.log(`active page is ${pageNumber}`);
+        this.setState({activePage: pageNumber});
+    }
 
     render() {
 
@@ -110,15 +119,13 @@ class ProductListPage extends Component {
                                     {/* End Item */}
                                 </div>
                                 <div className="pagination-pagin">
-                                    <Pagination size="lg" aria-label="Page navigation example">
-                                        <PaginationItem><PaginationLink first href="#" /></PaginationItem>
-                                        <PaginationItem><PaginationLink previous href="#" /></PaginationItem>
-                                        <PaginationItem><PaginationLink href="#">1</PaginationLink></PaginationItem>
-                                        <PaginationItem><PaginationLink href="#">2</PaginationLink></PaginationItem>
-                                        <PaginationItem><PaginationLink href="#">3</PaginationLink></PaginationItem>
-                                        <PaginationItem><PaginationLink next href="#" /></PaginationItem>
-                                        <PaginationItem><PaginationLink last href="#" /></PaginationItem>
-                                    </Pagination>
+                                    <Pagination
+                                        activePage={this.state.activePage}
+                                        itemsCountPerPage={6}
+                                        totalItemsCount={450}
+                                        pageRangeDisplayed={5}
+                                        onChange={this.handlePageChange}
+                                        />
                                 </div>
                             </div>
                         </div>
