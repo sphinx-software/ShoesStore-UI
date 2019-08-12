@@ -84,7 +84,7 @@ class Header extends Component {
                                     <DropdownMenu style={{ width: 350 }}>
                                         {
                                             products.map((product) =>
-                                                <div className="product">
+                                                <div key={product.id} className="product">
                                                     <img className="image" src={product.image} alt={"text"}/>
                                                     <div className="name-price-quantity">
                                                         <h2>{product.name}</h2>

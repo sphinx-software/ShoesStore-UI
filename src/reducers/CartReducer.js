@@ -1,54 +1,74 @@
 const initialState = {
     products: [
-        { id: 1,  image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1, categories: 'maytinh' },
-        { id: 2,  image: 'assets/img/blog/41.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1, categories: 1 },
-        { id: 3,  image: 'assets/img/blog/42.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 4,  image: 'assets/img/blog/43.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 5,  image: 'assets/img/blog/44.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 6,  image: 'assets/img/blog/45.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 7,  image: 'assets/img/blog/46.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 8,  image: 'assets/img/blog/47.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 9,  image: 'assets/img/blog/48.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 10, image: 'assets/img/blog/49.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 11, image: 'assets/img/blog/50.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
-        { id: 12, image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
+        { id: 1,  image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: 100 },
+        { id: 2,  image: 'assets/img/blog/41.jpg', name: 'Shoes', gender: 'NAM', price: 100 },
+        { id: 3,  image: 'assets/img/blog/42.jpg', name: 'Shoes', gender: 'NAM', price: 100 },
     ],
-
-    cart: [
-
-    ],
+    cart: [],
+    total: 0
 }
 
 const CartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
-            return {
-                
-            }
-        case 'REMOVE_ITEM':
-            return [
-                state.filter(id => id !== action.id)
-            ]
-        case 'GET_TOTAL_PRICE':
-            return [
-                state.reduce((total, action) => total + (action.price * action.quantity), 0)
-            ]
-        case 'INCREASE_QUANTITY':
-            return {
-                ...state,
-                quantity: action.quantity++
-            };
-        case 'DECREASE_QUANTITY':
-            if (state.quantity > 0) {
+
+            let addProduct     = state.products.find(product => product.id === action.id);
+
+            let existedProduct = state.cart.find(product => action.id === product.id);
+
+            if (existedProduct) {
+                addProduct.quantity++
                 return {
                     ...state,
-                    quantity: action.quantity--
-                };
+                    total: state.total + addProduct.price
+                }
+            } else {
+                addProduct.quantity = 1
+                let newTotal = state.total + addProduct.price
+                return {
+                    ...state,
+                    cart: [...state.cart, addProduct],
+                    total: newTotal
+                }
             }
-            break;
+
+        case 'REMOVE_ITEM':
+            return {
+                ...state,
+                cart: [
+                    state.cart.filter(product => action.id !== product.id)
+                ]
+            }
+            console.log(state.cart);
+
+
+
         default:
             return state
     }
 }
 
 export default CartReducer;
+
+
+
+
+
+
+// case 'GET_TOTAL_PRICE':
+//     return [
+//         state.reduce((total, action) => total + (action.price * action.quantity), 0)
+//     ]
+// case 'INCREASE_QUANTITY':
+//     return {
+//         ...state,
+//         quantity: action.quantity++
+//     };
+// case 'DECREASE_QUANTITY':
+//     if (state.quantity > 0) {
+//         return {
+//             ...state,
+//             quantity: action.quantity--
+//         };
+//     }
+//     break;
