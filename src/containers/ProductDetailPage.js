@@ -1,5 +1,4 @@
 import React, {Component}           from 'react';
-import {Link}                       from "react-router-dom";
 import ProductService               from '../components/ProductService/ProductService';
 import Quantity                     from "../components/Quantity/Quantity";
 import propTypes                    from "prop-types";
@@ -44,7 +43,6 @@ export default class ProductDetailPage extends Component {
 
         const { totalPrice } = this.props;
         const { quantity }   = this.state;
-        const { product }    = this.props;
 
         return (
             <Nav>
@@ -59,11 +57,11 @@ export default class ProductDetailPage extends Component {
                         <div className="container">
                             <div >
                                 {/* Item Detail Slide*/}
-                                <div className="col-md-4 md-margin-bottom-50">
+                                <div className="col-md-6 md-margin-bottom-50">
                                     <Slideshow/>
                                 </div>
 
-                                <div className="col-md-4">
+                                <div className="col-md-4 margin-left">
                                     <h2>{this.state.name}</h2>
                                     <ul className="list-inline product-ratings margin-bottom-30">
                                         <li><i className="rating-selected fa fa-star"/></li>
@@ -210,12 +208,6 @@ export default class ProductDetailPage extends Component {
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-5">
-                                            <div className="responsive-video">
-                                                <iframe src="//player.vimeo.com/video/72343553" frameBorder={0}
-                                                        webkitallowfullscreen mozallowfullscreen allowFullScreen/>
                                             </div>
                                         </div>
                                     </div>
