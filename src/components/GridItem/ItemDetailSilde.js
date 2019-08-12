@@ -12,7 +12,7 @@ const slideImages = [
 const properties = {
     duration: 5000,
     transitionDuration:500,
-    infinite:false,
+    infinite:true,
     indicators: true,
     arrows: true,
     onChange: (oldIndex, newIndex) => {
@@ -28,21 +28,18 @@ const Slideshow = () => {
                     <div style={{'backgroundImage': `url(${slideImages[0]})`}}
                         className={'back-ground-img-slider'}
                     >
-                        <span>Slide 1</span>
                     </div>
                 </div>
                 <div className="each-slide">
                     <div style={{'backgroundImage': `url(${slideImages[1]})`}}
                          className={'back-ground-img-slider'}
                     >
-                        <span>Slide 2</span>
                     </div>
                 </div>
                 <div className="each-slide">
                     <div style={{'backgroundImage': `url(${slideImages[2]})`}}
                          className={'back-ground-img-slider'}
                     >
-                        <span>Slide 3</span>
                     </div>
                 </div>
             </Slide>

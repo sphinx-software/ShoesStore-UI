@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import propTypes            from 'prop-types';
 import Nav                  from "reactstrap/es/Nav";
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardBody } from 'reactstrap';
 
 export default class CategoryItem extends Component {
     render() {

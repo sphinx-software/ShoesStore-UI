@@ -59,7 +59,7 @@ export default class ProductDetailPage extends Component {
                         <div className="container">
                             <div >
                                 {/* Item Detail Slide*/}
-                                <div className="col-md-8 md-margin-bottom-50">
+                                <div className="col-md-4 md-margin-bottom-50">
                                     <Slideshow/>
                                 </div>
 
