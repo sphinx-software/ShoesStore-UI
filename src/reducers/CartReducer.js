@@ -1,7 +1,7 @@
 const initialState = {
     products: [
-        { id: 1,  image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1,categories : 'maytinh' },
-        { id: 2,  image: 'assets/img/blog/41.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1,categories : 1 },
+        { id: 1,  image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1, categories: 'maytinh' },
+        { id: 2,  image: 'assets/img/blog/41.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1, categories: 1 },
         { id: 3,  image: 'assets/img/blog/42.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
         { id: 4,  image: 'assets/img/blog/43.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
         { id: 5,  image: 'assets/img/blog/44.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1 },
