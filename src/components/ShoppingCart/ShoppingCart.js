@@ -8,7 +8,6 @@ import { connect }                                from "react-redux";
 import { decreaseQuantity }                       from "../../actions/actions";
 import { increaseQuantity }                       from "../../actions/actions";
 import { remove }                                 from "../../actions/actions";
-import { getTotalPrice }                          from "../../actions/actions";
 
 
 import '../../ui/shoppingcart/shoppingcarttotalprice.css';
@@ -18,7 +17,7 @@ class ShoppingCart extends Component {
 
     render() {
 
-        const { products } = this.props;
+        const { products, getTotalPrice } = this.props;
 
         return (
             <div>
@@ -84,7 +83,7 @@ class ShoppingCart extends Component {
                             <tbody>
                             <tr>
                                 <th><h3>Subtotal:</h3></th>
-                                <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
+                                <td><h3>{ getTotalPrice }$</h3></td>
                             </tr>
                             <tr>
                                 <th><h3>Shipping:</h3></th>
@@ -92,7 +91,7 @@ class ShoppingCart extends Component {
                             </tr>
                             <tr>
                                 <th><h3>Total:</h3></th>
-                                <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
+                                <td><h3>{ getTotalPrice }$</h3></td>
                             </tr>
                             </tbody>
                         </Table>
@@ -107,7 +106,7 @@ class ShoppingCart extends Component {
 const mapStateToProps = (state) => {
     return {
         products        : state.Cart.cart,
-        getTotalPrice   : getTotalPrice(state.Cart.cart)
+        getTotalPrice   : state.Cart.total
     }
 };
 

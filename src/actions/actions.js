@@ -11,10 +11,6 @@ export const remove = product => ({
     product
 });
 
-export const getTotalPrice = products => ({
-    type: "GET_TOTAL_PRICE",
-    products
-});
 
 export const increaseQuantity = quantity => ({
     type: 'INCREASE_QUANTITY',
