@@ -14,6 +14,11 @@ import NavLink                          from "reactstrap/es/NavLink";
 export default class HomePage extends Component {
     render() {
 
+        const banners = [
+            {img: "assets/img/blog/banner1.png"},
+            {img: "assets/img/blog/banner2.png"},
+        ];
+
         const categories = [
             { name: 'Men1', img: "assets/img/blog/collection2.png" },
             { name: 'Men2', img: "assets/img/blog/collection3.png" },
@@ -39,7 +44,17 @@ export default class HomePage extends Component {
                         <div className="wrapper">
                             <Slider/>
                             <div className="container content-md">
-                                <SaleBanner/>
+                                <div className="row"> 
+                                    {
+                                        banners.map((banner, index) => {
+                                            return(
+                                                <div key={index}>
+                                                    <SaleBanner banner={banner}/>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
                                 <div className="heading heading-v1 margin-bottom-20">
                                     <h2>Featured products</h2>
                                 </div>
