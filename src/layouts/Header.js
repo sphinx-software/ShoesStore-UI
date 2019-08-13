@@ -1,6 +1,6 @@
 import React, { Component }             from 'react';
 import        { Link }                  from "react-router-dom";
-import        { getTotalPrice, remove } from "../actions/actions";
+import        { remove }                from "../actions/actions";
 import        { connect }               from "react-redux";
 import                                       '../ui/header/headers.css';
 import {
@@ -39,7 +39,7 @@ class Header extends Component {
         })
     };
     render() {
-        const { products } = this.props;
+        const { products, totalPrice } = this.props;
         return (
             <div>
                 <Navbar color="light" light expand="md">
@@ -101,7 +101,7 @@ class Header extends Component {
                                             <center>
                                                 <div className="sub-total">
                                                     <h3>SUBTOTAL</h3>
-                                                    <h3>{ () => this.props.getTotalPrice(products)}$</h3>
+                                                    <h3>{ totalPrice }$</h3>
                                                 </div>
                                                 <div>
                                                     <Button className="checkout-button" color="primary" size="lg"><Link to="/checkout">Checkout</Link></Button>{' '}
@@ -120,8 +120,8 @@ class Header extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        products: state.Cart.cart,
-        getTotalPrice: getTotalPrice(state.Cart.total)
+        products    : state.Cart.cart,
+        totalPrice  : state.Cart.total
     }
 };
 
