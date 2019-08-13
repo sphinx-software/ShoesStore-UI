@@ -2494,7 +2494,8 @@ img.img-center,
 .bg-light {
  padding: 10px 15px;
  margin-bottom: 10px;
- background: #fcfcfc;
+ background: #ffffff
+;
 
 }
 .bg-light:hover {
