@@ -5,20 +5,21 @@ const initialState = {
         { id: 3,  image: 'assets/img/blog/42.jpg', name: 'Shoes', gender: 'NAM', price: 100 },
     ],
     cart: [],
-    total: 0
+    total: 0,
+    quantity: 1
 }
 
 const CartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
 
-            let addProduct     = state.products.find(product => product.id === action.id);
+            let addProduct           = state.products.find(product => product.id === action.id);
 
             let existedProductOfCart = state.cart.find(product => action.id === product.id);
 
 
             if (existedProductOfCart) {
-                addProduct.quantity++
+                addProduct.quantity += 1
                 return {
                     ...state,
                     total: state.cart.reduce((total, existedProductOfCart) => total + ( existedProductOfCart.price * existedProductOfCart.quantity ), 0)
@@ -35,8 +36,24 @@ const CartReducer = (state = initialState, action) => {
         case 'REMOVE_ITEM':
             return {
                 ...state,
-                cart: state.cart.filter(product => action.id !== product.id)
+                cart: state.cart.filter(product => action.id !== product.id),
+                total: state.cart.reduce((total, existedProductOfCart) => total + ( existedProductOfCart.price * existedProductOfCart.quantity ), 0)
             }
+
+        case 'INCREASE_QUANTITY':
+            return {
+                ...state,
+                quantity: existedProductOfCart.quantity++
+            };
+
+        case 'DECREASE_QUANTITY':
+            if (state.quantity > 0) {
+                return {
+                    ...state,
+                    quantity: existedProductOfCart.quantity--
+                };
+            }
+            break;
 
         default:
             return state
@@ -46,23 +63,7 @@ const CartReducer = (state = initialState, action) => {
 export default CartReducer;
 
 
-// case 'GET_TOTAL_PRICE':
-//     return [
-//         state.reduce((total, action) => total + (action.price * action.quantity), 0)
-//     ]
 
 
 
-// case 'INCREASE_QUANTITY':
-//     return {
-//         ...state,
-//         quantity: action.quantity++
-//     };
-// case 'DECREASE_QUANTITY':
-//     if (state.quantity > 0) {
-//         return {
-//             ...state,
-//             quantity: action.quantity--
-//         };
-//     }
-//     break;
+

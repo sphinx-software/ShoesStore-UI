@@ -17,7 +17,7 @@ class ShoppingCart extends Component {
 
     render() {
 
-        const { products, getTotalPrice } = this.props;
+        const { products, totalPrice } = this.props;
 
         return (
             <div>
@@ -51,10 +51,10 @@ class ShoppingCart extends Component {
                                         <h3>{ product.name }</h3>
                                         <p>{ product.description }</p>
                                     </td>
-                                    <td>{ product.price } </td>
+                                    <td>{ product.price } $ </td>
                                     <td>
-                                        <Quantity decrease={ () => this.props.decrease(product.id) }
-                                                  increase={ () => this.props.increase(product.id) }
+                                        <Quantity decrease={ () => this.props.decrease(1) }
+                                                  increase={ () => this.props.increase(1) }
                                                   value={ product.quantity }/>
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
@@ -83,7 +83,7 @@ class ShoppingCart extends Component {
                             <tbody>
                             <tr>
                                 <th><h3>Subtotal:</h3></th>
-                                <td><h3>{ getTotalPrice }$</h3></td>
+                                <td><h3>{ totalPrice }$</h3></td>
                             </tr>
                             <tr>
                                 <th><h3>Shipping:</h3></th>
@@ -91,7 +91,7 @@ class ShoppingCart extends Component {
                             </tr>
                             <tr>
                                 <th><h3>Total:</h3></th>
-                                <td><h3>{ getTotalPrice }$</h3></td>
+                                <td><h3>{ totalPrice }$</h3></td>
                             </tr>
                             </tbody>
                         </Table>
@@ -105,8 +105,8 @@ class ShoppingCart extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        products        : state.Cart.cart,
-        getTotalPrice   : state.Cart.total
+        products     : state.Cart.cart,
+        totalPrice   : state.Cart.total
     }
 };
 
