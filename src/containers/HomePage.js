@@ -1,6 +1,6 @@
 import React, { Component }             from 'react';
 import { BrowserRouter }                from "react-router-dom";
-import Slider                           from '../components/Slider/Slider';
+import SlideBanner                      from '../components/Slider/SliderBanner';
 import SaleBanner                       from '../components/Banner/SaleBanner';
 import ProductItem                      from '../components/GridItem/ProductItem';
 import CategoryItem                     from '../components/GridItem/CategoryItem';
@@ -8,7 +8,6 @@ import ProductService                   from '../components/ProductService/Produ
 import Illustrationv5                   from '../components/Illustrationv5/Illustrationv5';
 import Nav                              from "reactstrap/es/Nav";
 import NavLink                          from "reactstrap/es/NavLink";
-
 
 
 export default class HomePage extends Component {
@@ -42,7 +41,7 @@ export default class HomePage extends Component {
                 <Nav>
                     <div>
                         <div className="wrapper">
-                            <Slider/>
+                            <SlideBanner/>
                             <div className="container content-md">
                                 <div className="row"> 
                                     {
