@@ -16,19 +16,19 @@ const CartReducer = (state = initialState, action) => {
 
             let existedProduct = state.cart.find(product => action.id === product.id);
 
+
             if (existedProduct) {
                 addProduct.quantity++
                 return {
                     ...state,
-                    total: state.cart.reduce((existedProduct, total) => total + ( existedProduct * action.quantity ), 0)
+                    total: state.cart.reduce((total, existedProduct) => total + ( existedProduct.price * addProduct.quantity ), 0)
                 }
             } else {
                 addProduct.quantity = 1
-                let newTotal = state.total + addProduct.price
                 return {
                     ...state,
                     cart: [...state.cart, addProduct],
-                    total: newTotal
+                    total: state.cart.reduce((total, existedProduct) => total + ( existedProduct.price * addProduct.quantity ), 0)
                 }
             }
 

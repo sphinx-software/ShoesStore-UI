@@ -39,7 +39,7 @@ class Header extends Component {
         })
     };
     render() {
-        const { products, getTotalPrice } = this.props;
+        const { products } = this.props;
         return (
             <div>
                 <Navbar color="light" light expand="md">
@@ -101,7 +101,7 @@ class Header extends Component {
                                             <center>
                                                 <div className="sub-total">
                                                     <h3>SUBTOTAL</h3>
-                                                    <h3>{() => this.getTotalPrice()}$</h3>
+                                                    <h3>{ () => this.props.getTotalPrice(products)}$</h3>
                                                 </div>
                                                 <div>
                                                     <Button className="checkout-button" color="primary" size="lg"><Link to="/checkout">Checkout</Link></Button>{' '}
