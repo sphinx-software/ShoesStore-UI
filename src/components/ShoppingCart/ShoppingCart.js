@@ -1,13 +1,11 @@
-import React,       { Component }                 from 'react';
-import BreadCrumbs                                from "../BreadCrumbs/BreadCrumbs";
-import Quantity                                   from "../Quantity/Quantity";
-import { Button, FormGroup, Input, Label, Table } from "reactstrap";
+import React,       { Component }                       from 'react';
+import BreadCrumbs                                      from "../BreadCrumbs/BreadCrumbs";
+import Quantity                                         from "../Quantity/Quantity";
+import { Button, FormGroup, Input, Label, Table }       from "reactstrap";
 
 
-import { connect }                                from "react-redux";
-import { decreaseQuantity }                       from "../../actions/actions";
-import { increaseQuantity }                       from "../../actions/actions";
-import { remove }                                 from "../../actions/actions";
+import { connect }                                      from "react-redux";
+import { decreaseQuantity, increaseQuantity, remove }   from "../../actions/actions";
 
 
 import '../../ui/shoppingcart/shoppingcarttotalprice.css';
@@ -53,8 +51,8 @@ class ShoppingCart extends Component {
                                     </td>
                                     <td>{ product.price } $ </td>
                                     <td>
-                                        <Quantity decrease={ () => this.props.decrease(1) }
-                                                  increase={ () => this.props.increase(1) }
+                                        <Quantity decrease={ () => this.props.decrease() }
+                                                  increase={ () => this.props.increase() }
                                                   value={ product.quantity }/>
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
@@ -114,8 +112,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         remove      : (product) => dispatch(remove(product)),
-        decrease    : () => dispatch(decreaseQuantity(1)),
-        increase    : () => dispatch(increaseQuantity(1))
+        decrease    : () => dispatch(decreaseQuantity()),
+        increase    : () => dispatch(increaseQuantity())
     }
 };
 
