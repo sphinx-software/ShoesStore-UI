@@ -39,7 +39,8 @@ class Header extends Component {
         })
     };
     render() {
-        const { products, totalPrice } = this.props;
+        const { products, totalPrice, cart } = this.props;
+        console.log("cart", cart);
         return (
             <div>
                 <Navbar color="light" light expand="md">
@@ -121,7 +122,8 @@ class Header extends Component {
 const mapStateToProps = (state) => {
     return {
         products    : state.Cart.cart,
-        totalPrice  : state.Cart.total
+        totalPrice  : state.Cart.total,
+        cart        : state.Cart
     }
 };
 

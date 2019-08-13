@@ -19,6 +19,7 @@ const initialState = {
 }
 
 const CartReducer = (state = initialState, action) => {
+    console.log("action", action);
     switch (action.type) {
         case 'ADD_TO_CART':
 
@@ -38,7 +39,7 @@ const CartReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     cart: [...state.cart, addProduct],
-                    total: state.cart.reduce((total, existedProductOfCart) => total + ( existedProductOfCart.price * existedProductOfCart.quantity ), 0)
+                    total: action.product.price
                 }
             }
 
