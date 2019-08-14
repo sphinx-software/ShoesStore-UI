@@ -8,7 +8,7 @@ import { connect }                                      from "react-redux";
 import { decreaseQuantity, increaseQuantity, remove }   from "../../actions/actions";
 
 
-import '../../ui/shoppingcart/shoppingcarttotalprice.css';
+import                                                       '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
 
 class ShoppingCart extends Component {
@@ -112,8 +112,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         remove      : (product) => dispatch(remove(product)),
-        decrease    : () => dispatch(decreaseQuantity()),
-        increase    : () => dispatch(increaseQuantity())
+        decrease    : () => dispatch(decreaseQuantity(1)),
+        increase    : () => dispatch(increaseQuantity(1))
     }
 };
 
