@@ -3,13 +3,10 @@ import BreadCrumbs                                      from "../BreadCrumbs/Bre
 import Quantity                                         from "../Quantity/Quantity";
 import { Button, FormGroup, Input, Label, Table }       from "reactstrap";
 
-
 import { connect }                                      from "react-redux";
 import { decreaseQuantity, increaseQuantity, remove }   from "../../actions/actions";
 
-
 import                                                       '../../ui/shoppingcart/shoppingcarttotalprice.css';
-
 
 class ShoppingCart extends Component {
 
@@ -34,7 +31,6 @@ class ShoppingCart extends Component {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -100,14 +96,12 @@ class ShoppingCart extends Component {
     }
 }
 
-
 const mapStateToProps = (state) => {
     return {
         products     : state.Cart.cart,
         totalPrice   : state.Cart.total
     }
 };
-
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -116,7 +110,6 @@ const mapDispatchToProps = (dispatch) => {
         increase    : () => dispatch(increaseQuantity(1))
     }
 };
-
 
 export default connect(
     mapStateToProps,

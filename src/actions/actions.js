@@ -26,5 +26,3 @@ export const dropdown = dropdown => ({
     type: 'DROP_DOWN',
     dropdown
 })
-
-
