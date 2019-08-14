@@ -11,17 +11,6 @@ export const remove = product => ({
     product
 });
 
-
-export const increaseQuantity = quantity => ({
-    type: 'INCREASE_QUANTITY',
-    quantity
-});
-
-export const decreaseQuantity = quantity => ({
-    type: 'DECREASE_QUANTITY',
-    quantity
-});
-
 export const dropdown = dropdown => ({
     type: 'DROP_DOWN',
     dropdown

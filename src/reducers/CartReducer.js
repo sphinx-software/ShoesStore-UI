@@ -10,6 +10,7 @@ const initialState = {
 
 const CartReducer = (state = initialState, action) => {
     switch (action.type) {
+
         case 'ADD_TO_CART':
 
             let productOfProducts   = state.products.find(product => product.id === action.id);
@@ -31,6 +32,7 @@ const CartReducer = (state = initialState, action) => {
                 }
             }
 
+
         case 'REMOVE_ITEM':
             return {
                 ...state,
@@ -39,27 +41,9 @@ const CartReducer = (state = initialState, action) => {
             }
 
 
-        case 'INCREASE_QUANTITY':
-            return {
-                ...state,
-                quantity: productOfProducts.quantity++
-            };
-
-        case 'DECREASE_QUANTITY':
-            if (productOfProducts.quantity > 0) {
-                return {
-                    ...state,
-                    quantity: productOfProducts.quantity--
-                };
-            }
-
         default:
             return state
     }
 }
 
 export default CartReducer;
-
-
-
-

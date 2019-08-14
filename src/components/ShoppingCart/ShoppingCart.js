@@ -4,7 +4,7 @@ import Quantity                                         from "../Quantity/Quanti
 import { Button, FormGroup, Input, Label, Table }       from "reactstrap";
 
 import { connect }                                      from "react-redux";
-import { decreaseQuantity, increaseQuantity, remove }   from "../../actions/actions";
+import {addToCart, decreaseQuantity, increaseQuantity, remove} from "../../actions/actions";
 
 import                                                       '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
@@ -47,8 +47,8 @@ class ShoppingCart extends Component {
                                     </td>
                                     <td>{ product.price } $ </td>
                                     <td>
-                                        <Quantity decrease={ () => this.props.decrease() }
-                                                  increase={ () => this.props.increase() }
+                                        <Quantity decrease={ (product) => this.props.decrease(product.id) }
+                                                  increase={ (product) => this.props.increase(product.id) }
                                                   value={ product.quantity }/>
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
@@ -107,8 +107,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         remove      : (product) => dispatch(remove(product)),
-        decrease    : () => dispatch(decreaseQuantity(1)),
-        increase    : () => dispatch(increaseQuantity(1))
+        decrease    : (product) => dispatch(addToCart(product)),
+        increase    : (product) => dispatch(addToCart(product))
     }
 };
 
