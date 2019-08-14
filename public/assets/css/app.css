@@ -2493,13 +2493,8 @@ img.img-center,
 /*Background Light*/
 .bg-light {
  padding: 10px 15px;
- margin-bottom: 10px;
- background: #ffffff
-;
-
-}
-.bg-light:hover {
-	 border: solid 1px #bbb;
+ margin-bottom: 1px;
+ background: #ffffff;
 }
 
 /*CSS3 Hover Effects*/
