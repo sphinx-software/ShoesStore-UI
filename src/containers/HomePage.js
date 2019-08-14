@@ -14,8 +14,8 @@ export default class HomePage extends Component {
     render() {
 
         const banners = [
-            {img: "assets/img/blog/banner1.png"},
-            {img: "assets/img/blog/banner2.png"},
+            { img: "assets/img/blog/banner1.png" },
+            { img: "assets/img/blog/banner2.png" },
         ];
 
         const categories = [

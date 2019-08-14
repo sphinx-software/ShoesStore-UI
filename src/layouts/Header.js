@@ -58,7 +58,7 @@ class Header extends Component {
                         <Col xs="6" sm="4">
                             <ButtonGroup className="button-group-dropdown">
                                 <ButtonDropdown isOpen={this.state.dropdownOpenOne} toggle={ () => this.toggleOne() }>
-                                    <DropdownToggle caret size="lg" style={{ background: "#fcfcfc", height: 70 }}>
+                                    <DropdownToggle caret size="lg" style={{ background: "#fcfcfc", height: 70, width: 150 }}>
                                         PRODUCT
                                     </DropdownToggle>
                                     <DropdownMenu>
@@ -67,7 +67,7 @@ class Header extends Component {
                                     </DropdownMenu>
                                 </ButtonDropdown>
                                 <ButtonDropdown isOpen={this.state.dropdownOpenTwo} toggle={ () => this.toggleTwo() }>
-                                    <DropdownToggle caret size="lg" style={{ background: "#fcfcfc", height: 70 }}>
+                                    <DropdownToggle caret size="lg" style={{ background: "#fcfcfc", height: 70, width: 150 }}>
                                         PROMOTION
                                     </DropdownToggle>
                                     <DropdownMenu>
@@ -89,30 +89,27 @@ class Header extends Component {
                                     </DropdownToggle>
                                 </ButtonDropdown>
                             </ButtonGroup>
-                            <div className={`${dropdownOpenThree}`} 
-                                 style={{ width: 350, 
-                                          position: 'absolute', 
-                                          top: '100%', 
-                                          zIndex: 200, 
-                                          border: '1px solid black',
-                                          background: 'white',
+                                <div className={`${dropdownOpenThree}`} 
+                                    style={{ width: 350, 
+                                            position: 'absolute', 
+                                            top: '100%', 
+                                            zIndex: 200, 
+                                            border: '1px solid black',
+                                            background: 'white',
                                         }}>
-
-                                    {
-                                        products.map((product) =>
-                                            <div key={product.id} className="product">
-                                                <img className="image" src={product.image} alt={"text"}/>
-                                                <div className="name-price-quantity">
-                                                    <h2>{product.name}</h2>
-                                                    <h4>{product.price}$ x {product.quantity}</h4>
-                                                </div>
-                                                <div className="total-price">
-                                                    <h2>{product.price * product.quantity}$</h2>
-                                                </div>
-                                                <button onClick={ () => this.props.remove(product) } type="button" className="close">x</button>
+                                    {products.map((product) =>
+                                        <div key={product.id} className="product">
+                                            <img className="image" src={product.image} alt={"text"}/>
+                                            <div className="name-price-quantity">
+                                                <h2>{product.name}</h2>
+                                                <h4>{product.price}$ x {product.quantity}</h4>
                                             </div>
-                                        )
-                                    }   
+                                            <div className="total-price">
+                                                <h2>{product.price * product.quantity}$</h2>
+                                            </div>
+                                            <button onClick={ () => this.props.remove(product) } type="button" className="close">x</button>
+                                        </div>
+                                    )}
                                 <div>
                                     <center>
                                         <div className="sub-total">
