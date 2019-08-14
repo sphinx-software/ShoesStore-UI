@@ -1,7 +1,8 @@
-import React, {Component}                               from 'react';
-import { FacebookLoginButton, TwitterLoginButton }      from "react-social-login-buttons";
-import { Button, Form, FormGroup, Label, Input }        from 'reactstrap';
-import '../../ui/form/formlogin.css';
+import React, {Component}                          from 'react';
+import { FacebookLoginButton, TwitterLoginButton } from "react-social-login-buttons";
+import { Button, Form, FormGroup, Label, Input }   from 'reactstrap';
+import {Link}                                      from "react-router-dom";
+import                                                  '../../ui/form/formlogin.css';
 
 export default class FormLogin extends Component {
     render() {
@@ -17,7 +18,7 @@ export default class FormLogin extends Component {
                             <FormGroup>
                                 <Input type="password" name="password" id="examplePassword" placeholder="Password"/>
                             </FormGroup>
-                            <h5>Forget your password?</h5>
+                            <h5>Forgot your password?</h5>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox"/>{' '}
@@ -27,7 +28,7 @@ export default class FormLogin extends Component {
                             <Button color="primary">Login</Button>{' '}
                             <FacebookLoginButton/>
                             <TwitterLoginButton/>
-                            <h5>Don't have account yet? Learn more and Sign Up</h5>
+                            <h5>Don't have account yet? Learn more and <Link to="/register">Sign Up</Link></h5>
                         </div>
                     </div>
                 </Form>
