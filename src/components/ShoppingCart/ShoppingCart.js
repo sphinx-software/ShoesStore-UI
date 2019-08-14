@@ -1,24 +1,18 @@
-import React,       { Component }                 from 'react';
-import BreadCrumbs                                from "../BreadCrumbs/BreadCrumbs";
-import Quantity                                   from "../Quantity/Quantity";
-import { Button, FormGroup, Input, Label, Table } from "reactstrap";
+import React,       { Component }                       from 'react';
+import BreadCrumbs                                      from "../BreadCrumbs/BreadCrumbs";
+import Quantity                                         from "../Quantity/Quantity";
+import { Button, FormGroup, Input, Label, Table }       from "reactstrap";
 
+import { connect }                                      from "react-redux";
+import {addToCart, decreaseQuantity, increaseQuantity, remove} from "../../actions/actions";
 
-import { connect }                                from "react-redux";
-import { decreaseQuantity }                       from "../../actions/actions";
-import { increaseQuantity }                       from "../../actions/actions";
-import { remove }                                 from "../../actions/actions";
-import { getTotalPrice }                          from "../../actions/actions";
-
-
-import '../../ui/shoppingcart/shoppingcarttotalprice.css';
-
+import                                                       '../../ui/shoppingcart/shoppingcarttotalprice.css';
 
 class ShoppingCart extends Component {
 
     render() {
 
-        const { products } = this.props;
+        const { products, totalPrice } = this.props;
 
         return (
             <div>
@@ -37,7 +31,6 @@ class ShoppingCart extends Component {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -52,15 +45,16 @@ class ShoppingCart extends Component {
                                         <h3>{ product.name }</h3>
                                         <p>{ product.description }</p>
                                     </td>
-                                    <td>{ product.price } </td>
+                                    <td>{ product.price } $ </td>
                                     <td>
-                                        <Quantity decrease={ () => this.props.decrease(product.id) }
-                                                  increase={ () => this.props.increase(product.id) }
+                                        <Quantity decrease={ (product) => this.props.decrease(product.id) }
+                                                  increase={ (product) => this.props.increase(product.id) }
                                                   value={ product.quantity }/>
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
                                     <td>
-                                        <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                        <button onClick={ () => this.props.remove(product) } type="button" className="close">
+                                            <span>X</span><span className="sr-only">Close</span></button>
                                     </td>
                                 </tr>
                             )
@@ -71,55 +65,52 @@ class ShoppingCart extends Component {
                 <hr/>
                 {/* ShoppingCartTotalPrice */}
                     <div className="content-father">
-                    <div className="form-fa">
-                        <FormGroup>
-                            <Label><h3>Discount Code</h3></Label>
-                        </FormGroup>
-                        <FormGroup className="content-child">
-                            <Input style={{ height: 40, width: 200 }} placeholder="Enter your coupon code" />
-                            <Button color="success">Apply Coupon</Button>{' '}
-                        </FormGroup>
+                        <div className="form-fa">
+                            <FormGroup>
+                                <Label><h3>Discount Code</h3></Label>
+                            </FormGroup>
+                            <FormGroup className="content-child">
+                                <Input style={{ height: 40, width: 200 }} placeholder="Enter your coupon code" />
+                                <Button color="success">Apply Coupon</Button>{' '}
+                            </FormGroup>
+                        </div>
+                        <Table className="table" style={{ width: 200 }}>
+                            <tbody>
+                            <tr>
+                                <th><h3>Subtotal:</h3></th>
+                                <td><h3>{ totalPrice }$</h3></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Shipping:</h3></th>
+                                <td><h3>----</h3></td>
+                            </tr>
+                            <tr>
+                                <th><h3>Total:</h3></th>
+                                <td><h3>{ totalPrice }$</h3></td>
+                            </tr>
+                            </tbody>
+                        </Table>
                     </div>
-                    <Table className="table" style={{ width: 200 }}>
-                        <tbody>
-                        <tr>
-                            <th><h3>Subtotal:</h3></th>
-                            <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
-                        </tr>
-                        <tr>
-                            <th><h3>Shipping:</h3></th>
-                            <td><h3>----</h3></td>
-                        </tr>
-                        <tr>
-                            <th><h3>Total:</h3></th>
-                            <td><h3>{ () => this.props.getTotalPrice(products) }$</h3></td>
-                        </tr>
-                        </tbody>
-                    </Table>
-                </div>
                 {/* End ShoppingCartTotalPrice */}
             </div>
         );
     }
 }
 
-
 const mapStateToProps = (state) => {
     return {
-        products        : state.Cart,
-        getTotalPrice   : getTotalPrice(state.Cart)
+        products     : state.Cart.cart,
+        totalPrice   : state.Cart.total
     }
 };
-
 
 const mapDispatchToProps = (dispatch) => {
     return {
         remove      : (product) => dispatch(remove(product)),
-        decrease    : (quantity) => dispatch(decreaseQuantity(quantity)),
-        increase    : (quantity) => dispatch(increaseQuantity(quantity))
+        decrease    : (product) => dispatch(addToCart(product)),
+        increase    : (product) => dispatch(addToCart(product))
     }
 };
-
 
 export default connect(
     mapStateToProps,

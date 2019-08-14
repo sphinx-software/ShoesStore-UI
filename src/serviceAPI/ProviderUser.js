@@ -1,30 +1,21 @@
 class ProviderUser {
     constructor(axiosConfig) {
         this.axiosConfig = axiosConfig;
-    }
+    };
 
-    registUser(infoUser) {
+    registerUser(infoUser) {
         return this.axiosConfig.post('/users', {
-            // ...infoUser
             user: infoUser.userName
         })
-            .then((response) => {
-                return response.data;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+            .then(res => res.data)
+            .catch(err => console.log(err))
+    };
 
     getUsers(infoUser) {
         return this.axiosConfig.get('/users')
-            .then((response) =>{
-                return response.data;
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
+            .then(res => res.data)
+            .catch(err => console.log(err))
+    };
 }
 
 export default ProviderUser;

@@ -1,6 +1,7 @@
 import React, {Component}                        from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import '../../ui/form/formregister.css';
+import {Link}                                    from "react-router-dom";
+import                                                '../../ui/form/formregister.css';
 
 
 class FormRegister extends Component {
@@ -71,8 +72,7 @@ class FormRegister extends Component {
                             </Label>
                         </FormGroup>
                         <Button color="primary">Create Account</Button>{' '}
-                        <h5>Already you have an account?</h5>
-                        <h5>Sign In</h5>
+                        <h5>Already you have an account? <Link to="/login">Sign In</Link></h5>
                      </Form>
                 </Form>
             </div>

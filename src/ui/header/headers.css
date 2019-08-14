@@ -1,0 +1,52 @@
+.timkeo-banner {
+    margin: 100px
+}
+.button-group-dropdown {
+    margin: 0px 50px 0px 50px;
+}
+.product-list {
+    width: 160px;
+    height: 50px;
+    background: white;
+}
+.checkout {
+    width: 160px;
+    height: 50px;
+    background: white;
+}
+.free-ship {
+    width: 160px;
+    height: 50px;
+    background: white;
+}
+.twenty-percent {
+    width: 160px;
+    height: 50px;
+    background: white;
+}
+.image {
+    width: 100px;
+    margin: 20px 0px 20px 10px;
+}
+.product {
+    display: flex;
+    justify-content: space-around;
+    border: solid thin gainsboro;
+}
+.name-price-quantity {
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.total-price {
+    margin-top: 50px;
+    margin-right: 10px;
+}
+.sub-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 25px;
+}
+.checkout-button {
+    margin-bottom: 10px;
+}
+

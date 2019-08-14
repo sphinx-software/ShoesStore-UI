@@ -1,20 +1,45 @@
-import React, { Component }                           from 'react';
-import { BrowserRouter }                              from "react-router-dom";
-import HeadBanner                                     from '../components/Banner/HeadBanner';
-import Panel                                          from "../components/Panel/Panel";
-import Item                                           from '../components/GridItem/Item';
-import BreadCrumbs                                    from "../components/BreadCrumbs/BreadCrumbs";
-import propTypes                                      from "prop-types";
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-import Nav                                            from "reactstrap/es/Nav";
-import                                                     '../ui/pagination/pagination.css';
+import React, { Component } from 'react';
+import { BrowserRouter }    from "react-router-dom";
+import HeadBanner           from '../components/Banner/HeadBanner';
+import Panel                from "../components/Panel/Panel";
+import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
+import propTypes            from "prop-types";
+import {
+    Button,
+    Card,
+    CardBody,
+    CardImg,
+    CardSubtitle,
+    CardText,
+    CardTitle,
+}                           from 'reactstrap';
+import Nav                  from "reactstrap/es/Nav";
+import NavLink              from "reactstrap/es/NavLink";
+import { connect }          from "react-redux";
+import { addToCart }        from "../actions/actions";
+import                           '../ui/item/item.css';
+import                           '../ui/pagination/pagination.css';
+import Pagination           from "react-js-pagination";
 
 
-export default class ProductListPage extends Component {
+class ProductListPage extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            activePage: 1
+        };
+    }
+
+    handlePageChange(pageNumber) {
+        console.log(`active page is ${pageNumber}`);
+        this.setState({activePage: pageNumber});
+    }
 
     render() {
 
         const { products } = this.props;
+        console.log('products',products);
 
         return (
             <BrowserRouter>
@@ -64,48 +89,45 @@ export default class ProductListPage extends Component {
                                     </div>
                                 </div>
                                 <div className="filter-results">
-                                    <div className="row illustration-v2 margin-bottom-30">
-                                        {
-                                            products.map((product) => {
-                                                return(
-                                                    <div>
-                                                        <Item product={product}/>
-                                                    </div>
+                                    {/* Item */}
+                                        <div className="row illustration-v2 margin-bottom-30">
+                                            {
+                                                products.map((product) => {
+                                                    return (
+                                                        <div className="col-md-4">
+                                                            <Card className="card">
+                                                                <CardImg top width="100%" src={product.image} alt="Card image cap" />
+                                                                <CardBody>
+                                                                    <div className="name">
+                                                                        <CardTitle><h3><NavLink>{product.name}</NavLink></h3></CardTitle>
+                                                                    </div>
+                                                                    <div className="gender">
+                                                                        <CardSubtitle>{product.gender}</CardSubtitle>
+                                                                    </div>
+                                                                    <div className="price">
+                                                                        <CardText><h3>{product.price}$</h3></CardText>
+                                                                    </div>
+                                                                    <div>
+                                                                        <Button className="quick-review"><NavLink href={`/products/${product.id}`}>Quick review</NavLink></Button>{' '}
+                                                                        <Button onClick={ () => this.props.addToCart(product) } className="add-cart"><NavLink>Add to cart</NavLink></Button>{' '}
+                                                                    </div>
+                                                                </CardBody>
+                                                            </Card>
+                                                        </div>
+                                                    )}
                                                 )
-                                            })
-                                        }
-                                    </div>
+                                            }
+                                        </div>
+                                    {/* End Item */}
                                 </div>
                                 <div className="pagination-pagin">
-                                    <Pagination size="lg" aria-label="Page navigation example">
-                                        <PaginationItem>
-                                            <PaginationLink first href="#" />
-                                        </PaginationItem>
-                                        <PaginationItem>
-                                            <PaginationLink previous href="#" />
-                                        </PaginationItem>
-                                        <PaginationItem>
-                                            <PaginationLink href="#">
-                                                1
-                                            </PaginationLink>
-                                        </PaginationItem>
-                                        <PaginationItem>
-                                            <PaginationLink href="#">
-                                                2
-                                            </PaginationLink>
-                                        </PaginationItem>
-                                        <PaginationItem>
-                                            <PaginationLink href="#">
-                                                3
-                                            </PaginationLink>
-                                        </PaginationItem>
-                                        <PaginationItem>
-                                            <PaginationLink next href="#" />
-                                        </PaginationItem>
-                                        <PaginationItem>
-                                            <PaginationLink last href="#" />
-                                        </PaginationItem>
-                                    </Pagination>
+                                    <Pagination
+                                        activePage={this.state.activePage}
+                                        itemsCountPerPage={6}
+                                        totalItemsCount={450}
+                                        pageRangeDisplayed={5}
+                                        onChange={this.handlePageChange}
+                                        />
                                 </div>
                             </div>
                         </div>
@@ -122,18 +144,24 @@ ProductListPage.propTypes = {
 
 ProductListPage.defaultProps = {
     products: [
-        { id: 1,  image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 2,  image: 'assets/img/blog/41.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 3,  image: 'assets/img/blog/42.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 4,  image: 'assets/img/blog/43.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 5,  image: 'assets/img/blog/44.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 6,  image: 'assets/img/blog/45.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 7,  image: 'assets/img/blog/46.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 8,  image: 'assets/img/blog/47.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 9,  image: 'assets/img/blog/48.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 10, image: 'assets/img/blog/49.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 11, image: 'assets/img/blog/50.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
-        { id: 12, image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: '100$', quantity: 1 },
+        { id: 1,  image: 'assets/img/blog/40.jpg', name: 'Shoes', gender: 'NAM', price: 100, quantity: 1, categories : 'maytinh' },
     ]
 }
 
+const mapStateToProps = (state) => {
+    return {
+        products        : state.Cart.products,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (product) => dispatch(addToCart(product))
+    }
+};
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ProductListPage);

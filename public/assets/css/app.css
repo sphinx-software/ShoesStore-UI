@@ -2226,8 +2226,8 @@ img.image-md {
 }
 
 .content-md {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 40px;
+	padding-bottom: 10px;
 }
 
 .content-lg {
@@ -2493,12 +2493,8 @@ img.img-center,
 /*Background Light*/
 .bg-light {
  padding: 10px 15px;
- margin-bottom: 10px;
- background: #fcfcfc;
- border: solid 1px #e5e5e5;
-}
-.bg-light:hover {
-	 border: solid 1px #bbb;
+ margin-bottom: 1px;
+ background: #ffffff;
 }
 
 /*CSS3 Hover Effects*/

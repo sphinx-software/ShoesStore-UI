@@ -1,6 +1,6 @@
 import React, { Component }             from 'react';
 import { BrowserRouter }                from "react-router-dom";
-import Slider                           from '../components/Slider/Slider';
+import SlideBanner                      from '../components/Slider/SliderBanner';
 import SaleBanner                       from '../components/Banner/SaleBanner';
 import ProductItem                      from '../components/GridItem/ProductItem';
 import CategoryItem                     from '../components/GridItem/CategoryItem';
@@ -9,13 +9,19 @@ import Illustrationv5                   from '../components/Illustrationv5/Illus
 import Nav                              from "reactstrap/es/Nav";
 import NavLink                          from "reactstrap/es/NavLink";
 
+
 export default class HomePage extends Component {
     render() {
 
+        const banners = [
+            { img: "assets/img/blog/banner1.png" },
+            { img: "assets/img/blog/banner2.png" },
+        ];
+
         const categories = [
-            { name: 'Men1', amount: '200', img: "assets/img/blog/40.jpg" },
-            { name: 'Men2', amount: '200' },
-            { name: 'Men3', amount: '200' },
+            { name: 'Men1', img: "assets/img/blog/collection2.png" },
+            { name: 'Men2', img: "assets/img/blog/collection3.png" },
+            { name: 'Men3', img: "assets/img/blog/collection1.png" },
         ];
 
         const products = [
@@ -35,9 +41,19 @@ export default class HomePage extends Component {
                 <Nav>
                     <div>
                         <div className="wrapper">
-                            <Slider/>
+                            <SlideBanner/>
                             <div className="container content-md">
-                                <SaleBanner/>
+                                <div className="row"> 
+                                    {
+                                        banners.map((banner, index) => {
+                                            return(
+                                                <div key={index}>
+                                                    <SaleBanner banner={banner}/>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
                                 <div className="heading heading-v1 margin-bottom-20">
                                     <h2>Featured products</h2>
                                 </div>
