@@ -63,7 +63,7 @@ class Header extends Component {
                                     </DropdownToggle>
                                     <DropdownMenu>
                                         <DropdownItem className="product-list"><Link to="/products">Product List</Link></DropdownItem>
-                                        <DropdownItem className="checkout"><Link to="/checkout">Checkout</Link></DropdownItem>
+                                        <DropdownItem className="product-list"><Link to="/checkout">Checkout</Link></DropdownItem>
                                     </DropdownMenu>
                                 </ButtonDropdown>
                                 <ButtonDropdown isOpen={this.state.dropdownOpenTwo} toggle={ () => this.toggleTwo() }>
