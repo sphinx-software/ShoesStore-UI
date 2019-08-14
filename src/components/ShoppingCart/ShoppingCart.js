@@ -53,7 +53,8 @@ class ShoppingCart extends Component {
                                     </td>
                                     <td>{ product.price * product.quantity } $</td>
                                     <td>
-                                        <button onClick={ () => this.props.remove(product) } type="button" className="close"><span>X</span><span className="sr-only">Close</span></button>
+                                        <button onClick={ () => this.props.remove(product) } type="button" className="close">
+                                            <span>X</span><span className="sr-only">Close</span></button>
                                     </td>
                                 </tr>
                             )
