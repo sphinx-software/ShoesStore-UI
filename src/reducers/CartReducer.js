@@ -32,14 +32,12 @@ const CartReducer = (state = initialState, action) => {
                 }
             }
 
-
         case 'REMOVE_ITEM':
             return {
                 ...state,
                 cart    : state.cart.filter(product => action.id !== product.id),
                 total   : state.cart.reduce((total, productOfCart) => total + ( productOfCart.price * productOfCart.quantity ), 0)
             }
-
 
         default:
             return state
