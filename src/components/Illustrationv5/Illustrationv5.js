@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ThumbProduct from '../GridItem/ThumbProduct';
-import Nav from "reactstrap/es/Nav";
+import ThumbProduct         from '../GridItem/ThumbProduct';
+import Nav                  from "reactstrap/es/Nav";
+
 
 export default class Illustrationv5 extends Component {
-    render() {
 
+    render() {
         return (
             <Nav>
                 <div className="row illustration-v4 margin-bottom-40">

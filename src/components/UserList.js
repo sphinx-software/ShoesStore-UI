@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios                from 'axios';
 
 
-class UserList extends Component {
+export default class UserList extends Component {
 
     state = {
         users: []
@@ -38,5 +38,3 @@ class UserList extends Component {
         )
     }
 }
-
-export default UserList;

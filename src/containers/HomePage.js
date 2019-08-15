@@ -10,6 +10,10 @@ import Nav                              from "reactstrap/es/Nav";
 import NavLink                          from "reactstrap/es/NavLink";
 
 
+import '../ui/item/backgroundImage.css';
+
+
+
 export default class HomePage extends Component {
     render() {
 
@@ -43,7 +47,7 @@ export default class HomePage extends Component {
                         <div className="wrapper">
                             <SlideBanner/>
                             <div className="container content-md">
-                                <div className="row"> 
+                                <div className="row">
                                     {
                                         banners.map((banner, index) => {
                                             return(
@@ -54,6 +58,11 @@ export default class HomePage extends Component {
                                         })
                                     }
                                 </div>
+
+                                <div className="backgroundImage1">
+
+                                </div>
+
                                 <div className="heading heading-v1 margin-bottom-20">
                                     <h2>Featured products</h2>
                                 </div>
@@ -76,18 +85,14 @@ export default class HomePage extends Component {
                                     </ul>
                                 </div>
 
-                                <div className="row margin-bottom-50">
-                                    {
-                                        categories.map((category, index) => {
-                                                return(
-                                                    <div key={index}>
-                                                        <CategoryItem category={category}/>
-                                                    </div>
-                                                )
-                                            }
-                                        )
-                                    }
+
+
+                                <div className="backgroundImage2">
+
                                 </div>
+
+
+
 
                                 <div className="heading heading-v1 margin-bottom-40">
                                     <h2>Latest products</h2>
@@ -110,6 +115,9 @@ export default class HomePage extends Component {
                                         }
                                     </ul>
                                 </div>
+
+
+
                             </div>
                             <div className="container">
                                 <ProductService/>

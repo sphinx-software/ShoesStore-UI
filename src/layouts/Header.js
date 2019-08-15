@@ -58,7 +58,7 @@ class Header extends Component {
                         <Col xs="6" sm="4">
                             <ButtonGroup className="button-group-dropdown">
                                 <ButtonDropdown isOpen={this.state.dropdownOpenOne} toggle={ () => this.toggleOne() }>
-                                    <DropdownToggle caret size="lg" style={{ background: "#fcfcfc", height: 70, width: 150 }}>
+                                    <DropdownToggle className="font-a" caret size="lg" style={{ background: "#fcfcfc", height: 70, width: 150 }}>
                                         PRODUCT
                                     </DropdownToggle>
                                     <DropdownMenu>
@@ -67,7 +67,7 @@ class Header extends Component {
                                     </DropdownMenu>
                                 </ButtonDropdown>
                                 <ButtonDropdown isOpen={this.state.dropdownOpenTwo} toggle={ () => this.toggleTwo() }>
-                                    <DropdownToggle caret size="lg" style={{ background: "#fcfcfc", height: 70, width: 150 }}>
+                                    <DropdownToggle className="font-a" caret size="lg" style={{ background: "#fcfcfc", height: 70, width: 150 }}>
                                         PROMOTION
                                     </DropdownToggle>
                                     <DropdownMenu>
@@ -89,11 +89,11 @@ class Header extends Component {
                                     </DropdownToggle>
                                 </ButtonDropdown>
                             </ButtonGroup>
-                                <div className={`${dropdownOpenThree}`} 
-                                    style={{ width: 350, 
-                                            position: 'absolute', 
-                                            top: '100%', 
-                                            zIndex: 200, 
+                                <div className={`${dropdownOpenThree}`}
+                                    style={{ width: 350,
+                                            position: 'absolute',
+                                            top: '100%',
+                                            zIndex: 200,
                                             border: '1px solid black',
                                             background: 'white',
                                         }}>
