@@ -3,7 +3,6 @@ import { BrowserRouter }                from "react-router-dom";
 import SlideBanner                      from '../components/Slider/SliderBanner';
 import SaleBanner                       from '../components/Banner/SaleBanner';
 import ProductItem                      from '../components/GridItem/ProductItem';
-import CategoryItem                     from '../components/GridItem/CategoryItem';
 import ProductService                   from '../components/ProductService/ProductService';
 import Illustrationv5                   from '../components/Illustrationv5/Illustrationv5';
 import Nav                              from "reactstrap/es/Nav";
@@ -20,12 +19,6 @@ export default class HomePage extends Component {
         const banners = [
             { img: "assets/img/blog/banner1.png" },
             { img: "assets/img/blog/banner2.png" },
-        ];
-
-        const categories = [
-            { name: 'Men1', img: "assets/img/blog/collection2.png" },
-            { name: 'Men2', img: "assets/img/blog/collection3.png" },
-            { name: 'Men3', img: "assets/img/blog/collection1.png" },
         ];
 
         const products = [
