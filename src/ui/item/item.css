@@ -11,6 +11,11 @@
     padding-right: 10px;
 }
 
+.quick-review a {
+    text-decoration: none;
+    color: white;
+}
+
 .add-cart {
     margin-left: 0px;
     margin-right: 0px;
@@ -19,10 +24,17 @@
 }
 
 .add-cart a {
-    margin-right: -1px;
-    margin-left: -5px;
-    padding-left: 27px;
+    margin-right: 1px;
+    margin-left: -20px;
+    padding-left: 25px;
     padding-right: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
 }
 
 .name {

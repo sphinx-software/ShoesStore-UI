@@ -9,6 +9,9 @@
     border-width: 2px;
     border: solid grey;
     border-radius: 10px;
+
+    background: rgb(99,187,100);
+    background: linear-gradient(90deg, rgba(99,187,100,1) 0%, rgba(16,201,31,1) 24%, rgba(38,218,24,1) 44%, rgba(0,254,255,1) 67%);
 }
 
 

@@ -12,6 +12,10 @@
     background: white;
 }
 
+.product-list a {
+    text-decoration: none;
+}
+
 .checkout {
     width: 160px;
     height: 50px;
@@ -24,10 +28,18 @@
     background: white;
 }
 
+.free-ship a {
+    text-decoration: none;
+}
+
 .twenty-percent {
     width: 160px;
     height: 50px;
     background: white;
+}
+
+.twenty-percent a {
+    text-decoration: none;
 }
 
 .image {

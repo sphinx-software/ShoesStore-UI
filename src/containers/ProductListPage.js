@@ -1,25 +1,17 @@
-import React, { Component } from 'react';
-import { BrowserRouter }    from "react-router-dom";
-import HeadBanner           from '../components/Banner/HeadBanner';
-import Panel                from "../components/Panel/Panel";
-import BreadCrumbs          from "../components/BreadCrumbs/BreadCrumbs";
-import propTypes            from "prop-types";
-import {
-    Button,
-    Card,
-    CardBody,
-    CardImg,
-    CardSubtitle,
-    CardText,
-    CardTitle,
-}                           from 'reactstrap';
-import Nav                  from "reactstrap/es/Nav";
-import NavLink              from "reactstrap/es/NavLink";
-import { connect }          from "react-redux";
-import { addToCart }        from "../actions/actions";
-import                           '../ui/item/item.css';
-import                           '../ui/pagination/pagination.css';
-import Pagination           from "react-js-pagination";
+import React, { Component }                                                   from 'react';
+import { BrowserRouter }                                                      from "react-router-dom";
+import HeadBanner                                                             from '../components/Banner/HeadBanner';
+import Panel                                                                  from "../components/Panel/Panel";
+import BreadCrumbs                                                            from "../components/BreadCrumbs/BreadCrumbs";
+import propTypes                                                              from "prop-types";
+import { Button, Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap';
+import Nav                                                                    from "reactstrap/es/Nav";
+import NavLink                                                                from "reactstrap/es/NavLink";
+import { connect }                                                            from "react-redux";
+import { addToCart }                                                          from "../actions/actions";
+import Pagination                                                             from "react-js-pagination";
+import                                                                             '../ui/item/item.css';
+import                                                                             '../ui/pagination/pagination.css';
 
 
 class ProductListPage extends Component {
@@ -107,9 +99,9 @@ class ProductListPage extends Component {
                                                                     <div className="price">
                                                                         <CardText><h3>{product.price}$</h3></CardText>
                                                                     </div>
-                                                                    <div>
-                                                                        <Button className="quick-review"><NavLink href={`/products/${product.id}`}>Quick review</NavLink></Button>{' '}
-                                                                        <Button onClick={ () => this.props.addToCart(product) } className="add-cart"><NavLink>Add to cart</NavLink></Button>{' '}
+                                                                    <div className="flex">
+                                                                        <Button color="primary" className="quick-review"><NavLink href={`/products/${product.id}`}>Quick review</NavLink></Button>{' '}
+                                                                        <Button color="success" onClick={ () => this.props.addToCart(product) } className="add-cart"><NavLink>Add to cart</NavLink></Button>{' '}
                                                                     </div>
                                                                 </CardBody>
                                                             </Card>

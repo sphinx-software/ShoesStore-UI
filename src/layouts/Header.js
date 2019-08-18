@@ -1,20 +1,9 @@
-import React, { Component } from 'react';
-import        { Link }      from "react-router-dom";
-import        { remove }    from "../actions/actions";
-import        { connect }   from "react-redux";
-import                           '../ui/header/headers.css';
-import {
-    Row,
-    Col,
-    Navbar,
-    NavLink,
-    ButtonGroup,
-    ButtonDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    Button
-} from 'reactstrap';
+import React, { Component }                                                                                           from 'react';
+import        { Link }                                                                                                from "react-router-dom";
+import        { remove }                                                                                              from "../actions/actions";
+import        { connect }                                                                                             from "react-redux";
+import                                                                                                                     '../ui/header/headers.css';
+import { Row, Col, Navbar, NavLink, ButtonGroup, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
 
 class Header extends Component {
     state = {
@@ -44,7 +33,7 @@ class Header extends Component {
     render() {
 
         const { products, totalPrice } = this.props;
-        const dropdownOpenThree = this.state.dropdownOpenThree ? 'show' : 'hidden'
+        const dropdownOpenThree = this.state.dropdownOpenThree ? 'show' : 'hidden';
 
         return (
             <div>
@@ -78,7 +67,7 @@ class Header extends Component {
                             </ButtonGroup>
                         </Col>
                         <Col xs="6" sm="4">
-                            <ButtonGroup className="button-group-dropdown" style={{float :'right'}}>
+                            <ButtonGroup className="button-group-dropdown" style={{ float: 'right' }}>
                                 <ButtonDropdown isOpen={this.state.dropdownOpenThree} toggle={ () => this.toggleThree() }>
                                     <DropdownToggle caret size="lg" style={{ background: "#fcfcfc", height: 70 }}>
                                         <img

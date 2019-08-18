@@ -26,8 +26,10 @@ export default class FormLogin extends Component {
                                 </Label>
                             </FormGroup>
                             <Button color="primary">Login</Button>{' '}
-                            <FacebookLoginButton/>
-                            <TwitterLoginButton/>
+                            <div className="facebook-twitter">
+                                <FacebookLoginButton/>
+                                <TwitterLoginButton/>
+                            </div>
                             <h5>Don't have account yet? Learn more and <Link to="/register">Sign Up</Link></h5>
                         </div>
                     </div>
