@@ -10,8 +10,8 @@
     border: solid grey;
     border-radius: 10px;
 
-    background: rgb(99,187,100);
-    background: linear-gradient(90deg, rgba(99,187,100,1) 0%, rgba(16,201,31,1) 24%, rgba(38,218,24,1) 44%, rgba(0,254,255,1) 67%);
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,173,0,1) 14%, rgba(247,255,0,1) 28%, rgba(33,255,0,1) 42%, rgba(35,78,255,1) 56%, rgba(223,44,255,1) 70%, rgba(150,0,158,1) 84%);
 }
 
 
