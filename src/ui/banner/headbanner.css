@@ -1,0 +1,15 @@
+.headbanner {
+    background-image: url(../../img/imagesShoes/s-nike2.jpg);
+    padding: 25px 0px 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-name {
+    font-size: 80px;
+    background: -webkit-linear-gradient(  #fcb045, #de1dfd, #1dfddb, #1d7efd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
