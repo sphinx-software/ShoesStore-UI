@@ -1,0 +1,15 @@
+.add-to-cart {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.add-to-cart a {
+    margin-right: 1px;
+    margin-left: -20px;
+    padding-left: 25px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #18ba9b;
+}

@@ -91,7 +91,7 @@ export default class ProductDetailPage extends Component {
                                                       value={ quantity }/>
                                         </form>
 
-                                        <Button className="add-cart"><NavLink>Add to cart</NavLink></Button>{' '}
+                                        <Button className="add-to-cart"><NavLink>Add to cart</NavLink></Button>{' '}
 
                                     </div>
                                     {/*/end product quantity*/}

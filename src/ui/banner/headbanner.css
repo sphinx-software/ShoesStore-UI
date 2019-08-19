@@ -1,9 +1,10 @@
 .headbanner {
-    background-image: url(../../img/imagesShoes/s-nike2.jpg);
+    background-image: url(../../img/imagesShoes/s-nike1.jpg);
     padding: 25px 0px 100px;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: 50%;
 }
 
 .page-name {
