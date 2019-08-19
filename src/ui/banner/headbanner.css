@@ -13,3 +13,8 @@
     -webkit-text-fill-color: transparent;
 
 }
+.quote {
+    background: -webkit-linear-gradient(  #fcb045, #de1dfd, #1dfddb, #1d7efd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

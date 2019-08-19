@@ -8,7 +8,7 @@ export default class HeadBanner extends Component {
             <div className="headbanner">
                 <div className="container">
                     <span className="page-name">ShoesStore</span>
-                    <h1>Choice <span className="shop-green">for</span> everyone</h1>
+                    <h1 className="quote">Choice for everyone</h1>
                 </div>
             </div>
         );
