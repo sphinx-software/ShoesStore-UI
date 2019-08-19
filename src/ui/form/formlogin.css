@@ -10,8 +10,11 @@
     border: solid grey;
     border-radius: 10px;
 
-    background: rgb(255,0,0);
-    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,173,0,1) 14%, rgba(247,255,0,1) 28%, rgba(18,142,0,1) 42%, rgba(19,0,255,1) 56%, rgba(96,25,224,1) 70%, rgba(219,0,254,1) 85%);
+    background-image: url(../../img/imagesShoes/galaxy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
 
 .facebook-twitter {
